@@ -7,12 +7,9 @@ import org.springframework.web.bind.annotation.GetMapping
 @Controller
 class PortfolioController{
 
-
-    @GetMapping("/index")
+    @GetMapping
     fun index(): String {
 
         return "index"
     }
-
-
 }
