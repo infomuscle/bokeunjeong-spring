@@ -9,7 +9,6 @@ class MailKafkaConsumer {
 
         // send email 로직
 
-
     }
 
 }
