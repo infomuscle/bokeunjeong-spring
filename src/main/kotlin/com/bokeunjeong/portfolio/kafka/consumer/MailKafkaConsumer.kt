@@ -4,7 +4,7 @@ import org.springframework.kafka.annotation.KafkaListener
 
 class MailKafkaConsumer {
 
-    @KafkaListener
+//    @KafkaListener
     fun consumeMailTopic(msg: String) {
 
         // send email 로직

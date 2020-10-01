@@ -15,5 +15,4 @@ class PortfolioProjectDto {
     var startDt: Date = Date()
     var endDt: Date = Date()
 
-
 }

@@ -8,16 +8,11 @@ import java.util.*
 @Setter
 class PortfolioExperienceDto {
 
-
     var title: String = ""
     var grade: String = ""
 
 
     var startDt: Date = Date()
     var endDt: Date = Date()
-
-
-
-
 
 }
