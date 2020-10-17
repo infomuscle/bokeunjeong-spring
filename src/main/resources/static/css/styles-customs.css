@@ -1,16 +1,14 @@
 .about-section {
     background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)), url("../assets/img/code3.jpg");
     background-size: 100%;
-    /*-webkit-filter: grayscale(100%);*/
 }
 
 .projects-section {
     background: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1));
 }
 
-.portfolio-box {
+.portfolio-box img {
     -webkit-filter: grayscale(70%);
-
 }
 
 .signup-section {
