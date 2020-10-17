@@ -3,25 +3,23 @@ package com.bokeunjeong.portfolio.kafka.producer
 import org.apache.kafka.clients.producer.KafkaProducer
 import org.apache.kafka.clients.producer.ProducerRecord
 import org.springframework.stereotype.Service
-import org.springframework.util.concurrent.ListenableFuture
 import java.util.*
-import javax.websocket.SendResult
 
 @Service
 class MailKafkaProducer {
 
-    var prop: Properties = Properties()
+    var props: Properties = Properties()
     lateinit var producer: KafkaProducer<String, String>
 
 
     init {
-        prop.put("bootstrap.servers", "localhost:9092");
-        prop.put("acks", "all");
-        prop.put("block.on.buffer.full", "true");
-        prop.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
-        prop.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+        props.put("bootstrap.servers", "localhost:9092");
+        props.put("acks", "all");
+        props.put("block.on.buffer.full", "true");
+        props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+        props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
 
-        producer = KafkaProducer<String, String>(prop)
+        producer = KafkaProducer<String, String>(props)
     }
 
     fun produce(topic: String, msg: String): String {

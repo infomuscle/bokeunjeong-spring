@@ -15,11 +15,11 @@ class PortfolioApplicationTests {
     fun testKafkaProduce() {
 
         var topic = "test"
-        var msg = "THIS IS TEST MESSAGE"
+        var msg = "THIS IS TEST MESSAGE!!!"
 
         var producer = MailKafkaProducer()
         producer.produce(topic, msg)
-        println("TESTTESTTEST" + msg)
+        println("TESTTESTTEST " + msg)
 
     }
 
