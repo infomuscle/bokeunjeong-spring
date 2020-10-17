@@ -2,10 +2,13 @@ package com.bokeunjeong.portfolio
 
 import com.bokeunjeong.portfolio.kafka.producer.MailKafkaProducer
 import org.junit.jupiter.api.Test
+import org.slf4j.LoggerFactory
 import org.springframework.boot.test.context.SpringBootTest
 
 @SpringBootTest
 class PortfolioApplicationTests {
+
+    val log = LoggerFactory.getLogger(javaClass)
 
     @Test
     fun contextLoads() {
@@ -19,7 +22,7 @@ class PortfolioApplicationTests {
 
         var producer = MailKafkaProducer()
         producer.produce(topic, msg)
-        println("TESTTESTTEST " + msg)
+        log.info("테스트테스트테스트: {}", msg)
 
     }
 
