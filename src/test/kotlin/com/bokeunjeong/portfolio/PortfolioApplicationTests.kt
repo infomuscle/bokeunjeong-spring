@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
+import org.springframework.context.annotation.ComponentScan
 
 @SpringBootTest
 class PortfolioApplicationTests {
@@ -34,7 +35,8 @@ class PortfolioApplicationTests {
     @Test
     fun testJpaSave() {
         var project = PortfolioProjectDto("test")
-        project.description = "test"
+        project.name = project.name
+        project.description = "test6"
 
         portfolioProjectService.save(project)
         log.info("테스트테스트테스트: {}", project.name)

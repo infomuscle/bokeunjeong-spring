@@ -28,7 +28,7 @@ class PortfolioProjectDto {
 
     @Builder
     constructor(name: String) {
-
+        this.name = name
     }
 
 }
