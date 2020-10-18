@@ -18,6 +18,8 @@ class PortfolioProjectDto {
 
     var name: String = ""
 
+    var category: String = ""
+
     var client: String = ""
 
     var description: String = ""

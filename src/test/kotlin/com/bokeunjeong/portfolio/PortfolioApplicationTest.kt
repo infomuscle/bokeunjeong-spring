@@ -10,7 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.context.annotation.ComponentScan
 
 @SpringBootTest
-class PortfolioApplicationTests {
+class PortfolioApplicationTest {
 
     val log = LoggerFactory.getLogger(javaClass)
 
