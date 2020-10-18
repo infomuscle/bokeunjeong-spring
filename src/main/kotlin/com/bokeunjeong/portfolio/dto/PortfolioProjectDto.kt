@@ -1,18 +1,34 @@
 package com.bokeunjeong.portfolio.dto
 
-import lombok.Getter
-import lombok.Setter
+import lombok.Builder
+import lombok.NoArgsConstructor
 import java.util.*
+import javax.persistence.Entity
+import javax.persistence.GeneratedValue
+import javax.persistence.GenerationType
+import javax.persistence.Id
 
-@Getter
-@Setter
+@NoArgsConstructor
+@Entity(name = "project")
 class PortfolioProjectDto {
 
-    var title: String = ""
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    var no: Int = 0
+
+    var name: String = ""
+
     var client: String = ""
+
     var description: String = ""
 
     var startDt: Date = Date()
+
     var endDt: Date = Date()
+
+    @Builder
+    constructor(name: String) {
+
+    }
 
 }
