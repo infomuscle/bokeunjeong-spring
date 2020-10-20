@@ -49,7 +49,7 @@ class PortfolioApplicationTest {
         skill.skillLevel = "Advanced"
 
         portfolioService.saveSkill(skill)
-        log.info("테스트테스트테스트: {}", skill.skillName)
+        log.info("테스트테스트테스트: {}", skill.name)
 
     }
 }
