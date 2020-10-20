@@ -10,7 +10,8 @@ class PortfolioSkillDto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    var skillNo: Int = 0
+    @Column(name = "SKILL_NO")
+    var no: Int = 0
 
     @Column(name = "SKILL_NAME")
     var name: String = ""

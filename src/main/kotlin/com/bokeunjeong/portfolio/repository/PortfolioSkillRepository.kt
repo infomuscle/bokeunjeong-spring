@@ -5,6 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository
 
 
 interface PortfolioSkillRepository : JpaRepository<PortfolioSkillDto, Int> {
-    fun findBySkillNo(skillNo: Int): List<PortfolioSkillDto>
+    fun findByNo(no: Int): List<PortfolioSkillDto>
     fun findByName(name: String): List<PortfolioSkillDto>
 }
