@@ -3,6 +3,7 @@ package com.bokeunjeong.portfolio.controller
 import com.bokeunjeong.portfolio.dto.PortfolioProjectDto
 import com.bokeunjeong.portfolio.dto.PortfolioSkillDto
 import com.bokeunjeong.portfolio.service.PortfolioService
+import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
@@ -11,6 +12,8 @@ import org.springframework.web.bind.annotation.GetMapping
 
 @Controller
 class PortfolioController {
+
+    val log = LoggerFactory.getLogger(javaClass)
 
     @Autowired
     lateinit var portfolioService: PortfolioService
@@ -21,9 +24,19 @@ class PortfolioController {
         var projects: List<PortfolioProjectDto> = portfolioService.findAllProjects()
         model.addAttribute("projects", projects)
 
-        var skills: List<PortfolioSkillDto> = portfolioService.findAllSkills()
-        model.addAttribute("skills", skills)
+        var skills = HashMap<String, MutableList<PortfolioSkillDto>>()
+        for (skill in portfolioService.findAllSkills()) {
+            if (!skills.containsKey(skill.type)) {
+                skills.put(skill.type, mutableListOf<PortfolioSkillDto>())
+            }
+            var list: MutableList<PortfolioSkillDto>? = skills.get(skill.type)
+            list?.add(skill)
+        }
+        log.info(skills.toString())
+        model.addAttribute("frameworks", skills.get("Framework"))
+        model.addAttribute("languages", skills.get("Language"))
 
         return "index"
     }
 }
+

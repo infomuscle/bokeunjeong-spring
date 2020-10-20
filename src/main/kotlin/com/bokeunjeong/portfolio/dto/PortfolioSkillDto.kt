@@ -23,7 +23,7 @@ class PortfolioSkillDto {
     var level: String = ""
 
     @Column(name = "SKILL_LOGO")
-    var img: String = ""
+    var logo: String = ""
 
     @Builder
     constructor(name: String) {

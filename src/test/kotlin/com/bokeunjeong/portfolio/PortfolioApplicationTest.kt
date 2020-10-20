@@ -44,8 +44,8 @@ class PortfolioApplicationTest {
 
     @Test
     fun testJpaSaveSkill() {
-        var skill = PortfolioSkillDto("Kotlin")
-        skill.type = "Language"
+        var skill = PortfolioSkillDto("Spring")
+        skill.type = "Framework"
         skill.level = "Intermediate"
 
         portfolioService.saveSkill(skill)
