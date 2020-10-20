@@ -1,13 +1,13 @@
 package com.bokeunjeong.portfolio
 
 import com.bokeunjeong.portfolio.dto.PortfolioProjectDto
+import com.bokeunjeong.portfolio.dto.PortfolioSkillDto
 import com.bokeunjeong.portfolio.kafka.producer.MailKafkaProducer
-import com.bokeunjeong.portfolio.service.PortfolioProjectService
+import com.bokeunjeong.portfolio.service.PortfolioService
 import org.junit.jupiter.api.Test
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
-import org.springframework.context.annotation.ComponentScan
 
 @SpringBootTest
 class PortfolioApplicationTest {
@@ -15,7 +15,7 @@ class PortfolioApplicationTest {
     val log = LoggerFactory.getLogger(javaClass)
 
     @Autowired
-    lateinit var portfolioProjectService: PortfolioProjectService
+    lateinit var portfolioService: PortfolioService
 
     @Test
     fun contextLoads() {
@@ -32,13 +32,24 @@ class PortfolioApplicationTest {
         log.info("테스트테스트테스트: {}", msg)
     }
 
-    @Test
-    fun testJpaSave() {
+//    @Test
+    fun testJpaSaveProject() {
         var project = PortfolioProjectDto("test")
         project.name = project.name
         project.description = "test6"
 
-        portfolioProjectService.save(project)
+        portfolioService.saveProject(project)
         log.info("테스트테스트테스트: {}", project.name)
+    }
+
+    @Test
+    fun testJpaSaveSkill() {
+        var skill = PortfolioSkillDto("Python")
+        skill.skillType = "Language"
+        skill.skillLevel = "Advanced"
+
+        portfolioService.saveSkill(skill)
+        log.info("테스트테스트테스트: {}", skill.skillName)
+
     }
 }

@@ -14,3 +14,7 @@
 .signup-section {
     background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)), url("../assets/img/bg-signup.jpg");;
 }
+
+.skills-section {
+    padding: 10rem 0;
+}

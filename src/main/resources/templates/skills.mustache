@@ -1,0 +1,26 @@
+<section class="skills-section" id="skills">
+    <div class="container">
+        <div class="row">
+            {{#skills}}
+                <div class="col-md-4">
+                    <div class="card py-4 h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+                            <h4 class="text-uppercase m-0">{{skillName}}</h4>
+                            <hr class="my-4"/>
+                            <div class="small text-black-50">{{skillLevel}}</div>
+                        </div>
+                    </div>
+                </div>
+            {{/skills}}
+        </div>
+    </div>
+</section>
+
+<!--
+Language: Java, Python, JavaScript
+Framework: Spring, Django, Vue.js
+Database: Oracle, MySQL, InfluxDB
+Tools: Git, Grafana, Linux
+Design: Phtoshop, Illustartor, XD, Bootstrap
+-->
