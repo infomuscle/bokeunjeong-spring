@@ -24,3 +24,9 @@
     background-attachment: scroll;
     background-size: cover;
 }
+
+.skills-section .card hr {
+    border-color: #64a19d;
+    border-width: 0.25rem;
+    width: 3rem;
+}

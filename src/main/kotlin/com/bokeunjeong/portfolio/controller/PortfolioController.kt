@@ -18,6 +18,8 @@ class PortfolioController {
     @Autowired
     lateinit var portfolioService: PortfolioService
 
+    var levels = mapOf(Pair("Advanced", 3), Pair("Intermediate", 2), Pair("Beginner", 1))
+
     @GetMapping
     fun index(model: Model): String {
 

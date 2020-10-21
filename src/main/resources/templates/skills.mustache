@@ -3,31 +3,13 @@
         <h2 class="text-white mb-3">Languages</h2>
         <div class="row mb-5">
             {{#languages}}
-                <div class="col-md-4 mb-3 mb-md-0">
-                    <div class="card py-4 h-100">
-                        <div class="card-body text-center">
-                            <i class="fas fa-map-marked-alt text-primary mb-2"></i>
-                            <h4 class="text-uppercase m-0">{{name}}</h4>
-                            <hr class="my-4"/>
-                            <div class="small text-black-50">{{level}}</div>
-                        </div>
-                    </div>
-                </div>
+                {{> modules/skill-card}}
             {{/languages}}
         </div>
         <h2 class="text-white mb-3">Frameworks</h2>
         <div class="row mb-5">
             {{#frameworks}}
-                <div class="col-md-4 mb-3 mb-md-0">
-                    <div class="card py-4 h-100">
-                        <div class="card-body text-center">
-                            <i class="fas fa-map-marked-alt text-primary mb-2"></i>
-                            <h4 class="text-uppercase m-0">{{name}}</h4>
-                            <hr class="my-4"/>
-                            <div class="small text-black-50">{{level}}</div>
-                        </div>
-                    </div>
-                </div>
+                {{> modules/skill-card}}
             {{/frameworks}}
         </div>
     </div>
