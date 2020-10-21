@@ -24,6 +24,15 @@ class PortfolioController {
         var projects: List<PortfolioProjectDto> = portfolioService.findAllProjects()
         model.addAttribute("projects", projects)
 
+        var skills: HashMap<String, MutableList<PortfolioSkillDto>> = getSkills()
+        model.addAttribute("frameworks", skills.get("Framework"))
+        model.addAttribute("languages", skills.get("Language"))
+
+        return "index"
+    }
+
+    private fun getSkills(): HashMap<String, MutableList<PortfolioSkillDto>> {
+
         var skills = HashMap<String, MutableList<PortfolioSkillDto>>()
         for (skill in portfolioService.findAllSkills()) {
             if (!skills.containsKey(skill.type)) {
@@ -33,10 +42,8 @@ class PortfolioController {
             list?.add(skill)
         }
         log.info(skills.toString())
-        model.addAttribute("frameworks", skills.get("Framework"))
-        model.addAttribute("languages", skills.get("Language"))
 
-        return "index"
+        return skills
     }
 }
 

@@ -11,8 +11,10 @@ class PortfolioProjectDto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "PROJECT_NO")
     var no: Int = 0
 
+    @Column(name = "PROJECT_NAME")
     var name: String = ""
 
     var category: String = ""
@@ -21,9 +23,17 @@ class PortfolioProjectDto {
 
     var description: String = ""
 
+    @Column(name = "PROJECT_START_DT")
     var startDt: Date = Date()
 
+    @Column(name = "PROJECT_END_DT")
     var endDt: Date = Date()
+
+    @Column(name = "PROJECT_IMG")
+    var img: String = ""
+
+    var url: String = ""
+
 
     @Builder
     constructor(name: String) {
