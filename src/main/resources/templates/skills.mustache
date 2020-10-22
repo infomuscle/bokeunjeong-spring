@@ -1,16 +1,22 @@
 <section class="skills-section" id="skills">
     <div class="container">
-        <h2 class="text-white mb-3">Languages</h2>
+        <h2 class="text-white mb-3">Language</h2>
         <div class="row mb-5">
             {{#languages}}
                 {{> modules/skill-card}}
             {{/languages}}
         </div>
-        <h2 class="text-white mb-3">Frameworks</h2>
+        <h2 class="text-white mb-3">Framework</h2>
         <div class="row mb-5">
             {{#frameworks}}
                 {{> modules/skill-card}}
             {{/frameworks}}
+        </div>
+        <h2 class="text-white mb-3">Database</h2>
+        <div class="row mb-5">
+            {{#databases}}
+                {{> modules/skill-card}}
+            {{/databases}}
         </div>
     </div>
 </section>

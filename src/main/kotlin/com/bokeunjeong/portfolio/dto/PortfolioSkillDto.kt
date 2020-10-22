@@ -9,7 +9,7 @@ import javax.persistence.*
 class PortfolioSkillDto {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "SKILL_NO")
     var no: Int = 0
 

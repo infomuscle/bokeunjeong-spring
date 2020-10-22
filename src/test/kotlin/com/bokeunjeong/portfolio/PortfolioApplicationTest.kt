@@ -34,19 +34,20 @@ class PortfolioApplicationTest {
 
 //    @Test
     fun testJpaSaveProject() {
-        var project = PortfolioProjectDto("test")
-        project.name = project.name
-        project.description = "test6"
+        var project = PortfolioProjectDto("test6")
+        project.category = "test-ctg6"
+        project.description = "test-description6"
 
         portfolioService.saveProject(project)
         log.info("테스트테스트테스트: {}", project.name)
     }
 
-    @Test
+//    @Test
     fun testJpaSaveSkill() {
-        var skill = PortfolioSkillDto("Spring")
-        skill.type = "Framework"
+        var skill = PortfolioSkillDto("MySQL")
+        skill.type = "Database"
         skill.level = "Intermediate"
+        skill.logo = "assets/img/logos/mysql.svg"
 
         portfolioService.saveSkill(skill)
         log.info("테스트테스트테스트: {}", skill.name)
