@@ -7,6 +7,7 @@ import com.bokeunjeong.portfolio.repository.PortfolioSkillRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
+import org.springframework.ui.Model
 
 @Service
 class PortfolioService {
@@ -38,6 +39,4 @@ class PortfolioService {
     fun findAllSkills(): List<PortfolioSkillDto> {
         return portfolioSkillRepository.findAll()
     }
-
-
 }
