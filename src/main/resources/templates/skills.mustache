@@ -1,19 +1,19 @@
 <section class="skills-section" id="skills">
     <div class="container">
-        <div class="py-3 my-5"></div>
-            <h2 class="text-white mb-3">Language</h2>
-            <div class="row mb-5">
-                {{#languages}}
-                    {{> modules/skill-card}}
-                {{/languages}}
-            </div>
-            <h2 class="text-white mb-3">Framework</h2>
-            <div class="row mb-5">
-                {{#frameworks}}
-                    {{> modules/skill-card}}
-                {{/frameworks}}
-            </div>
+        {{> modules/bumper}}
+        <h2 class="text-white mb-3">Language</h2>
+        <div class="row mb-5">
+            {{#languages}}
+                {{> modules/skill-card}}
+            {{/languages}}
         </div>
+        <h2 class="text-white mb-3">Framework</h2>
+        <div class="row mb-5">
+            {{#frameworks}}
+                {{> modules/skill-card}}
+            {{/frameworks}}
+        </div>
+    </div>
 </section>
 
 
