@@ -1,48 +1,22 @@
 <!-- Contact-->
-<section class="contact-section d-flex align-items-center" id="contact">
-    <div class="container">
+<section class="contact-section d-md-flex align-items-center" id="contact">
+    <div class="container py-5 py-md-0">
         <div class="row">
             <div class="col-md-10 col-lg-8 mx-auto text-center">
-<!--                <i class="far fa-paper-plane fa-2x mb-2"></i>-->
                 <h2 class="mb-5">Contact Me</h2>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4 mb-3 mb-md-0">
-                <div class="card py-4 h-100">
-                    <div class="card-body text-center">
-                        <i class="fas fa-map-marked-alt text-primary mb-2"></i>
-                        <h4 class="text-uppercase m-0">Address</h4>
-                        <hr class="my-4"/>
-                        <div class="small text-black-50">Samhaksa Street, Songpa, Seoul, KR</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-3 mb-md-0">
-                <div class="card py-4 h-100">
-                    <div class="card-body text-center">
-                        <i class="fas fa-envelope text-primary mb-2"></i>
-                        <h4 class="text-uppercase m-0">Email</h4>
-                        <hr class="my-4"/>
-                        <div class="small text-black-50"><a href="#!">infomuscle10@gmail.com</a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-3 mb-md-0">
-                <div class="card py-4 h-100">
-                    <div class="card-body text-center">
-                        <i class="fas fa-mobile-alt text-primary mb-2"></i>
-                        <h4 class="text-uppercase m-0">Phone</h4>
-                        <hr class="my-4"/>
-                        <div class="small text-black-50">+82 10-6301-1628</div>
-                    </div>
-                </div>
-            </div>
+            {{#contacts}}
+                {{> modules/contact-card}}
+            {{/contacts}}
         </div>
-        <div class="social my-3 d-flex justify-content-center">
-            <a class="mx-2" href="https://www.linkedin.com/in/infomuscle10/"><i class="fab fa-linkedin-in"></i></a>
-            <a class="mx-2" href="instagram.com/jumbo_gun"><i class="fab fa-instagram"></i></a>
-            <a class="mx-2" href="https://github.com/infomuscle"><i class="fab fa-github"></i></a>
+        <div class="row">
+            <div class="social mx-auto my-3 d-flex justify-content-center">
+                <a class="mx-2" href="https://www.linkedin.com/in/infomuscle10/"><i class="fab fa-linkedin-in"></i></a>
+                <a class="mx-2" href="instagram.com/jumbo_gun"><i class="fab fa-instagram"></i></a>
+                <a class="mx-2" href="https://github.com/infomuscle"><i class="fab fa-github"></i></a>
+            </div>
         </div>
     </div>
 </section>
