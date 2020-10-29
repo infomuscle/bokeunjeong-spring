@@ -27,10 +27,7 @@ class PortfolioController {
         model.addAttribute("projects", projects)
 
         var skills: HashMap<String, MutableList<PortfolioSkillDto>> = getSkills()
-        model.addAttribute("frameworks", skills.get("Framework"))
-        model.addAttribute("languages", skills.get("Language"))
-        model.addAttribute("databases", skills.get("Database"))
-
+        model.addAttribute("skills", skills.entries)
         return "index"
     }
 
