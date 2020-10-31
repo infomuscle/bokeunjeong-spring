@@ -25,6 +25,9 @@ class PortfolioSkillDto {
     @Column(name = "SKILL_LOGO")
     var logo: String = ""
 
+    @Column(name = "USE_YN")
+    var useYn: String = ""
+
     @Builder
     constructor(name: String) {
         this.name = name

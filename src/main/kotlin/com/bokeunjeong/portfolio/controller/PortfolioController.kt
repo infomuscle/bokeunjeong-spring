@@ -39,7 +39,7 @@ class PortfolioController {
     private fun getSkills(): HashMap<String, MutableList<PortfolioSkillDto>> {
 
         var skills = HashMap<String, MutableList<PortfolioSkillDto>>()
-        for (skill: PortfolioSkillDto in portfolioService.findAllSkills()) {
+        for (skill: PortfolioSkillDto in portfolioService.findAllUsingSkills()) {
             if (!skills.containsKey(skill.type)) {
                 skills.put(skill.type, mutableListOf<PortfolioSkillDto>())
             }

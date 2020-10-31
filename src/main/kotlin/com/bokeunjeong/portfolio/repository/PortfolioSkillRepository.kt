@@ -8,4 +8,5 @@ interface PortfolioSkillRepository : JpaRepository<PortfolioSkillDto, Int> {
     fun findByNo(no: Int): List<PortfolioSkillDto>
     fun findByName(name: String): List<PortfolioSkillDto>
     fun findByType(type: String): List<PortfolioSkillDto>
+    fun findByUseYn(useYn: String): List<PortfolioSkillDto>
 }

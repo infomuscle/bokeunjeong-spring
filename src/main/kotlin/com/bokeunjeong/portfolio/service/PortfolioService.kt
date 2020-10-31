@@ -42,6 +42,10 @@ class PortfolioService {
         return portfolioSkillRepository.findAll()
     }
 
+    fun findAllUsingSkills(): List<PortfolioSkillDto> {
+        return portfolioSkillRepository.findByUseYn("Y")
+    }
+
     fun findAllContacts(): List<PortfolioContactDto> {
         return portfolioContactRepository.findAll()
     }

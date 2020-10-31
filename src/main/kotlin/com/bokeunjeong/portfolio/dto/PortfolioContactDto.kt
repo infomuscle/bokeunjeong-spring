@@ -13,10 +13,13 @@ class PortfolioContactDto {
     @Column(name = "CONTACT_NO")
     var no: Int = 0
 
+    @Column(name = "TYPE")
     var type: String = ""
 
+    @Column(name = "DETAIL")
     var detail: String = ""
 
+    @Column(name = "ICON")
     var icon: String = ""
 
     @Builder
