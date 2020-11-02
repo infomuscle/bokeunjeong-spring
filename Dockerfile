@@ -6,7 +6,7 @@ VOLUME /tmp
 
 EXPOSE 8080
 
-ARG JAR_FILE=out/artifacts/portfolio_jar/portfolio.jar
+ARG JAR_FILE=build/libs/portfolio-0.0.1-SNAPSHOT.jar
 
 ADD ${JAR_FILE} bortfolio.jar
 
