@@ -5,7 +5,7 @@ import lombok.NoArgsConstructor
 import javax.persistence.*
 
 @NoArgsConstructor
-@Entity(name = "skill")
+@Entity(name = "SKILL")
 class PortfolioSkillDto {
 
     @Id

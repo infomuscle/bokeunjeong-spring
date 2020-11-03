@@ -17,7 +17,7 @@ class PortfolioApplicationTest {
     @Autowired
     lateinit var portfolioService: PortfolioService
 
-    @Test
+//    @Test
     fun contextLoads() {
     }
 

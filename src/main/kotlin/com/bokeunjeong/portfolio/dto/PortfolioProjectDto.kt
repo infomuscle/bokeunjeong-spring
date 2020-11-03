@@ -6,7 +6,7 @@ import java.util.*
 import javax.persistence.*
 
 @NoArgsConstructor
-@Entity(name = "project")
+@Entity(name = "PROJECT")
 class PortfolioProjectDto {
 
     @Id
