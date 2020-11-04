@@ -16,7 +16,8 @@ class KafkaConsumerConfiguration {
     fun consumerFactory(groupId: String): ConsumerFactory<String, String> {
         var props = HashMap<String, Any>()
 
-        props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092")
+        props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "zookeeper:9092")
+//        props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092")
         props.put(ConsumerConfig.GROUP_ID_CONFIG, groupId)
         props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer::class.java)
         props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer::class.java)

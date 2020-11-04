@@ -22,5 +22,7 @@ ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/bortfolio.
 # docker run -d -p 9090:3306 -e MYSQL_ROOT_PASSWORD=password --name mysql --network mysql-network mysql --character-set-server=utf8
 # --lower_case_table_names=1
 
+# docker run --name zookeeper zookeeper
+
 # docker network inspect mysql-network
 # docker network connect mysql-newtork bortfolio
