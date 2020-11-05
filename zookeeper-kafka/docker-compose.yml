@@ -6,6 +6,11 @@ networks:
       name: mysql-network
 
 services:
+#  bortfolio:
+#    image: bortfolio
+#    container_name: bortfolio
+#    ports:
+#    - "9000:80"
   zookeeper:
     image: zookeeper
     container_name: zookeeper
