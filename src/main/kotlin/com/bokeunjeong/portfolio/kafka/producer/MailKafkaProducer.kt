@@ -13,7 +13,7 @@ class MailKafkaProducer {
 
 
     init {
-        props.put("bootstrap.servers", "zookeeper:9092");
+        props.put("bootstrap.servers", "kafka:9092");
 //        props.put("bootstrap.servers", "localhost:9092");
         props.put("acks", "all");
         props.put("block.on.buffer.full", "true");
