@@ -6,18 +6,11 @@ networks:
       name: mysql-network
 
 services:
-#  bortfolio:
-#    image: bortfolio
-#    container_name: bortfolio
-#    ports:
-#    - "9000:80"
   zookeeper:
     image: zookeeper
     container_name: zookeeper
     ports:
       - "2181:2181"
-#    networks:
-#      - mysql-network
   kafka:
     image: kafka
     container_name: kafka
@@ -30,8 +23,12 @@ services:
       KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092
       KAFKA_ADVERTISED_PORT: 9092
       KAFKA_CREATE_TOPICS: "test:1:1"
-#    networks:
-#      - mysql-network
+      #      KAFKA_HEAP_OPTS: "-Xmx512M -Xms256"
+      KAFKA_JVM_PERFORMANCE_OPTS: " -Xmx256m -Xms256m"
     depends_on:
       - zookeeper
-
+  bortfolio:
+    image: bortfolio
+    container_name: bortfolio
+    ports:
+      - "9000:80"
