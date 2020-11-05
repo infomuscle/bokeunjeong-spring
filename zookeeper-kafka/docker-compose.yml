@@ -7,12 +7,12 @@ networks:
 
 services:
   zookeeper:
-    image: zookeeper
+    image: infomuscle10/zookeeper
     container_name: zookeeper
     ports:
       - "2181:2181"
   kafka:
-    image: kafka
+    image: infomuscle10/kafka
     container_name: kafka
     ports:
       - "9092:9092"
@@ -28,7 +28,7 @@ services:
     depends_on:
       - zookeeper
   bortfolio:
-    image: bortfolio
+    image: infomuscle10/bortfolio
     container_name: bortfolio
     ports:
       - "9000:80"
