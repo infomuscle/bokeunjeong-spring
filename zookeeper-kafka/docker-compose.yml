@@ -27,8 +27,8 @@ services:
       KAFKA_JVM_PERFORMANCE_OPTS: " -Xmx256m -Xms256m"
     depends_on:
       - zookeeper
-  bortfolio:
-    image: infomuscle10/bortfolio
-    container_name: bortfolio
-    ports:
-      - "9000:80"
+#  bortfolio:
+#    image: infomuscle10/bortfolio
+#    container_name: bortfolio
+#    ports:
+#      - "9000:80"

@@ -4,7 +4,7 @@ LABEL maintainer="infomuscle10@gmail.com"
 
 VOLUME /tmp
 
-EXPOSE 8080
+EXPOSE 80
 
 ARG JAR_FILE=build/libs/portfolio-0.0.1-SNAPSHOT.jar
 
@@ -29,7 +29,6 @@ ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/bortfolio.
 
 # cd /opt/kafka/bin/
 # kafka-topics.sh --describe --topic test --zookeeper zookeeper:2181
-
 
 # docker network inspect mysql-network
 # docker network connect mysql-newtork bortfolio
