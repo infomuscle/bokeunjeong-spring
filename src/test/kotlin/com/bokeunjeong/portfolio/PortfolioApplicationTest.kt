@@ -22,7 +22,7 @@ class PortfolioApplicationTest {
     //    @Test
     fun testKafkaProduce() {
 
-        var topic = "test"
+//        var topic = "test"
         var msg = "THIS IS TEST MESSAGE!!!"
 
 //        var producer = MailKafkaProducer()
