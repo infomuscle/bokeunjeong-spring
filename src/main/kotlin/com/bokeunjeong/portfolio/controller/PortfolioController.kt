@@ -27,7 +27,7 @@ class PortfolioController {
         var projects: List<PortfolioProjectDto> = portfolioService.findAllProjects()
         model.addAttribute("projects", projects)
 
-        var skills: HashMap<String, MutableList<PortfolioSkillDto>> = getSkills()
+        var skills: LinkedHashMap<String, MutableList<PortfolioSkillDto>> = getSkills()
         model.addAttribute("skills", skills.entries)
 
         var contacts: List<PortfolioContactDto> = portfolioService.findAllContacts()
@@ -36,9 +36,9 @@ class PortfolioController {
         return "index"
     }
 
-    private fun getSkills(): HashMap<String, MutableList<PortfolioSkillDto>> {
+    private fun getSkills(): LinkedHashMap<String, MutableList<PortfolioSkillDto>> {
 
-        var skills = HashMap<String, MutableList<PortfolioSkillDto>>()
+        var skills = LinkedHashMap<String, MutableList<PortfolioSkillDto>>()
         for (skill: PortfolioSkillDto in portfolioService.findAllUsingSkills()) {
             if (!skills.containsKey(skill.type)) {
                 skills.put(skill.type, mutableListOf<PortfolioSkillDto>())
