@@ -23,7 +23,6 @@ services:
       KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092
       KAFKA_ADVERTISED_PORT: 9092
       KAFKA_CREATE_TOPICS: "test:1:1"
-      #      KAFKA_HEAP_OPTS: "-Xmx512M -Xms256"
       KAFKA_JVM_PERFORMANCE_OPTS: " -Xmx256m -Xms256m"
     depends_on:
       - zookeeper

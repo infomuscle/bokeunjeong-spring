@@ -2,9 +2,7 @@ package com.bokeunjeong.portfolio
 
 import com.bokeunjeong.portfolio.dto.PortfolioProjectDto
 import com.bokeunjeong.portfolio.dto.PortfolioSkillDto
-import com.bokeunjeong.portfolio.kafka.producer.MailKafkaProducer
 import com.bokeunjeong.portfolio.service.PortfolioService
-import org.junit.jupiter.api.Test
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
@@ -17,7 +15,7 @@ class PortfolioApplicationTest {
     @Autowired
     lateinit var portfolioService: PortfolioService
 
-//    @Test
+    //    @Test
     fun contextLoads() {
     }
 
@@ -27,12 +25,12 @@ class PortfolioApplicationTest {
         var topic = "test"
         var msg = "THIS IS TEST MESSAGE!!!"
 
-        var producer = MailKafkaProducer()
-        producer.produce(topic, msg)
+//        var producer = MailKafkaProducer()
+//        producer.produce(topic, msg)
         log.info("테스트테스트테스트: {}", msg)
     }
 
-//    @Test
+    //    @Test
     fun testJpaSaveProject() {
         var project = PortfolioProjectDto("test6")
         project.category = "test-ctg6"
@@ -42,7 +40,7 @@ class PortfolioApplicationTest {
         log.info("테스트테스트테스트: {}", project.name)
     }
 
-//    @Test
+    //    @Test
     fun testJpaSaveSkill() {
         var skill = PortfolioSkillDto("MySQL")
         skill.type = "Database"
