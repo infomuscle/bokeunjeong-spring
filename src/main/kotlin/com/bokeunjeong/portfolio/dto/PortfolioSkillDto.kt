@@ -32,7 +32,7 @@ class PortfolioSkillDto {
     var useYn: String = ""
 
     @Transient
-    var leveler : List<String> = listOf()
+    var color: String = ""
 
     @Builder
     constructor(name: String) {

@@ -41,3 +41,7 @@
     width: 1.5rem;
 }
 
+.skills-section .card .progress {
+    height: 0.2rem;
+}
+

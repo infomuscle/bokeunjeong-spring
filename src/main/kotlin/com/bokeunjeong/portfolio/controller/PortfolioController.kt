@@ -19,7 +19,13 @@ class PortfolioController {
     @Autowired
     lateinit var portfolioService: PortfolioService
 
-    var levels = mapOf(Pair("Advanced", 3), Pair("Intermediate", 2), Pair("Beginner", 1))
+    var colors: Map<String, String> = mapOf(
+            Pair("Language", "bg-primary"),
+            Pair("Framework", "bg-warning"),
+            Pair("Database", "bg-success"),
+            Pair("Tool", "bg-danger"),
+            Pair("Design", "bg-info")
+    )
 
     @GetMapping
     fun index(model: Model): String {
@@ -40,7 +46,7 @@ class PortfolioController {
 
         var skills = LinkedHashMap<String, MutableList<PortfolioSkillDto>>()
         for (skill: PortfolioSkillDto in portfolioService.findAllUsingSkills()) {
-            skill.leveler = skill.level.chunked(1)
+            skill.color = colors.get(skill.type).toString()
             if (!skills.containsKey(skill.type)) {
                 skills.put(skill.type, mutableListOf<PortfolioSkillDto>())
             }
