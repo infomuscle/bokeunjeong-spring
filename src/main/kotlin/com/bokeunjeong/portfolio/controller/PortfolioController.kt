@@ -1,13 +1,12 @@
 package com.bokeunjeong.portfolio.controller
 
-import com.bokeunjeong.portfolio.common.CONST_SITE_URL
 import com.bokeunjeong.portfolio.dto.PortfolioContactDto
 import com.bokeunjeong.portfolio.dto.PortfolioProjectDto
 import com.bokeunjeong.portfolio.dto.PortfolioSkillDto
 import com.bokeunjeong.portfolio.service.PortfolioService
-import org.apache.tomcat.util.bcel.Const
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
@@ -20,6 +19,9 @@ class PortfolioController {
 
     @Autowired
     lateinit var portfolioService: PortfolioService
+
+    @Value("\${portfolio.const.site-url}")
+    lateinit var siteUrl: String
 
     var colors: Map<String, String> = mapOf(
             Pair("Language", "bg-info"),
@@ -41,7 +43,7 @@ class PortfolioController {
         var contacts: List<PortfolioContactDto> = portfolioService.findAllContacts()
         model.addAttribute("contacts", contacts)
 
-        model.addAttribute("site-url", CONST_SITE_URL)
+        model.addAttribute("site-url", siteUrl)
 
         return "index"
     }
