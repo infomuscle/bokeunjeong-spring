@@ -4,9 +4,19 @@
         <div class="row no-gutters">
             {{#projects}}
                 <div class="col-lg-4 col-sm-6 my-3 my-md-0">
-                    <a class="portfolio-box" href="assets/img/projects/fullsize/{{no}}.jpg">
+                    <button class="portfolio-box" id="open{{no}}">
                         <img class="img-fluid w-100 h-100" src="assets/img/projects/thumbnails/{{no}}.jpg" alt=""/>
-                    </a>
+                    </button>
+                    <div class="modal hidden" id="project-modal{{no}}">
+                        <div class="md_overlay"></div>
+                        <div class="md_content">
+                            <h1>샘플 모달창{{no}}</h1>
+                            <div class="modal_text">
+                                자바스크립트로 모달창을 만들어 봤습니다.
+                            </div>
+                            <button>X</button>
+                        </div>
+                    </div>
                 </div>
             {{/projects}}
             <div class="col-lg-4 col-sm-6">
@@ -17,5 +27,7 @@
                 </a>
             </div>
         </div>
+        <!--        <button id="open">모달창 열기</button>-->
+
     </div>
 </section>
