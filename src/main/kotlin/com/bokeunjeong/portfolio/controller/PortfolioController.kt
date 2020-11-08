@@ -20,11 +20,11 @@ class PortfolioController {
     lateinit var portfolioService: PortfolioService
 
     var colors: Map<String, String> = mapOf(
-            Pair("Language", "bg-primary"),
-            Pair("Framework", "bg-warning"),
-            Pair("Database", "bg-success"),
-            Pair("Tool", "bg-danger"),
-            Pair("Design", "bg-info")
+            Pair("Language", "bg-info"),
+            Pair("Framework", "bg-success"),
+            Pair("Database", "bg-danger"),
+            Pair("Tool", "bg-primary"),
+            Pair("Design", "bg-warning")
     )
 
     @GetMapping
