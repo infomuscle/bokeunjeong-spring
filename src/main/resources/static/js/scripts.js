@@ -16,14 +16,9 @@ const overlay = modal.querySelector(".md_overlay");
 
 
 //동작함수
-const openModal = () => {
-    modal.classList.remove("hidden");
+var openModal = (idx) => {
+    modals[idx - 1].classList.remove("hidden");
 }
-const closeModal = () => {
-    modal.classList.add("hidden");
-}
-//클릭 이벤트
-for (var i = 0; i < 5; i++) {
-    openButtons[i].addEventListener("click", openModal);
-    closeButtons[i].addEventListener("click", closeModal);
+var closeModal = (idx) => {
+    modals[idx - 1].classList.add("hidden");
 }
