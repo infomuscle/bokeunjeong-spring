@@ -22,11 +22,17 @@ class PortfolioSkillDto {
     @Column(name = "SKILL_LEVEL")
     var level: String = ""
 
+    @Column(name = "SKILL_PROFICIENCY")
+    var proficiency: String = ""
+
     @Column(name = "SKILL_LOGO")
     var logo: String = ""
 
     @Column(name = "USE_YN")
     var useYn: String = ""
+
+    @Transient
+    var leveler : List<String> = listOf()
 
     @Builder
     constructor(name: String) {

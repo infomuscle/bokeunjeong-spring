@@ -40,6 +40,7 @@ class PortfolioController {
 
         var skills = LinkedHashMap<String, MutableList<PortfolioSkillDto>>()
         for (skill: PortfolioSkillDto in portfolioService.findAllUsingSkills()) {
+            skill.leveler = skill.level.chunked(1)
             if (!skills.containsKey(skill.type)) {
                 skills.put(skill.type, mutableListOf<PortfolioSkillDto>())
             }

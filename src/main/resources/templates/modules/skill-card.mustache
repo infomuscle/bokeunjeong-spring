@@ -4,11 +4,11 @@
             <img class="img-fluid w-25 h-25 my-1" src="{{logo}}" alt=""/>
             <h6 class="text-uppercase my-1">{{name}}</h6>
             <div class="d-flex">
-                <hr class="mx-1 my-1"/>
-                <hr class="mx-1 my-1"/>
-                <hr class="mx-1 my-1"/>
+                {{#leveler}}
+                    <hr class="my-1"/>
+                {{/leveler}}
             </div>
-            <div class="small text-black-50 my-1">{{level}}</div>
+            <div class="small text-black-50 my-1">{{proficiency}}</div>
         </div>
     </div>
 </div>
