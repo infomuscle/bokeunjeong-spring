@@ -10,7 +10,7 @@ ARG JAR_FILE=build/libs/portfolio-0.0.1-SNAPSHOT.jar
 
 ADD ${JAR_FILE} bortfolio.jar
 
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/bortfolio.jar"]
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom", "-Dspring.profiles.active=dev","-jar","/bortfolio.jar"]
 
 
 # ./gradlew clean build
