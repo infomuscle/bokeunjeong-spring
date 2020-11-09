@@ -1,13 +1,17 @@
 <div class="project-modal modal hidden" id="project-modal{{no}}">
-    <div class="modal-dialog">
-        <div class="modal-content">
+    <div class="modal-dialog mx-5 mw-100 h-75">
+        <div class="modal-content  d-flex flex-column justify-content-center h-100">
             <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
+                <div class="row">
+                    <div class="col-md-4 align-self-center">
+                        <div class="modal-body">
+                            <img class="img-fluid mx-auto" src="assets/img/projects/fullsize/{{no}}.jpg" alt=""/>
+                        </div>
+                    </div>
+                    <div class="col-md-8 align-self-center">
                         <div class="modal-body">
                             <h2 class="text-uppercase">{{name}}</h2>
                             <p class="text-muted">{{category}}</p>
-                            <img class="img-fluid d-block mx-auto" src="assets/img/projects/fullsize/{{no}}.jpg" alt=""/>
                             <p>{{description}}</p>
                             <ul class="list-inline">
                                 <li>Date: January 2020</li>
