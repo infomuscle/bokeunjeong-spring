@@ -10,9 +10,8 @@ import javax.persistence.*
 class PortfolioProjectDto {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "PROJECT_NO")
-    var no: Int = 0
+    @Column(name = "PROJECT_ID")
+    var id: String = ""
 
     @Column(name = "PROJECT_NAME")
     var name: String = ""
@@ -37,6 +36,9 @@ class PortfolioProjectDto {
 
     @Column(name = "URL")
     var url: String = ""
+
+    @Transient
+    var no: Int = 0
 
     @Transient
     var skills: List<PortfolioSkillDto>? = null

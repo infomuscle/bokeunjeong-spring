@@ -35,6 +35,9 @@ class PortfolioController {
     fun index(model: Model): String {
 
         var projects: List<PortfolioProjectDto> = portfolioService.findAllProjects()
+        for (idx: Int in projects.indices) {
+            projects[idx].no = idx + 1
+        }
         model.addAttribute("projects", projects)
 
         var skills: LinkedHashMap<String, MutableList<PortfolioSkillDto>> = getSkills()
