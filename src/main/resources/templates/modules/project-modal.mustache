@@ -13,10 +13,15 @@
                             <h2 class="text-uppercase">{{name}}</h2>
                             <p class="text-muted">{{category}}</p>
                             <p>{{description}}</p>
-                            <ul class="list-inline">
+                            <ul class="">
                                 <li>Date: Coming Soon</li>
                                 <li>Client: {{client}}</li>
-                                <li>Skills: Coming Soon</li>
+                                <li>Skills:
+                                    <ul class="modal-skill-list">
+                                        <li><img class="modal-skill img-fluid my-1" src="assets/img/logos/docker.svg" alt=""/></li>
+                                        <li><img class="modal-skill img-fluid my-1" src="assets/img/logos/kubernetes.svg" alt=""/></li>
+                                    </ul>
+                                </li>
                             </ul>
                             <button onclick="closeModal({{no}})" class="btn btn-outline-dark" type="button">
                                 <i class="fas fa-times mr-1"></i>

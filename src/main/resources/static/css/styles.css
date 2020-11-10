@@ -56,3 +56,13 @@
 .hidden {
     display: none;
 }
+
+.modal-skill-list {
+    list-style: none;
+}
+
+.modal-skill {
+    width: 3rem;
+    height: 3rem;
+    float: left;
+}
