@@ -38,6 +38,8 @@ class PortfolioProjectDto {
     @Column(name = "URL")
     var url: String = ""
 
+    @Transient
+    var skills: List<PortfolioSkillDto>? = null
 
     @Builder
     constructor(name: String) {
