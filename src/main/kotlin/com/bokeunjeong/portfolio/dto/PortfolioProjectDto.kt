@@ -41,7 +41,7 @@ class PortfolioProjectDto {
     var no: Int = 0
 
     @Transient
-    var skills: List<PortfolioSkillDto>? = null
+    var skills: List<PortfolioSkillDto> = listOf()
 
     @Builder
     constructor(name: String) {

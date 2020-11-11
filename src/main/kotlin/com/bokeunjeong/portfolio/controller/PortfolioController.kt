@@ -34,14 +34,11 @@ class PortfolioController {
     @GetMapping
     fun index(model: Model): String {
 
-        var projects: List<PortfolioProjectDto> = portfolioService.findAllProjects()
-        for (idx: Int in projects.indices) {
-            projects[idx].no = idx + 1
-        }
-        model.addAttribute("projects", projects)
-
         var skills: LinkedHashMap<String, MutableList<PortfolioSkillDto>> = getSkills()
         model.addAttribute("skills", skills.entries)
+
+        var projects: List<PortfolioProjectDto> = getProjects()
+        model.addAttribute("projects", projects)
 
         var contacts: List<PortfolioContactDto> = portfolioService.findAllContacts()
         model.addAttribute("contacts", contacts)
@@ -65,6 +62,16 @@ class PortfolioController {
         log.info(skills.toString())
 
         return skills
+    }
+
+    private fun getProjects(): List<PortfolioProjectDto> {
+
+        var projects: List<PortfolioProjectDto> = portfolioService.findAllProjects()
+        for ((idx: Int, project: PortfolioProjectDto) in projects.withIndex()) {
+            project.no = idx + 1
+        }
+
+        return projects
     }
 }
 
