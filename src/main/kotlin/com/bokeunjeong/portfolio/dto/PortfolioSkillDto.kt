@@ -2,16 +2,18 @@ package com.bokeunjeong.portfolio.dto
 
 import lombok.Builder
 import lombok.NoArgsConstructor
-import javax.persistence.*
+import javax.persistence.Column
+import javax.persistence.Entity
+import javax.persistence.Id
+import javax.persistence.Transient
 
 @NoArgsConstructor
 @Entity(name = "SKILL")
 class PortfolioSkillDto {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "SKILL_NO")
-    var no: Int = 0
+    @Column(name = "SKILL_ID")
+    var id: String = ""
 
     @Column(name = "SKILL_NAME")
     var name: String = ""
