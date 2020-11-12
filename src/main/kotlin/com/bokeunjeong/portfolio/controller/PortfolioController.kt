@@ -66,7 +66,6 @@ class PortfolioController {
 
     private fun getProjects(): List<PortfolioProjectDto> {
 
-//        var projects: List<PortfolioProjectDto> = portfolioService.findAllProjects()
         var projects: List<PortfolioProjectDto> = portfolioService.findRecentFiveProjects()
         for ((idx: Int, project: PortfolioProjectDto) in projects.withIndex()) {
             project.no = 5 - idx
