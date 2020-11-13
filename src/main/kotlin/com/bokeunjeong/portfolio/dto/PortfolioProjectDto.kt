@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor
 import java.util.*
 import javax.persistence.*
 
+
 @NoArgsConstructor
 @Entity(name = "PROJECT")
 class PortfolioProjectDto {
@@ -40,8 +41,12 @@ class PortfolioProjectDto {
     @Transient
     var no: Int = 0
 
-    @Transient
-    var skills: List<PortfolioSkillDto> = listOf()
+    @ManyToMany
+    @JoinTable(
+            name = "PROJECT_SKILL",
+            joinColumns = [JoinColumn(name = "PROJECT_ID")],
+            inverseJoinColumns = [JoinColumn(name = "SKILL_ID")])
+    var skills: List<PortfolioSkillDto> = ArrayList<PortfolioSkillDto>()
 
     @Builder
     constructor(name: String) {
