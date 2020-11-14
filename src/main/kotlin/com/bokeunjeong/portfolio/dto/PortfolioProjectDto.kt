@@ -46,7 +46,7 @@ class PortfolioProjectDto {
             name = "PROJECT_SKILL",
             joinColumns = [JoinColumn(name = "PROJECT_ID")],
             inverseJoinColumns = [JoinColumn(name = "SKILL_ID")])
-    var skills: List<PortfolioSkillDto> = ArrayList<PortfolioSkillDto>()
+    var projectSkills: List<PortfolioSkillDto> = ArrayList<PortfolioSkillDto>()
 
     @Builder
     constructor(name: String) {

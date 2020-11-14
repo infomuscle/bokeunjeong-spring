@@ -17,13 +17,9 @@
                             <p class="text-muted my-1">{{category}}</p>
                             <hr class="my-2">
                             <ul class="list-inline my-1">
-                                <li class="list-inline-item m-0"><img class="img-fluid" src="assets/img/logos/python.svg" alt=""/></li>
-                                <li class="list-inline-item m-0"><img class="img-fluid" src="assets/img/logos/django.svg" alt=""/></li>
-                                <li class="list-inline-item m-0"><img class="img-fluid" src="assets/img/logos/oracle.svg" alt=""/></li>
-                                <li class="list-inline-item m-0"><img class="img-fluid" src="assets/img/logos/git.svg" alt=""/></li>
-                                <li class="list-inline-item m-0"><img class="img-fluid" src="assets/img/logos/ubuntu.svg" alt=""/></li>
-                                <li class="list-inline-item m-0"><img class="img-fluid" src="assets/img/logos/docker.svg" alt=""/></li>
-                                <li class="list-inline-item m-0"><img class="img-fluid" src="assets/img/logos/sketch.svg" alt=""/></li>
+                                {{#projectSkills}}
+                                    <li class="list-inline-item m-0 mr-md-1"><img class="img-fluid" src="{{logo}}" alt="{{name}}"/></li>
+                                {{/projectSkills}}
                             </ul>
                             <hr class="my-2">
                             <p class="my-1">{{description}}</p>
