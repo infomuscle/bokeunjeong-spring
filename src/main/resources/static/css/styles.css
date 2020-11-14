@@ -68,3 +68,13 @@
     top: 1.5rem;
     right: 1.5rem;
 }
+
+.project-box-caption {
+    bottom: 0;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.project-box-caption:hover {
+    opacity: 0.9;
+}

@@ -4,8 +4,12 @@
         <div class="row no-gutters">
             {{#projects}}
                 <div class="col-lg-4 col-sm-6 my-3 my-md-0">
-                    <a class="portfolio-box" onclick="openModal({{no}})" id="open{{no}}">
+                    <a class="project-box" onclick="openModal({{no}})" id="open{{no}}">
                         <img class="img-fluid w-100 h-100" src="assets/img/projects/thumbnails/{{id}}.jpg" alt=""/>
+                        <div class="project-box-caption bg-info position-absolute d-flex justify-content-center align-items-center flex-column w-100 h-100">
+                            <div class="project-category text-white-50">{{category}}</div>
+                            <div class="project-name text-white">{{name}}</div>
+                        </div>
                     </a>
                     {{> modules/project-modal}}
                 </div>
