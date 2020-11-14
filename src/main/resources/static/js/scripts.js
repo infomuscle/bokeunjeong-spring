@@ -12,10 +12,6 @@ for (var i = 0; i < 5; i++) {
     closeButtons.push(closeButton)
 }
 
-const overlay = modal.querySelector(".md_overlay");
-
-
-//동작함수
 var openModal = (idx) => {
     modals[idx - 1].classList.remove("hidden");
 }

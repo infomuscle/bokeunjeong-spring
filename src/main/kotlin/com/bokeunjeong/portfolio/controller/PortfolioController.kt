@@ -4,6 +4,7 @@ import com.bokeunjeong.portfolio.dto.PortfolioContactDto
 import com.bokeunjeong.portfolio.dto.PortfolioProjectDto
 import com.bokeunjeong.portfolio.dto.PortfolioSkillDto
 import com.bokeunjeong.portfolio.service.PortfolioService
+import org.aspectj.weaver.ast.Literal
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value
@@ -23,13 +24,15 @@ class PortfolioController {
     @Value("\${portfolio.const.site-url}")
     lateinit var siteUrl: String
 
-    var colors: Map<String, String> = mapOf(
+    var colorMap: Map<String, String> = mapOf(
             Pair("Language", "bg-info"),
             Pair("Framework", "bg-success"),
             Pair("Database", "bg-danger"),
             Pair("Tool", "bg-primary"),
             Pair("Design", "bg-warning")
     )
+
+    var colorList: List<String> = listOf("bg-info", "bg-success", "bg-danger", "bg-primary", "bg-warning")
 
     @GetMapping
     fun index(model: Model): String {
@@ -52,7 +55,7 @@ class PortfolioController {
 
         var skills = LinkedHashMap<String, MutableList<PortfolioSkillDto>>()
         for (skill: PortfolioSkillDto in portfolioService.findAllUsingSkills()) {
-            skill.color = colors.get(skill.type).toString()
+            skill.color = colorMap.get(skill.type).toString()
             if (!skills.containsKey(skill.type)) {
                 skills.put(skill.type, mutableListOf<PortfolioSkillDto>())
             }
@@ -69,6 +72,7 @@ class PortfolioController {
         var projects: List<PortfolioProjectDto> = portfolioService.findRecentFiveProjects()
         for ((idx: Int, project: PortfolioProjectDto) in projects.withIndex()) {
             project.no = 5 - idx
+            project.color = colorList[idx]
         }
 
         return projects

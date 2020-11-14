@@ -41,6 +41,9 @@ class PortfolioProjectDto {
     @Transient
     var no: Int = 0
 
+    @Transient
+    var color: String = ""
+
     @ManyToMany
     @JoinTable(
             name = "PROJECT_SKILL",
