@@ -18,3 +18,7 @@ var openModal = (idx) => {
 var closeModal = (idx) => {
     modals[idx - 1].classList.add("hidden");
 }
+var dropDown = () => {
+    var navbarResponsive = document.getElementById("navbarResponsive");
+    navbarResponsive.classList.toggle("show");
+}
