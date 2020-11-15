@@ -38,6 +38,10 @@ class PortfolioService {
         return portfolioProjectRepository.findAll()
     }
 
+    fun findAllProjectsDesc(): List<PortfolioProjectDto> {
+        return portfolioProjectRepository.findAllByOrderByIdDesc()
+    }
+
     fun findRecentFiveProjects(): List<PortfolioProjectDto> {
         return portfolioProjectRepository.findTop5ByOrderByIdDesc()
     }

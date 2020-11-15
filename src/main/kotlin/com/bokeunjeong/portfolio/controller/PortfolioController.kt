@@ -69,10 +69,10 @@ class PortfolioController {
 
     private fun getProjects(): List<PortfolioProjectDto> {
 
-        var projects: List<PortfolioProjectDto> = portfolioService.findRecentFiveProjects()
+        var projects: List<PortfolioProjectDto> = portfolioService.findAllProjectsDesc()
         for ((idx: Int, project: PortfolioProjectDto) in projects.withIndex()) {
-            project.no = 5 - idx
-            project.color = colorList[idx]
+            project.no = projects.size - idx
+            project.color = colorList[idx % 5]
         }
 
         return projects
