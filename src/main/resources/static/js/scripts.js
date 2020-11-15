@@ -1,7 +1,9 @@
 var openButtons = new Array()
 var modals = new Array()
 var closeButtons = new Array()
-for (var i = 0; i < 5; i++) {
+
+var modalSize = document.getElementsByClassName("project-modal").length;
+for (var i = 0; i < modalSize; i++) {
     var openButton = document.getElementById("open" + (i + 1));
     openButtons.push(openButton)
 
