@@ -3,7 +3,7 @@ version: '2'
 networks:
   default:
     external:
-      name: mysql-network
+      name: local-network
 
 services:
   bortfolio:
@@ -13,3 +13,5 @@ services:
       - "9000:80"
     environment:
       - "SPRING_PROFILES_ACTIVE=prod"
+    volumes:
+      - ~/Dropbox/Programming/docker-volume/bortfolio:/tmp

@@ -3,14 +3,14 @@ version: "2"
 networks:
   default:
     external:
-      name: mysql-network
+      name: local-network
 
 services:
   mysql:
-    image: mysql
-    container_name: mysql3 # 컨테이너 이름 설정
+    image: infomuscle10/mysql
+    container_name: mysql
     ports:
-      - "9092:3306"
+      - "3306:3306"
     environment:
       - MYSQL_ROOT_PASSWORD=password
       - TZ=Asia/Seoul
@@ -19,7 +19,7 @@ services:
     volumes:
       - ~/Dropbox/Programming/docker-volume/mysql:/var/lib/mysql
   oracle:
-    image: oracle
+    image: infomuscle10/oracle
     container_name: oracle
     ports:
       - "1521:1521"
@@ -27,3 +27,18 @@ services:
       - ORACLE_PWD=password
     volumes:
       - ~/Dropbox/Programming/docker-volume/oracle:/ORCL
+  postgres:
+    image: infomuscle10/postgres
+    container_name: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      #      - POSTGRES_USER=postgres
+      - PGDATA=/data/pgdata
+      - POSTGRES_PASSWORD=password
+    #      - POSTGRES_DB=postgres
+    volumes:
+      #      - /var/lib/docker/volumes/postgres/_data:/var/lib/postgresql/data
+      - ~/Dropbox/Programming/docker-volume/postgres/data:/var/lib/postgresql/data
+
+
