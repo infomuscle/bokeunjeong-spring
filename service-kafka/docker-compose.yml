@@ -11,6 +11,10 @@ services:
     container_name: zookeeper
     ports:
       - "2181:2181"
+    volumes:
+      - ~/Dropbox/Programming/docker-volume/zookeeper/logs:/logs
+      - ~/Dropbox/Programming/docker-volume/zookeeper/datalog:/datalog
+      - ~/Dropbox/Programming/docker-volume/zookeeper/data:/data
   kafka:
     image: infomuscle10/kafka
     container_name: kafka
@@ -24,10 +28,7 @@ services:
       KAFKA_ADVERTISED_PORT: 9092
       KAFKA_CREATE_TOPICS: "test:1:1"
       KAFKA_JVM_PERFORMANCE_OPTS: " -Xmx256m -Xms256m"
+    volumes:
+    - ~/Dropbox/Programming/docker-volume/kafka:/kafka
     depends_on:
       - zookeeper
-#  bortfolio:
-#    image: infomuscle10/bortfolio
-#    container_name: bortfolio
-#    ports:
-#      - "9000:80"
