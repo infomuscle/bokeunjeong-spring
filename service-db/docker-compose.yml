@@ -33,10 +33,8 @@ services:
     ports:
       - "5432:5432"
     environment:
-      #      - POSTGRES_USER=postgres
       - PGDATA=/data/pgdata
       - POSTGRES_PASSWORD=password
-    #      - POSTGRES_DB=postgres
     volumes:
       #      - /var/lib/docker/volumes/postgres/_data:/var/lib/postgresql/data
       - ~/Dropbox/Programming/docker-volume/postgres/data:/var/lib/postgresql/data

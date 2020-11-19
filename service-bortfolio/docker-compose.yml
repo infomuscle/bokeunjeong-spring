@@ -14,4 +14,4 @@ services:
     environment:
       - "SPRING_PROFILES_ACTIVE=prod"
     volumes:
-      - ~/Dropbox/Programming/docker-volume/bortfolio:/tmp
+      - /var/lib/docker/volumes/bortfolio/_data:/tmp
