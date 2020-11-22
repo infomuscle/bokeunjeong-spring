@@ -4,13 +4,15 @@ import com.bokeunjeong.portfolio.dto.PortfolioContactDto
 import com.bokeunjeong.portfolio.dto.PortfolioProjectDto
 import com.bokeunjeong.portfolio.dto.PortfolioSkillDto
 import com.bokeunjeong.portfolio.service.PortfolioService
-import org.aspectj.weaver.ast.Literal
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.LinkedHashMap
 
 
 @Controller
@@ -73,6 +75,9 @@ class PortfolioController {
         for ((idx: Int, project: PortfolioProjectDto) in projects.withIndex()) {
             project.no = projects.size - idx
             project.color = colorList[idx % 5]
+
+            project.startDtStr = if (project.startDt != null) SimpleDateFormat("MMM yyyy", Locale.ENGLISH).format(project.startDt) else ""
+            project.endDtStr = if (project.endDt != null) SimpleDateFormat("MMM yyyy", Locale.ENGLISH).format(project.endDt) else "NOW"
         }
 
         return projects

@@ -2,6 +2,7 @@ package com.bokeunjeong.portfolio.dto
 
 import lombok.Builder
 import lombok.NoArgsConstructor
+import java.time.LocalDate
 import java.util.*
 import javax.persistence.*
 
@@ -43,6 +44,12 @@ class PortfolioProjectDto {
 
     @Transient
     var color: String = ""
+
+    @Transient
+    var startDtStr: String? = ""
+
+    @Transient
+    var endDtStr: String? = ""
 
     @ManyToMany
     @JoinTable(
