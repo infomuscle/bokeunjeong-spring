@@ -4,7 +4,7 @@ LABEL maintainer="infomuscle10@gmail.com"
 
 VOLUME /tmp
 
-EXPOSE 80
+EXPOSE 8080
 
 ARG JAR_FILE=build/libs/portfolio-0.0.1-SNAPSHOT.jar
 
@@ -19,7 +19,7 @@ ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom", "-jar", "/bortfoli
 
 # docker build -t infomuscle10/bortfolio .
 
-# docker run -p 80:80 --name bortfolio --network mysql-network infomuscle10/bortfolio
+# docker run -p 80:8080 --name bortfolio --network mysql-network infomuscle10/bortfolio
 
 # docker run -d -p 9090:3306 -e MYSQL_ROOT_PASSWORD=password --name mysql --network mysql-network mysql --character-set-server=utf8
 # --lower_case_table_names=1
