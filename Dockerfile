@@ -19,7 +19,7 @@ ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom", "-jar", "/bortfoli
 
 # docker build -t infomuscle10/bortfolio .
 
-# docker run -p 9000:80 --name bortfolio --network mysql-network infomuscle10/bortfolio
+# docker run -p 80:80 --name bortfolio --network mysql-network infomuscle10/bortfolio
 
 # docker run -d -p 9090:3306 -e MYSQL_ROOT_PASSWORD=password --name mysql --network mysql-network mysql --character-set-server=utf8
 # --lower_case_table_names=1
