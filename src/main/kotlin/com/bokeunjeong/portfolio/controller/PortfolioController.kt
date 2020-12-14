@@ -49,6 +49,7 @@ class PortfolioController {
         model.addAttribute("contacts", contacts)
 
         model.addAttribute("site-url", siteUrl)
+        println()
 
         return "index"
     }
