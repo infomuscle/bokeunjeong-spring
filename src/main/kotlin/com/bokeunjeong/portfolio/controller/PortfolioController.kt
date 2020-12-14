@@ -27,11 +27,11 @@ class PortfolioController {
     lateinit var siteUrl: String
 
     var colorMap: Map<String, String> = mapOf(
-            Pair("Language", "bg-info"),
-            Pair("Framework", "bg-success"),
-            Pair("Database", "bg-danger"),
-            Pair("Tool", "bg-primary"),
-            Pair("Design", "bg-warning")
+        Pair("Language", "bg-info"),
+        Pair("Framework", "bg-success"),
+        Pair("Database", "bg-danger"),
+        Pair("Tool", "bg-primary"),
+        Pair("Design", "bg-warning")
     )
 
     var colorList: List<String> = listOf("bg-info", "bg-success", "bg-danger", "bg-primary", "bg-warning")
@@ -49,7 +49,6 @@ class PortfolioController {
         model.addAttribute("contacts", contacts)
 
         model.addAttribute("site-url", siteUrl)
-        println()
 
         return "index"
     }
@@ -77,8 +76,12 @@ class PortfolioController {
             project.no = projects.size - idx
             project.color = colorList[idx % 5]
 
-            project.startDtStr = if (project.startDt != null) SimpleDateFormat("MMM yyyy", Locale.ENGLISH).format(project.startDt) else ""
-            project.endDtStr = if (project.endDt != null) SimpleDateFormat("MMM yyyy", Locale.ENGLISH).format(project.endDt) else "NOW"
+            project.startDtStr = if (project.startDt != null) SimpleDateFormat(
+                "MMM yyyy",
+                Locale.ENGLISH
+            ).format(project.startDt) else ""
+            project.endDtStr =
+                if (project.endDt != null) SimpleDateFormat("MMM yyyy", Locale.ENGLISH).format(project.endDt) else "NOW"
         }
 
         return projects
