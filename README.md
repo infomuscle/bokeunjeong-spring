@@ -1,6 +1,6 @@
 # 🔎 프로젝트 소개
 
-[웹사이트 바로가기](https://bokeunjeong.com)
+[웹사이트 바로가기](http://bokeunjeong.com)
 
 ## 목적
 
