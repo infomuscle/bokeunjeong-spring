@@ -1,6 +1,7 @@
 package com.bokeunjeong.portfolio.model;
 
 
+import com.bokeunjeong.portfolio.model.base.BaseEntity;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,7 +12,7 @@ import javax.persistence.Id;
 @Getter
 @Setter
 @Entity
-public class Contact {
+public class Contact extends BaseEntity {
 
     @Id
     @Column(name = "CONTACT_NO")
