@@ -27,7 +27,7 @@ public class PortfolioController {
     public String index(Model model) {
 
         model.addAttribute("projects", portfolioService.getProjects().toString());
-        model.addAttribute("skills", portfolioService.getSkills().toString());
+        model.addAttribute("skills", portfolioService.getSkills());
         model.addAttribute("contacts", portfolioService.getContacts().toString());
 
         return "index";
