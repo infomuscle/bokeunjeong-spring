@@ -18,4 +18,5 @@ public class SkillProficiency {
 
     @Column(name = "DETAIL")
     private String detail;
+
 }
