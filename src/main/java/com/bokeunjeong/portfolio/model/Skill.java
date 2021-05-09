@@ -4,9 +4,7 @@ import com.bokeunjeong.portfolio.model.base.BaseEntity;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Getter
 @Setter
@@ -34,5 +32,9 @@ public class Skill extends BaseEntity {
 
     @Column(name = "CATEGORY")
     private String category;
+
+    @ManyToOne
+    @JoinColumn(name = "proficiency")
+    private SkillProficiency skillProficiency;
 
 }
