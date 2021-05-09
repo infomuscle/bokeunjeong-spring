@@ -14,7 +14,8 @@ import javax.persistence.OneToMany;
 public class SkillProficiency {
 
     @Id
-    private Integer Id;
+    @Column(name = "ID")
+    private Integer id;
 
     @Column(name = "DETAIL")
     private String detail;
