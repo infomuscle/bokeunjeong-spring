@@ -14,22 +14,19 @@ import javax.persistence.Id;
 public class Skill extends BaseEntity {
 
     @Id
-    @Column(name = "SKILL_ID")
+    @Column(name = "ID")
     private String id;
 
-    @Column(name = "SKILL_NAME")
+    @Column(name = "NAME")
     private String name;
 
-    @Column(name = "SKILL_TYPE")
+    @Column(name = "TYPE")
     private String type;
-
-    @Column(name = "SKILL_LEVEL")
-    private String level;
 
     @Column(name = "PROFICIENCY")
     private Integer proficiency;
 
-    @Column(name = "SKILL_LOGO")
+    @Column(name = "LOGO")
     private String image;
 
     @Column(name = "DISPLAY")

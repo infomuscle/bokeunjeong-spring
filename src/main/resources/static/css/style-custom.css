@@ -1,0 +1,15 @@
+.skills .skill .val {
+    /*position: absolute;*/
+    /*top: -25px;*/
+    /*left: 50%;*/
+    /*transform: translateX(-50%);*/
+    /*font-size: 24px;*/
+    background: #0563bb;
+    color: #fff;
+    border-radius: 15px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+}
