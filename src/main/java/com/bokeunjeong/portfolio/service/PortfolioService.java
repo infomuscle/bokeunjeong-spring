@@ -40,7 +40,7 @@ public class PortfolioService {
     }
 
     public List<Skill> getSkills() {
-        return portfolioSkillRepository.findAll();
+        return portfolioSkillRepository.findAllByDisplay(true);
     }
 
     public List<Contact> getContacts() {

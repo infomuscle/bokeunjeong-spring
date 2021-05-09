@@ -26,13 +26,13 @@ public class Skill extends BaseEntity {
     @Column(name = "SKILL_LEVEL")
     private String level;
 
-    @Column(name = "SKILL_PROFICIENCY")
-    private String proficiency;
+    @Column(name = "PROFICIENCY")
+    private Integer proficiency;
 
     @Column(name = "SKILL_LOGO")
     private String image;
 
-    @Column(name = "USE_YN")
+    @Column(name = "DISPLAY")
     private Boolean display;
 
 }
