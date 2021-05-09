@@ -30,23 +30,31 @@ public class PortfolioService {
     }
 
 
-    public List<Project> getAllProjects() {
+    /**
+     * 전체 프로젝트 조회
+     */
+   public List<Project> getAllProjects() {
         return portfolioProjectRepository.findAllByDisplayOrderByIdDesc(true);
     }
 
-    // DB 두번 찌르기 vs 한번찌르고 맵으로 분류 뭐가 더 빠를까?
+    /**
+     * 전체 프로젝트 조회 후 유형별로 분류한 맵 리턴
+     */
     public Map<String, List<Project>> getProjectsByType() {
         return portfolioProjectRepository.findAllByDisplayOrderByIdDesc(true).stream().collect(groupingBy(Project::getType));
     }
 
+    /**
+     * ID로 프로젝트 조회
+     */
     public Project getProjectOf(String id) throws Exception {
-
-        Optional<Project> project = portfolioProjectRepository.findById(id);
-
-        return Optional.ofNullable(project).get().orElseThrow(Exception::new);
+        return Optional.ofNullable(portfolioProjectRepository.findById(id)).get().orElseThrow(Exception::new);
 
     }
 
+    /**
+     * TYPE으로 모든 프로젝트 조회
+     */
     public List<Project> getProjectsOf(String type) {
         return portfolioProjectRepository.findAllByTypeOrderByIdDesc(type);
     }

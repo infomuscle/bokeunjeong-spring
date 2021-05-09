@@ -19,7 +19,7 @@
                 </div>
 
                 <h3 class="resume-title">Education</h3>
-                <div class="resume-item">
+                <div class="resume-item pb-0">
                     <h4>성균관대학교</h4>
                     <h5>2010.03 - 2018.08</h5>
                     <ul>
@@ -40,6 +40,7 @@
                                 <li>{{detail}}</li>
                             {{/details}}
                         </ul>
+                        {{#url}}<p><i class="bi bi-chevron-right"></i><a href="{{.}}" target="_blank">{{.}}</a></p>{{/url}}
                     </div>
                 {{/sideProjects}}
             </div>
@@ -55,6 +56,7 @@
                                 <li>{{detail}}</li>
                             {{/details}}
                         </ul>
+                        {{#url}}<p><i class="bi bi-chevron-right"></i><a href="{{.}}" target="_blank">{{.}}</a></p>{{/url}}
                     </div>
                 {{/workProjects}}
             </div>
