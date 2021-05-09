@@ -10,7 +10,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
+
+import static java.util.stream.Collectors.groupingBy;
 
 @Service
 public class PortfolioService {
@@ -27,8 +30,13 @@ public class PortfolioService {
     }
 
 
-    public List<Project> getProjects() {
+    public List<Project> getAllProjects() {
         return portfolioProjectRepository.findAllByDisplayOrderByIdDesc(true);
+    }
+
+    // DB 두번 찌르기 vs 한번찌르고 맵으로 분류 뭐가 더 빠를까?
+    public Map<String, List<Project>> getProjectsByType() {
+        return portfolioProjectRepository.findAllByDisplayOrderByIdDesc(true).stream().collect(groupingBy(Project::getType));
     }
 
     public Project getProjectOf(String id) throws Exception {
@@ -37,6 +45,10 @@ public class PortfolioService {
 
         return Optional.ofNullable(project).get().orElseThrow(Exception::new);
 
+    }
+
+    public List<Project> getProjectsOf(String type) {
+        return portfolioProjectRepository.findAllByTypeOrderByIdDesc(type);
     }
 
     public List<Skill> getSkills() {

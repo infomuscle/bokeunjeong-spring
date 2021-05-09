@@ -11,4 +11,6 @@ public interface PortfolioProjectRepository extends JpaRepository<Project, Strin
 
     List<Project> findAllByDisplayOrderByIdDesc(Boolean display);
 
+    List<Project> findAllByTypeOrderByIdDesc(String type);
+
 }

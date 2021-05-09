@@ -1,6 +1,7 @@
 package com.bokeunjeong.portfolio.controller;
 
 import com.bokeunjeong.portfolio.model.Contact;
+import com.bokeunjeong.portfolio.model.Project;
 import com.bokeunjeong.portfolio.service.PortfolioService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
+import java.util.Map;
 
 @Slf4j
 @Controller
@@ -26,7 +28,20 @@ public class PortfolioController {
     @GetMapping("/")
     public String index(Model model) {
 
-        model.addAttribute("projects", portfolioService.getProjects());
+        long startedAt = System.currentTimeMillis();
+        Map<String, List<Project>> projects = portfolioService.getProjectsByType();
+        long finishedAt = System.currentTimeMillis();
+        log.info("전체 조회 후 맵 분류 소요시간: {}", finishedAt - startedAt);
+
+        startedAt = System.currentTimeMillis();
+        List<Project> workProjects = portfolioService.getProjectsOf("Work");
+        List<Project> personalProjects = portfolioService.getProjectsOf("Personal");
+        finishedAt = System.currentTimeMillis();
+        log.info("각각 조회 소요시간: {}", finishedAt - startedAt);
+
+        log.info(projects.toString());
+        model.addAttribute("workProjects", projects.get("Work"));
+        model.addAttribute("sideProjects", projects.get("Personal"));
         model.addAttribute("skills", portfolioService.getSkills());
         model.addAttribute("contacts", portfolioService.getContacts());
 

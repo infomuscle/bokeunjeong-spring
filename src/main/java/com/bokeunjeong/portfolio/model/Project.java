@@ -22,8 +22,8 @@ public class Project extends BaseEntity {
     @Column(name = "NAME")
     private String name;
 
-    @Column(name = "CATEGORY")
-    private String category;
+    @Column(name = "TYPE")
+    private String type;
 
     @Column(name = "DESCRIPTION")
     private String description;

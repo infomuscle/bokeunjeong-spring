@@ -28,10 +28,9 @@
                         <li>4년 전액 장학금</li>
                     </ul>
                 </div>
-            </div>
-            <div class="col-lg-6">
-                <h3 class="resume-title">Professional Experience</h3>
-                {{#projects}}
+
+                <h3 class="resume-title">Side Projects</h3>
+                {{#sideProjects}}
                     <div class="resume-item">
                         <h4>{{name}}</h4>
                         <h5>{{startYearMonth.year}}.{{startYearMonth.month}} - {{#endYearMonth}}{{year}}.{{month}}{{/endYearMonth}}{{^endYearMonth}}Present{{/endYearMonth}}</h5>
@@ -42,7 +41,22 @@
                             {{/details}}
                         </ul>
                     </div>
-                {{/projects}}
+                {{/sideProjects}}
+            </div>
+            <div class="col-lg-6">
+                <h3 class="resume-title">Professional Experience</h3>
+                {{#workProjects}}
+                    <div class="resume-item">
+                        <h4>{{name}}</h4>
+                        <h5>{{startYearMonth.year}}.{{startYearMonth.month}} - {{#endYearMonth}}{{year}}.{{month}}{{/endYearMonth}}{{^endYearMonth}}Present{{/endYearMonth}}</h5>
+                        <p><em>{{description}}</em></p>
+                        <ul>
+                            {{#details}}
+                                <li>{{detail}}</li>
+                            {{/details}}
+                        </ul>
+                    </div>
+                {{/workProjects}}
             </div>
         </div>
 
