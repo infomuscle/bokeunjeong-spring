@@ -34,7 +34,7 @@
                 {{#projects}}
                     <div class="resume-item">
                         <h4>{{name}}</h4>
-                        <h5>2020.09 - 2020.12</h5>
+                        <h5>{{startYearMonth}} - {{#endYearMonth}}{{.}}{{/endYearMonth}}{{^endYearMonth}}Present{{/endYearMonth}}</h5>
                         <p><em>{{description}}</em></p>
                         <ul>
                             {{#details}}

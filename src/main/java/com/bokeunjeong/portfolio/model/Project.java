@@ -9,7 +9,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import java.util.Date;
+import java.time.YearMonth;
 import java.util.List;
 
 @Getter
@@ -18,10 +18,10 @@ import java.util.List;
 public class Project extends BaseEntity {
 
     @Id
-    @Column(name = "PROJECT_ID")
+    @Column(name = "ID")
     private String id;
 
-    @Column(name = "PROJECT_NAME")
+    @Column(name = "NAME")
     private String name;
 
     @Column(name = "CATEGORY")
@@ -33,13 +33,13 @@ public class Project extends BaseEntity {
     @Column(name = "CLIENT")
     private String client;
 
-    @Column(name = "PROJECT_START_DT")
-    private Date startDate;
+    @Column(name = "START_DATE")
+    private YearMonth startYearMonth;
 
-    @Column(name = "PROJECT_END_DT")
-    private Date endDate;
+    @Column(name = "END_DATE")
+    private YearMonth endYearMonth;
 
-    @Column(name = "PROJECT_IMG")
+    @Column(name = "IMG")
     private String image;
 
     @Column(name = "URL")
