@@ -3,16 +3,14 @@
 
         <div class="section-title">
             <h2>Skills</h2>
-            <p>3: 메인 기술로 내부 원리까지 이해하고 활용하도록 학습 중</p>
-            <p>2: 익숙하게 활용 가능</p>
-            <p>1: 개발 활용 경험 있음</p>
+            <p>3: 메인 기술로 내부 원리까지 이해하고 활용하도록 학습 중 | 2: 익숙하게 활용 가능 | 1: 개발 활용 경험 있음</p>
         </div>
 
         <div class="row skills-content">
-            <h3>업무</h3>
+            <h3 class="skills-title">Work</h3>
             {{#workSkills.entrySet}}
                 <div class="col-lg-3">
-<!--                    <h6>{{key}}</h6>-->
+                    <h4>{{key}}</h4>
                     {{#value}}
                         <div class="progress">
                             <span class="skill">{{name}}<i class="val p{{proficiency}}">{{proficiency}}</i></span>
@@ -23,10 +21,10 @@
         </div>
 
         <div class="row skills-content">
-            <h3>개인</h3>
+            <h3 class="skills-title">Personal</h3>
             {{#personalSkills.entrySet}}
                 <div class="col-lg-3">
-<!--                    <h6>{{key}}</h6>-->
+                    <h4>{{key}}</h4>
                     {{#value}}
                     <div class="progress">
                         <span class="skill">{{name}}<i class="val p{{proficiency}}">{{proficiency}}</i></span>
