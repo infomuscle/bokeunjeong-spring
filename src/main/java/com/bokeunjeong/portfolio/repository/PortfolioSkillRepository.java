@@ -11,4 +11,6 @@ public interface PortfolioSkillRepository extends JpaRepository<Skill, String> {
 
     public List<Skill> findAllByDisplay(Boolean display);
 
+    public List<Skill> findAllByCategoryAndDisplay(String category, Boolean display);
+
 }

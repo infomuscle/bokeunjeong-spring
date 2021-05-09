@@ -66,6 +66,11 @@ public class PortfolioService {
         return portfolioSkillRepository.findAllByDisplay(true);
     }
 
+    public Map<String, List<Skill>> getSkillsByTypeOf(String category) {
+
+        return portfolioSkillRepository.findAllByCategoryAndDisplay(category, true).stream().collect(groupingBy(Skill::getType));
+    }
+
     /**
      * 전체 연락처 조회
      */

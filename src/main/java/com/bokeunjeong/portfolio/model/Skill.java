@@ -32,4 +32,7 @@ public class Skill extends BaseEntity {
     @Column(name = "DISPLAY")
     private Boolean display;
 
+    @Column(name = "CATEGORY")
+    private String category;
+
 }

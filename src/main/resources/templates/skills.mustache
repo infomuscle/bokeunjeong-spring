@@ -9,18 +9,31 @@
         </div>
 
         <div class="row skills-content">
+            <h3>업무</h3>
+            {{#workSkills.entrySet}}
+                <div class="col-lg-3">
+<!--                    <h6>{{key}}</h6>-->
+                    {{#value}}
+                        <div class="progress">
+                            <span class="skill">{{name}}<i class="val p{{proficiency}}">{{proficiency}}</i></span>
+                        </div>
+                    {{/value}}
+                </div>
+            {{/workSkills.entrySet}}
+        </div>
 
-            {{#skills}}
-            <div class="col-lg-2">
+        <div class="row skills-content">
+            <h3>개인</h3>
+            {{#personalSkills.entrySet}}
+                <div class="col-lg-3">
+<!--                    <h6>{{key}}</h6>-->
+                    {{#value}}
                     <div class="progress">
-                        <span class="skill">{{name}}<i class="val">{{proficiency}}</i></span>
-<!--                        <div class="progress-bar-wrap">-->
-<!--                            <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>-->
-<!--                        </div>-->
+                        <span class="skill">{{name}}<i class="val p{{proficiency}}">{{proficiency}}</i></span>
                     </div>
-            </div>
-            {{/skills}}
-
+                    {{/value}}
+                </div>
+            {{/personalSkills.entrySet}}
         </div>
     </div>
 </section>
