@@ -59,10 +59,16 @@ public class PortfolioService {
         return portfolioProjectRepository.findAllByTypeOrderByIdDesc(type);
     }
 
+    /**
+     * 전체 기술 스택 조회
+     */
     public List<Skill> getSkills() {
         return portfolioSkillRepository.findAllByDisplay(true);
     }
 
+    /**
+     * 전체 연락처 조회
+     */
     public List<Contact> getContacts() {
         return portfolioContactRepository.findAll();
     }
