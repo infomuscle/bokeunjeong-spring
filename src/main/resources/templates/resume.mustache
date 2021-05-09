@@ -8,8 +8,8 @@
 
         <div class="row">
             <div class="col-lg-6">
-                <h3 class="resume-title">Career</h3>
-                <div class="resume-item pb-0">
+                <h3 class="resume-title">Career & Education</h3>
+                <div class="resume-item">
                     <h4>SSG.COM</h4>
                     <h5>2019.03 - Present</h5>
                     <p><em>뭐라할까</em></p>
@@ -17,8 +17,6 @@
                         <li>주문/클레임/제휴 백엔드 개발</li>
                     </ul>
                 </div>
-
-                <h3 class="resume-title">Education</h3>
                 <div class="resume-item pb-0">
                     <h4>성균관대학교</h4>
                     <h5>2010.03 - 2018.08</h5>
@@ -31,33 +29,13 @@
 
                 <h3 class="resume-title">Side Projects</h3>
                 {{#sideProjects}}
-                    <div class="resume-item">
-                        <h4>{{name}}</h4>
-                        <h5>{{startYearMonth.year}}.{{startYearMonth.month}} - {{#endYearMonth}}{{year}}.{{month}}{{/endYearMonth}}{{^endYearMonth}}Present{{/endYearMonth}}</h5>
-                        <p><em>{{description}}</em></p>
-                        <ul>
-                            {{#details}}
-                                <li>{{detail}}</li>
-                            {{/details}}
-                        </ul>
-                        {{#url}}<p><i class="bi bi-chevron-right"></i><a href="{{.}}" target="_blank">{{.}}</a></p>{{/url}}
-                    </div>
+                    {{>resume-details}}
                 {{/sideProjects}}
             </div>
             <div class="col-lg-6">
                 <h3 class="resume-title">Professional Experience</h3>
                 {{#workProjects}}
-                    <div class="resume-item">
-                        <h4>{{name}}</h4>
-                        <h5>{{startYearMonth.year}}.{{startYearMonth.month}} - {{#endYearMonth}}{{year}}.{{month}}{{/endYearMonth}}{{^endYearMonth}}Present{{/endYearMonth}}</h5>
-                        <p><em>{{description}}</em></p>
-                        <ul>
-                            {{#details}}
-                                <li>{{detail}}</li>
-                            {{/details}}
-                        </ul>
-                        {{#url}}<p><i class="bi bi-chevron-right"></i><a href="{{.}}" target="_blank">{{.}}</a></p>{{/url}}
-                    </div>
+                    {{>resume-details}}
                 {{/workProjects}}
             </div>
         </div>
