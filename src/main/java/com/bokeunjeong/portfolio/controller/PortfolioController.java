@@ -26,7 +26,7 @@ public class PortfolioController {
     @GetMapping("/")
     public String index(Model model) {
 
-        model.addAttribute("projects", portfolioService.getProjects().toString());
+        model.addAttribute("projects", portfolioService.getProjects());
         model.addAttribute("skills", portfolioService.getSkills());
         model.addAttribute("contacts", portfolioService.getContacts());
 

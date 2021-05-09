@@ -28,7 +28,7 @@ public class PortfolioService {
 
 
     public List<Project> getProjects() {
-        return portfolioProjectRepository.findAll();
+        return portfolioProjectRepository.findAllByDisplayOrderByIdDesc(true);
     }
 
     public Project getProjectOf(String id) throws Exception {

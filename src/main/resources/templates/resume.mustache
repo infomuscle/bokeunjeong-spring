@@ -31,26 +31,18 @@
             </div>
             <div class="col-lg-6">
                 <h3 class="resume-title">Professional Experience</h3>
-                <div class="resume-item">
-                    <h4>제휴 클레임 연동 RESTful API 개발</h4>
-                    <h5>2020.04 - Present</h5>
-                    <p><em>모바일기프트 제휴 연동 고도화</em></p>
-                    <ul>
-                        <li>RESTful API 디자인 및 개발</li>
-                        <li>(예정) 취소 등 클레임 기능 추가하여 프론트 클레임 접수 가능하게 변경</li>
-                        <li>(예정) 선물하기 개편에 따른 쿠폰정보조회 등 API 개발</li>
-                    </ul>
-                </div>
-                <div class="resume-item">
-                    <h4>주문 MSA 프로젝트</h4>
-                    <h5>2020.09 - 2020.12</h5>
-                    <p><em>레거시 프로젝트에서 주문 영역 분리</em></p>
-                    <ul>
-                        <li>Kafka 메시지 구독을 전담하는 Consumer 프로젝트 환경 구성</li>
-                        <li>Kafka 메시지 발행 가이드 작성</li>
-                        <li>AOP 적용하여 InfluxDB로 메시지 처리 결과 전송 및 모니터링</li>
-                    </ul>
-                </div>
+                {{#projects}}
+                    <div class="resume-item">
+                        <h4>{{name}}</h4>
+                        <h5>2020.09 - 2020.12</h5>
+                        <p><em>{{description}}</em></p>
+                        <ul>
+                            <li>Kafka 메시지 구독을 전담하는 Consumer 프로젝트 환경 구성</li>
+                            <li>Kafka 메시지 발행 가이드 작성</li>
+                            <li>AOP 적용하여 InfluxDB로 메시지 처리 결과 전송 및 모니터링</li>
+                        </ul>
+                    </div>
+                {{/projects}}
             </div>
         </div>
 

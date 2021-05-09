@@ -43,4 +43,7 @@ public class Project extends BaseEntity {
     @Column(name = "URL")
     private String url;
 
+    @Column(name = "DISPLAY")
+    private Boolean display;
+
 }
