@@ -28,7 +28,7 @@ public class PortfolioController {
 
         model.addAttribute("projects", portfolioService.getProjects().toString());
         model.addAttribute("skills", portfolioService.getSkills());
-        model.addAttribute("contacts", portfolioService.getContacts().toString());
+        model.addAttribute("contacts", portfolioService.getContacts());
 
         return "index";
     }
