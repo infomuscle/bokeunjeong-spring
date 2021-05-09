@@ -1,8 +1,6 @@
 package com.bokeunjeong.portfolio.controller;
 
 import com.bokeunjeong.portfolio.model.Contact;
-import com.bokeunjeong.portfolio.model.Project;
-import com.bokeunjeong.portfolio.model.ProjectDetail;
 import com.bokeunjeong.portfolio.service.PortfolioService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

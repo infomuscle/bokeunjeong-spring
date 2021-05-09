@@ -4,14 +4,12 @@ package com.bokeunjeong.portfolio.model;
 import com.bokeunjeong.portfolio.model.base.BaseEntity;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import java.time.YearMonth;
+import javax.persistence.*;
 import java.util.List;
 
+@Slf4j
 @Getter
 @Setter
 @Entity(name = "PROJECT")
@@ -33,11 +31,11 @@ public class Project extends BaseEntity {
     @Column(name = "CLIENT")
     private String client;
 
-    @Column(name = "START_DATE")
-    private YearMonth startYearMonth;
+    @Embedded
+    private StartYearMonth startYearMonth;
 
-    @Column(name = "END_DATE")
-    private YearMonth endYearMonth;
+    @Embedded
+    private EndYearMonth endYearMonth;
 
     @Column(name = "IMG")
     private String image;
@@ -51,4 +49,38 @@ public class Project extends BaseEntity {
     @OneToMany(mappedBy = "project")
     private List<ProjectDetail> details;
 
+
+    @Getter
+    @Setter
+    @Embeddable
+    static class StartYearMonth {
+
+        @Column(name = "START_YEAR")
+        private Integer year;
+
+        @Column(name = "START_MONTH")
+        private Integer month;
+
+        public String getMonth() {
+            return String.format("%02d", this.month);
+        }
+
+    }
+
+    @Getter
+    @Setter
+    @Embeddable
+    static class EndYearMonth {
+
+        @Column(name = "END_YEAR")
+        private Integer year;
+
+        @Column(name = "END_MONTH")
+        private Integer month;
+
+        public String getMonth() {
+            return String.format("%02d", this.month);
+        }
+
+    }
 }
