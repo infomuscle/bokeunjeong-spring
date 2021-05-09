@@ -8,11 +8,13 @@ import lombok.Setter;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import java.util.Date;
+import java.util.List;
 
 @Getter
 @Setter
-@Entity
+@Entity(name = "PROJECT")
 public class Project extends BaseEntity {
 
     @Id
@@ -45,5 +47,8 @@ public class Project extends BaseEntity {
 
     @Column(name = "DISPLAY")
     private Boolean display;
+
+    @OneToMany(mappedBy = "project")
+    private List<ProjectDetail> details;
 
 }

@@ -37,9 +37,9 @@
                         <h5>2020.09 - 2020.12</h5>
                         <p><em>{{description}}</em></p>
                         <ul>
-                            <li>Kafka 메시지 구독을 전담하는 Consumer 프로젝트 환경 구성</li>
-                            <li>Kafka 메시지 발행 가이드 작성</li>
-                            <li>AOP 적용하여 InfluxDB로 메시지 처리 결과 전송 및 모니터링</li>
+                            {{#details}}
+                                <li>{{detail}}</li>
+                            {{/details}}
                         </ul>
                     </div>
                 {{/projects}}
