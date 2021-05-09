@@ -8,7 +8,7 @@ import javax.persistence.*;
 
 @Getter
 @Setter
-@Entity
+@Entity(name = "SKILL")
 public class Skill extends BaseEntity {
 
     @Id

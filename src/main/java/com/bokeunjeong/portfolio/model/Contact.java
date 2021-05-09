@@ -11,7 +11,7 @@ import javax.persistence.Id;
 
 @Getter
 @Setter
-@Entity
+@Entity(name = "CONTACT")
 public class Contact extends BaseEntity {
 
     @Id
