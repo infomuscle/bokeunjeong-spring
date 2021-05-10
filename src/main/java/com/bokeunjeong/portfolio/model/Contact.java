@@ -15,7 +15,7 @@ import javax.persistence.Id;
 public class Contact extends BaseEntity {
 
     @Id
-    @Column(name = "CONTACT_NO")
+    @Column(name = "ID")
     private String id;
 
     @Column(name = "TYPE")
