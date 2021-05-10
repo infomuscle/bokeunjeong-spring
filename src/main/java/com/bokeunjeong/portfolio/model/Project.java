@@ -96,9 +96,7 @@ public class Project extends BaseEntity {
             this.name = name;
             this.type = type;
             this.description = description;
-//            this.details = IntStream.rangeClosed(1, 3).mapToObj(i -> new ProjectDetail(true, "P900", i, "테스트" + String.valueOf(i))).collect(Collectors.toList());
         }
-
     }
 
 }

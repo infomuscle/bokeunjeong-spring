@@ -13,7 +13,7 @@ import java.io.Serializable;
 public class ProjectDetail extends BaseEntity {
 
     @EmbeddedId
-    private ProjectDetailId id;
+    private CompositeKey pk;
 
     @Column(name = "DETAIL")
     private String detail;
@@ -22,33 +22,15 @@ public class ProjectDetail extends BaseEntity {
     @JoinColumn(name = "id")
     private Project project;
 
-    @Getter
-    @Setter
-    @Embeddable
-    static class ProjectDetailId implements Serializable {
-
-        @Column(name = "ID")
-        private String id;
-
-        @Column(name = "SEQ")
-        private Integer seq;
-
-    }
-
     public ProjectDetail() {
 
     }
 
     public ProjectDetail(Boolean isTest, String id, Integer seq, String detail) {
-
         if (isTest) {
-            ProjectDetailId pdId = new ProjectDetailId();
-            pdId.setId(id);
-            pdId.setSeq(seq);
-            this.id = pdId;
+            this.pk = new CompositeKey(id, seq);
             this.detail = detail;
         }
-
     }
 
 }
