@@ -2,18 +2,18 @@ package com.bokeunjeong.portfolio.service;
 
 import com.bokeunjeong.portfolio.model.Contact;
 import com.bokeunjeong.portfolio.repository.PortfolioContactRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
-
+@Slf4j
 @Service
-public class TransactionService {
+public class TransactionalService {
 
 
     private final PortfolioContactRepository portfolioContactRepository;
 
-    public TransactionService(PortfolioContactRepository portfolioContactRepository) {
+    public TransactionalService(PortfolioContactRepository portfolioContactRepository) {
         this.portfolioContactRepository = portfolioContactRepository;
     }
 
@@ -21,20 +21,11 @@ public class TransactionService {
     /**
      * Contact에 INSERT 후 예외
      */
-    @Transactional
-    public void addContact() throws Exception {
-
-        List<Contact> contacts = portfolioContactRepository.findAll();
-        Integer max = Integer.parseInt(contacts.get(contacts.size() - 1).getId().substring(1));
-
-        Contact contact = new Contact();
-        contact.setId("C" + String.format("%03d", max + 1));
-        contact.setType("Github");
-        contact.setDetail("https://github.com/infomuscle");
+    @Transactional(rollbackFor = {Exception.class})
+    public void addContact(Contact contact) throws Exception {
 
         portfolioContactRepository.save(contact);
-
-//        throw new Exception("예외처리");
+        throw new Exception("예외처리");
 
     }
 
