@@ -21,6 +21,7 @@ public class TransactionalService {
     /**
      * Contact에 INSERT 후 예외
      */
+//    @Transactional
     @Transactional(rollbackFor = {Exception.class})
     public void addContact(Contact contact) throws Exception {
 
