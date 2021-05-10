@@ -34,4 +34,21 @@ public class ProjectDetail extends BaseEntity {
         private Integer seq;
 
     }
+
+    public ProjectDetail() {
+
+    }
+
+    public ProjectDetail(Boolean isTest, String id, Integer seq, String detail) {
+
+        if (isTest) {
+            ProjectDetailId pdId = new ProjectDetailId();
+            pdId.setId(id);
+            pdId.setSeq(seq);
+            this.id = pdId;
+            this.detail = detail;
+        }
+
+    }
+
 }

@@ -8,6 +8,8 @@ import lombok.extern.slf4j.Slf4j;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 @Slf4j
 @Getter
@@ -83,4 +85,20 @@ public class Project extends BaseEntity {
         }
 
     }
+
+    public Project() {
+
+    }
+
+    public Project(Boolean isTest, String id, String name, String type, String description) {
+        if (isTest) {
+            this.id = id;
+            this.name = name;
+            this.type = type;
+            this.description = description;
+//            this.details = IntStream.rangeClosed(1, 3).mapToObj(i -> new ProjectDetail(true, "P900", i, "테스트" + String.valueOf(i))).collect(Collectors.toList());
+        }
+
+    }
+
 }
