@@ -10,8 +10,6 @@ ARG JAR_FILE=build/libs/bortfolio-spring-boot-0.0.1-SNAPSHOT.jar
 
 ADD ${JAR_FILE} bokeunjeong.jar
 
-#ENV SPRING_PROFILES_ACTIVE=dev
-
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom", "-jar", "/bokeunjeong.jar"]
 
 
