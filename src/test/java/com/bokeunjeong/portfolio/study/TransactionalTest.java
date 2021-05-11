@@ -42,17 +42,17 @@ public class TransactionalTest {
     }
 
     @Test
-    @DisplayName("이체: 송금인 업데이트 후 Unchecked Exception")
+    @DisplayName("이체: 송금인 업데이트 후 예상못한 Unchecked Exception")
     public void _12_testTransferTransaction2() {
 
         Account sender = accountService.openAccount(new Account(100000L));
         Account receiver = accountService.openAccount(new Account(0L));
 
         Exception e = assertThrows(Exception.class, () -> {
-            accountService.transfer(sender.getId(), 999L, 50000L);
+            accountService.transfer(sender.getId(), null, 50000L);
         });
 
-        assertThat(e.getMessage()).isEqualTo("No Receiver Found");
+        assertThat(e.getClass().getSimpleName()).isEqualTo("NullPointerException");
         assertThat(accountService.getAccount(sender.getId()).getAmount()).isEqualTo(100000L);
         assertThat(accountService.getAccount(receiver.getId()).getAmount()).isEqualTo(0L);
     }

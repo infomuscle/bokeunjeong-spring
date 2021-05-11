@@ -24,28 +24,23 @@ public class AccountService {
     }
 
 
+    /**
+     * 신규 계좌 생성
+     */
     public Account openAccount(Account account) {
         return accountRepository.save(account);
     }
 
+    /**
+     * 계좌 조회
+     */
     public Account getAccount(Long accountId) {
         return accountRepository.findById(accountId).get();
     }
 
-    @Transactional(rollbackFor = {Exception.class})
-    public Account deposit(Long accountId, Long amount) throws Exception {
-
-        Optional<Account> target = accountRepository.findById(accountId);
-        target.ifPresentOrElse(t -> {
-            t.setAmount(t.getAmount() + amount);
-            t = accountRepository.save(t);
-        }, () -> {
-            throw new RuntimeException("No Account Found");
-        });
-
-        return target.get();
-    }
-
+    /**
+     * 이체
+     */
     @Transactional
     public Map<String, Account> transfer(Long senderId, Long receiverId, Long amount) throws Exception {
 
@@ -57,7 +52,12 @@ public class AccountService {
         return result;
     }
 
+    /**
+     * 송금인 잔액 업데이트
+     */
     private Account updateSender(Long senderId, Long amount) throws Exception {
+
+        log.info("Sender ID: {}", senderId.toString());
 
         Optional<Account> sender = accountRepository.findById(senderId);
         sender.ifPresentOrElse(s -> {
@@ -70,7 +70,12 @@ public class AccountService {
         return sender.get();
     }
 
+    /**
+     * 수취인 잔액 업데이트
+     */
     private Account updateReceiver(Long receiverId, Long amount) throws Exception {
+
+        log.info("Receiver ID: {}", receiverId.toString());
 
         if (receiverId == 777L) {
             throw new RuntimeException("Intentional RuntimeException");
@@ -91,4 +96,17 @@ public class AccountService {
         return receiver.get();
     }
 
+    @Transactional(rollbackFor = {Exception.class})
+    public Account deposit(Long accountId, Long amount) throws Exception {
+
+        Optional<Account> target = accountRepository.findById(accountId);
+        target.ifPresentOrElse(t -> {
+            t.setAmount(t.getAmount() + amount);
+            t = accountRepository.save(t);
+        }, () -> {
+            throw new RuntimeException("No Account Found");
+        });
+
+        return target.get();
+    }
 }
