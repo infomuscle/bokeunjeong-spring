@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 
-@Transactional
+//@Transactional
 @SpringBootTest
 @DisplayName("@Transactional 테스트")
 @TestMethodOrder(MethodOrderer.MethodName.class)
@@ -43,7 +43,14 @@ public class TransactionalServiceTest {
     @DisplayName("2. 트랜잭션 메소드 안에서 n개 insert 실행 중 예외")
     public void _02_testTransaction() {
 
-        // Case 이체
+        Account sender = transactionalService.openAccount(new Account(100000L));
+        Account receiver = transactionalService.openAccount(new Account(0L));
+
+        try {
+            transactionalService.transfer(sender.getId(), receiver.getId(), 50000L);
+        } catch (Exception e) {
+            log.info(e.getMessage(), e);
+        }
 
     }
 

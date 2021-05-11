@@ -1,7 +1,5 @@
 package com.bokeunjeong.portfolio.test.transaction.service;
 
-import com.bokeunjeong.portfolio.repository.PortfolioContactRepository;
-import com.bokeunjeong.portfolio.repository.PortfolioProjectRepository;
 import com.bokeunjeong.portfolio.test.transaction.model.Account;
 import com.bokeunjeong.portfolio.test.transaction.repository.AccountRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -19,7 +17,7 @@ public class TransactionalService {
     private final AccountRepository accountRepository;
 
     @Autowired
-    public TransactionalService(PortfolioContactRepository portfolioContactRepository, PortfolioProjectRepository portfolioProjectRepository, AccountRepository accountRepository) {
+    public TransactionalService(AccountRepository accountRepository) {
         this.accountRepository = accountRepository;
     }
 
@@ -43,8 +41,41 @@ public class TransactionalService {
     }
 
     @Transactional
-    public void transfer(Account sender, Account receiver, Long amount) {
+    public void transfer(Long senderId, Long receiverId, Long amount) throws Exception {
 
+        Account sender = updateSender(senderId, amount);
+        Account receiver = updateReceiver(receiverId, amount);
+
+        log.info("Sender: {}", sender);
+        log.info("Receiver: {}", receiver);
+
+    }
+
+    private Account updateSender(Long senderId, Long amount) throws Exception {
+
+        Optional<Account> sender = accountRepository.findById(senderId);
+        sender.ifPresentOrElse(s -> {
+            s.setAmount(s.getAmount() - amount);
+            s = accountRepository.save(s);
+        }, () -> {
+            throw new RuntimeException("No Sender Found");
+        });
+
+
+        return sender.get();
+    }
+
+    private Account updateReceiver(Long receiverId, Long amount) throws Exception {
+
+        Optional<Account> receiver = accountRepository.findById(receiverId);
+        receiver.ifPresentOrElse(r -> {
+            r.setAmount(r.getAmount() + amount);
+            r = accountRepository.save(r);
+        }, () -> {
+            throw new RuntimeException("No Receiver Found");
+        });
+
+        return receiver.get();
     }
 
 }
