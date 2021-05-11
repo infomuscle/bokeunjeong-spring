@@ -13,13 +13,13 @@ import java.util.Optional;
 
 @Slf4j
 @Service
-public class TransactionalService {
+public class AccountService {
 
 
     private final AccountRepository accountRepository;
 
     @Autowired
-    public TransactionalService(AccountRepository accountRepository) {
+    public AccountService(AccountRepository accountRepository) {
         this.accountRepository = accountRepository;
     }
 
