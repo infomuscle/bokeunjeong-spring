@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
 
 @Slf4j
@@ -26,6 +28,10 @@ public class TransactionalService {
         return accountRepository.save(account);
     }
 
+    public Account getAccount(Long accountId) {
+        return accountRepository.findById(accountId).get();
+    }
+
     @Transactional(rollbackFor = {Exception.class})
     public Account deposit(Long accountId, Long amount) throws Exception {
 
@@ -41,14 +47,14 @@ public class TransactionalService {
     }
 
     @Transactional
-    public void transfer(Long senderId, Long receiverId, Long amount) throws Exception {
+    public Map<String, Account> transfer(Long senderId, Long receiverId, Long amount) throws Exception {
 
-        Account sender = updateSender(senderId, amount);
-        Account receiver = updateReceiver(receiverId, amount);
+        Map<String, Account> result = new HashMap<String, Account>();
+        result.put("sender", updateSender(senderId, amount));
+        result.put("receiver", updateReceiver(receiverId, amount));
+        log.info("Transfer Result: {}", result);
 
-        log.info("Sender: {}", sender);
-        log.info("Receiver: {}", receiver);
-
+        return result;
     }
 
     private Account updateSender(Long senderId, Long amount) throws Exception {
@@ -67,7 +73,11 @@ public class TransactionalService {
     private Account updateReceiver(Long receiverId, Long amount) throws Exception {
 
         if (receiverId == 777L) {
-            throw new RuntimeException();
+            throw new RuntimeException("Intentional RuntimeException");
+        }
+
+        if (receiverId == 555L) {
+            throw new ClassNotFoundException("Intentional ClassNotFoundException");
         }
 
         Optional<Account> receiver = accountRepository.findById(receiverId);
