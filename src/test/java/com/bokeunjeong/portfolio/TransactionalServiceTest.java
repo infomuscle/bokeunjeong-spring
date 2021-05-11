@@ -1,27 +1,41 @@
 package com.bokeunjeong.portfolio;
 
-import com.bokeunjeong.portfolio.service.TransactionalService;
+import com.bokeunjeong.portfolio.test.transaction.model.Account;
+import com.bokeunjeong.portfolio.test.transaction.service.TransactionalService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
 
+@Transactional
 @SpringBootTest
-@TestMethodOrder(MethodOrderer.MethodName.class)
 @DisplayName("@Transactional 테스트")
+@TestMethodOrder(MethodOrderer.MethodName.class)
 public class TransactionalServiceTest {
 
     @Autowired
     TransactionalService transactionalService;
 
+    private final Logger log = (Logger) LoggerFactory.getLogger(TransactionalServiceTest.class);
 
     @Test
     @DisplayName("1. 트랜잭션 메소드 안에서 1개 insert 실행 중 예외")
     public void _01_testTransaction() {
 
-        // Case 입금
+        Account account = transactionalService.openAccount(new Account(100000L));
+        log.info("Account Opened: {}", account);
+
+        try {
+            transactionalService.deposit(account.getId(), 99999L);
+            log.info("Deposit Succeeded: {}", account);
+        } catch (Exception e) {
+            log.info(e.getMessage(), e);
+        }
 
     }
 

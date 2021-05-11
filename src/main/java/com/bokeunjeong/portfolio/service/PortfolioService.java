@@ -49,7 +49,6 @@ public class PortfolioService {
      */
     public Project getProjectOf(String id) throws Exception {
         return Optional.ofNullable(portfolioProjectRepository.findById(id)).get().orElseThrow(Exception::new);
-
     }
 
     /**
@@ -67,7 +66,6 @@ public class PortfolioService {
     }
 
     public Map<String, List<Skill>> getSkillsByTypeOf(String category) {
-
         return portfolioSkillRepository.findAllByCategoryAndDisplay(category, true).stream().collect(groupingBy(Skill::getType));
     }
 
