@@ -10,7 +10,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.transaction.annotation.Transactional;
 
 //@Transactional
 @SpringBootTest
@@ -47,7 +46,9 @@ public class TransactionalServiceTest {
         Account receiver = transactionalService.openAccount(new Account(0L));
 
         try {
-            transactionalService.transfer(sender.getId(), receiver.getId(), 50000L);
+//            transactionalService.transfer(sender.getId(), receiver.getId(), 50000L);
+//            transactionalService.transfer(sender.getId(), 999L, 50000L);
+            transactionalService.transfer(sender.getId(), 777L, 50000L);
         } catch (Exception e) {
             log.info(e.getMessage(), e);
         }

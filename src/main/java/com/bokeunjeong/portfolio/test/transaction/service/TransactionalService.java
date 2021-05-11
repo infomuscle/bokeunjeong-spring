@@ -61,11 +61,14 @@ public class TransactionalService {
             throw new RuntimeException("No Sender Found");
         });
 
-
         return sender.get();
     }
 
     private Account updateReceiver(Long receiverId, Long amount) throws Exception {
+
+        if (receiverId == 777L) {
+            throw new RuntimeException();
+        }
 
         Optional<Account> receiver = accountRepository.findById(receiverId);
         receiver.ifPresentOrElse(r -> {
