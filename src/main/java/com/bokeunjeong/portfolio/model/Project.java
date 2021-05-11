@@ -58,5 +58,4 @@ public class Project extends BaseEntity {
     @OneToMany(mappedBy = "project")
     private List<ProjectDetail> details;
 
-
 }
