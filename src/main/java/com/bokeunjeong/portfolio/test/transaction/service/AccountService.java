@@ -49,6 +49,15 @@ public class AccountService {
         result.put("receiver", updateReceiver(receiverId, amount));
         log.info("Transfer Result: {}", result);
 
+        if (receiverId == 333L) {
+            String statement = null;
+            log.info("Transaction Statement: {}", statement.toString());
+        }
+
+        if (receiverId == 222L) {
+            throw new Exception("Intentional Checked Exception");
+        }
+
         return result;
     }
 
@@ -83,6 +92,10 @@ public class AccountService {
 
         if (receiverId == 555L) {
             throw new ClassNotFoundException("Intentional ClassNotFoundException");
+        }
+
+        if (receiverId == 333L || receiverId == 222L) {
+            return new Account(receiverId, 50000L);
         }
 
         Optional<Account> receiver = accountRepository.findById(receiverId);

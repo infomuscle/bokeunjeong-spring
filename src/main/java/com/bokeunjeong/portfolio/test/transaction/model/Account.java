@@ -30,6 +30,11 @@ public class Account {
         this.amount = amount;
     }
 
+    public Account(Long id, Long amount) {
+        this.id = id;
+        this.amount = amount;
+    }
+
     @Override
     public String toString() {
         return StringEscapeUtils.unescapeJava(ToStringBuilder.reflectionToString(this, ToStringStyle.JSON_STYLE));
