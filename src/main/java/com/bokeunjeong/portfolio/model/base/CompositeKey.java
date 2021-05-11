@@ -1,9 +1,8 @@
-package com.bokeunjeong.portfolio.model;
+package com.bokeunjeong.portfolio.model.base;
 
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import java.io.Serializable;
 
@@ -12,10 +11,8 @@ import java.io.Serializable;
 @Embeddable
 public class CompositeKey implements Serializable {
 
-    @Column(name = "ID")
     private String id;
 
-    @Column(name = "SEQ")
     private Integer seq;
 
     public CompositeKey() {

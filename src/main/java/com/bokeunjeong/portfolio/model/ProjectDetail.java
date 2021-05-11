@@ -5,32 +5,21 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.io.Serializable;
 
 @Getter
 @Setter
 @Entity(name = "PROJECT_DETAIL")
 public class ProjectDetail extends BaseEntity {
 
-    @EmbeddedId
-    private CompositeKey pk;
+    @Id
+    @Column(name = "SEQ")
+    private String seq;
 
     @Column(name = "DETAIL")
     private String detail;
 
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "PROJECT_ID")
     private Project project;
-
-    public ProjectDetail() {
-
-    }
-
-    public ProjectDetail(Boolean isTest, String id, Integer seq, String detail) {
-        if (isTest) {
-            this.pk = new CompositeKey(id, seq);
-            this.detail = detail;
-        }
-    }
 
 }

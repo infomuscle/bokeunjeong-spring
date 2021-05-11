@@ -27,15 +27,4 @@ public class Contact extends BaseEntity {
     @Column(name = "ICON")
     private String icon;
 
-    public Contact() {
-
-    }
-
-    public Contact(String id, String type, String detail, String icon) {
-        this.id = id;
-        this.type = type;
-        this.detail = detail;
-        this.icon = icon;
-    }
-
 }

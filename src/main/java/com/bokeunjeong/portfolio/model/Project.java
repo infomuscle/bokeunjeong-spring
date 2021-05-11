@@ -2,14 +2,13 @@ package com.bokeunjeong.portfolio.model;
 
 
 import com.bokeunjeong.portfolio.model.base.BaseEntity;
+import com.bokeunjeong.portfolio.model.base.YearMonth;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.persistence.*;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 @Slf4j
 @Getter
@@ -33,11 +32,19 @@ public class Project extends BaseEntity {
     @Column(name = "CLIENT")
     private String client;
 
+    @AttributeOverrides({
+            @AttributeOverride(name = "year", column = @Column(name = "START_YEAR")),
+            @AttributeOverride(name = "month", column = @Column(name = "START_MONTH"))
+    })
     @Embedded
-    private StartYearMonth startYearMonth;
+    private YearMonth startYearMonth;
 
+    @AttributeOverrides({
+            @AttributeOverride(name = "year", column = @Column(name = "END_YEAR")),
+            @AttributeOverride(name = "month", column = @Column(name = "END_MONTH"))
+    })
     @Embedded
-    private EndYearMonth endYearMonth;
+    private YearMonth endYearMonth;
 
     @Column(name = "IMG")
     private String image;
@@ -51,52 +58,5 @@ public class Project extends BaseEntity {
     @OneToMany(mappedBy = "project")
     private List<ProjectDetail> details;
 
-
-    @Getter
-    @Setter
-    @Embeddable
-    static class StartYearMonth {
-
-        @Column(name = "START_YEAR")
-        private Integer year;
-
-        @Column(name = "START_MONTH")
-        private Integer month;
-
-        public String getMonth() {
-            return String.format("%02d", this.month);
-        }
-
-    }
-
-    @Getter
-    @Setter
-    @Embeddable
-    static class EndYearMonth {
-
-        @Column(name = "END_YEAR")
-        private Integer year;
-
-        @Column(name = "END_MONTH")
-        private Integer month;
-
-        public String getMonth() {
-            return String.format("%02d", this.month);
-        }
-
-    }
-
-    public Project() {
-
-    }
-
-    public Project(Boolean isTest, String id, String name, String type, String description) {
-        if (isTest) {
-            this.id = id;
-            this.name = name;
-            this.type = type;
-            this.description = description;
-        }
-    }
 
 }
