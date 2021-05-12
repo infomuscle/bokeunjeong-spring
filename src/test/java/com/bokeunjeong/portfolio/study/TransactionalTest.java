@@ -99,9 +99,6 @@ public class TransactionalTest {
     @DisplayName("이체: 전체 완료 후 의도적인 Checked Exception")
     public void _16_testTransferTransaction6() {
 
-        Account sender = accountService.openAccount(new Account(100000L));
-        Account receiver = accountService.openAccount(new Account(0L));
-
         Exception e = assertThrows(Exception.class, () -> {
             accountService.transfer(sender.getId(), 222L, 50000L);
         });
@@ -110,6 +107,5 @@ public class TransactionalTest {
         assertThat(accountService.getAccount(sender.getId()).getAmount()).isEqualTo(50000L);
         assertThat(accountService.getAccount(receiver.getId()).getAmount()).isEqualTo(0L);
     }
-
 
 }

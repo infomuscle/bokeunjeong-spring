@@ -45,8 +45,8 @@ public class AccountService {
     public Map<String, Account> transfer(Long senderId, Long receiverId, Long amount) throws Exception {
 
         Map<String, Account> result = new HashMap<String, Account>();
-        result.put("sender", updateSender(senderId, amount));
-        result.put("receiver", updateReceiver(receiverId, amount));
+        result.put("sender", send(senderId, amount));
+        result.put("receiver", receive(receiverId, amount));
         log.info("Transfer Result: {}", result);
 
         if (receiverId == 333L) {
@@ -62,9 +62,9 @@ public class AccountService {
     }
 
     /**
-     * 송금인 잔액 업데이트
+     * 송금
      */
-    private Account updateSender(Long senderId, Long amount) throws Exception {
+    private Account send(Long senderId, Long amount) throws Exception {
 
         log.info("Sender ID: {}", senderId.toString());
 
@@ -80,9 +80,9 @@ public class AccountService {
     }
 
     /**
-     * 수취인 잔액 업데이트
+     * 수취
      */
-    private Account updateReceiver(Long receiverId, Long amount) throws Exception {
+    private Account receive(Long receiverId, Long amount) throws Exception {
 
         log.info("Receiver ID: {}", receiverId.toString());
 
@@ -95,7 +95,7 @@ public class AccountService {
         }
 
         if (receiverId == 333L || receiverId == 222L) {
-            return new Account(receiverId, 50000L);
+            return accountRepository.save(new Account(receiverId, amount));
         }
 
         Optional<Account> receiver = accountRepository.findById(receiverId);
