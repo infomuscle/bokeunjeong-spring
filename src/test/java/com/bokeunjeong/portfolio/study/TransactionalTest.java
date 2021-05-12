@@ -44,7 +44,7 @@ public class TransactionalTest {
     }
 
     @Test
-    @DisplayName("이체: 송금인 업데이트 후 예상못한 Unchecked Exception")
+    @DisplayName("이체: 송금 완료 후 예상못한 Unchecked Exception")
     public void _12_testTransferTransaction2() {
 
         Exception e = assertThrows(Exception.class, () -> {
@@ -57,7 +57,7 @@ public class TransactionalTest {
     }
 
     @Test
-    @DisplayName("이체: 송금인 업데이트 후 의도적인 Unchecked Exception")
+    @DisplayName("이체: 송금 완료 후 의도적인 Unchecked Exception")
     public void _13_testTransferTransaction3() {
 
         Exception e = assertThrows(Exception.class, () -> {
@@ -70,7 +70,7 @@ public class TransactionalTest {
     }
 
     @Test
-    @DisplayName("이체: 송금인 업데이트 후 의도적인 Checked Exception")
+    @DisplayName("이체: 송금 완료 후 의도적인 Checked Exception")
     public void _14_testTransferTransaction4() {
 
         Exception e = assertThrows(Exception.class, () -> {
@@ -83,7 +83,7 @@ public class TransactionalTest {
     }
 
     @Test
-    @DisplayName("이체: 전체 완료 후 예상못한 Unchecked Exception")
+    @DisplayName("이체: 수취 완료 후 예상못한 Unchecked Exception")
     public void _15_testTransferTransaction5() {
 
         Exception e = assertThrows(Exception.class, () -> {
@@ -96,7 +96,7 @@ public class TransactionalTest {
     }
 
     @Test
-    @DisplayName("이체: 전체 완료 후 의도적인 Checked Exception")
+    @DisplayName("이체: 수취 완료 후 의도적인 Checked Exception")
     public void _16_testTransferTransaction6() {
 
         Exception e = assertThrows(Exception.class, () -> {
