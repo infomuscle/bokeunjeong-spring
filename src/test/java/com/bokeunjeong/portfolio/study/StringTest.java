@@ -33,8 +33,8 @@ public class StringTest {
 
         log.info("a.equals(b): {}", a.equals(b));       // false
         log.info("a == b: {}", a == b);                 // false
-        log.info("a.hashCode(): {}", a.hashCode());     // 694823333
-        log.info("b.hashCode(): {}", b.hashCode());     // 1562549798
+        log.info("a.hashCode(): {}", a.hashCode());     // 221132985
+        log.info("b.hashCode(): {}", b.hashCode());     // 141661097
 
     }
 
