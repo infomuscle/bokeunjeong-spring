@@ -55,7 +55,7 @@ public class Project extends BaseEntity {
     @Column(name = "DISPLAY")
     private Boolean display;
 
-    @OneToMany(mappedBy = "project")
+    @OneToMany(mappedBy = "projectId")
     private List<ProjectDetail> details;
 
 }
