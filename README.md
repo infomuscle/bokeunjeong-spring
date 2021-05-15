@@ -14,3 +14,10 @@
 - 프레임워크: `Spring Boot`
 - 데이터베이스: `MySQL`
 - 기타: `Git`, `Spring Data JPA`, `Gradle`, `Docker`, `AWS`
+
+
+## 업데이트 예정
+
+- Last Updated 추가
+- 메일 전송 기능 추가
+- Jenkins 연동
