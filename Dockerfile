@@ -13,6 +13,17 @@ ADD ${JAR_FILE} bokeunjeong.jar
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom", "-jar", "/bokeunjeong.jar"]
 
 
+# 배포
+
+# ./gradlew clean build
+# docker build -t infomuscle10/bortfolio .
+# Docker Push
+# AWS 접속
+# docker pull infomuscle10/bortfolio
+# docker-compose up -d
+
+# -------- #
+
 # ./gradlew clean build
 
 # docker build -t infomuscle10/bortfolio .
