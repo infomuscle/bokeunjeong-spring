@@ -32,14 +32,12 @@ public class PortfolioController {
 
         long startedAt = System.currentTimeMillis();
         Map<String, List<Project>> projects = portfolioService.getProjectsByType();
-        long finishedAt = System.currentTimeMillis();
-        log.info("전체 조회 후 맵 분류 소요시간: {}", finishedAt - startedAt);
+        log.info("전체 조회 후 맵 분류 소요시간: {}", System.currentTimeMillis() - startedAt);
 
         startedAt = System.currentTimeMillis();
         List<Project> workProjects = portfolioService.getProjectsOf("Work");
         List<Project> personalProjects = portfolioService.getProjectsOf("Personal");
-        finishedAt = System.currentTimeMillis();
-        log.info("각각 조회 소요시간: {}", finishedAt - startedAt);
+        log.info("각각 조회 소요시간: {}", System.currentTimeMillis() - startedAt);
 
         Map<String, List<Skill>> workSkills = portfolioService.getSkillsByTypeOf("Work");
         Map<String, List<Skill>> personalSkills = portfolioService.getSkillsByTypeOf("Personal");
