@@ -1,12 +1,14 @@
 package com.bokeunjeong.portfolio.service;
 
 import com.bokeunjeong.portfolio.model.Contact;
+import com.bokeunjeong.portfolio.model.Introduction;
 import com.bokeunjeong.portfolio.model.Project;
 import com.bokeunjeong.portfolio.model.Skill;
 import com.bokeunjeong.portfolio.repository.PortfolioContactRepository;
+import com.bokeunjeong.portfolio.repository.PortfolioIntroductionRepository;
 import com.bokeunjeong.portfolio.repository.PortfolioProjectRepository;
 import com.bokeunjeong.portfolio.repository.PortfolioSkillRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,24 +18,25 @@ import java.util.Optional;
 import static java.util.stream.Collectors.groupingBy;
 
 @Service
+@RequiredArgsConstructor
 public class PortfolioService {
 
     private final PortfolioProjectRepository portfolioProjectRepository;
     private final PortfolioSkillRepository portfolioSkillRepository;
     private final PortfolioContactRepository portfolioContactRepository;
+    private final PortfolioIntroductionRepository portfolioIntroductionRepository;
 
-    @Autowired
-    public PortfolioService(PortfolioProjectRepository portfolioProjectRepository, PortfolioSkillRepository portfolioSkillRepository, PortfolioContactRepository portfolioContactRepository) {
-        this.portfolioProjectRepository = portfolioProjectRepository;
-        this.portfolioSkillRepository = portfolioSkillRepository;
-        this.portfolioContactRepository = portfolioContactRepository;
+    /**
+     * 전체 소개 조회
+     */
+    public List<Introduction> getAllIntroductions() {
+        return portfolioIntroductionRepository.findAllByDisplay(true);
     }
-
 
     /**
      * 전체 프로젝트 조회
      */
-   public List<Project> getAllProjects() {
+    public List<Project> getAllProjects() {
         return portfolioProjectRepository.findAllByDisplayOrderByIdDesc(true);
     }
 

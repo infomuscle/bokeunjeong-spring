@@ -30,20 +30,12 @@ public class PortfolioController {
     @GetMapping("/")
     public String index(Model model) {
 
-        long startedAt = System.currentTimeMillis();
         Map<String, List<Project>> projects = portfolioService.getProjectsByType();
-        log.info("전체 조회 후 맵 분류 소요시간: {}", System.currentTimeMillis() - startedAt);
-
-        startedAt = System.currentTimeMillis();
-        List<Project> workProjects = portfolioService.getProjectsOf("Work");
-        List<Project> personalProjects = portfolioService.getProjectsOf("Personal");
-        log.info("각각 조회 소요시간: {}", System.currentTimeMillis() - startedAt);
-
         Map<String, List<Skill>> workSkills = portfolioService.getSkillsByTypeOf("Work");
         Map<String, List<Skill>> personalSkills = portfolioService.getSkillsByTypeOf("Personal");
 
-
         log.info(projects.toString());
+        model.addAttribute("introductions", portfolioService.getAllIntroductions());
         model.addAttribute("workProjects", projects.get("Work"));
         model.addAttribute("sideProjects", projects.get("Personal"));
         model.addAttribute("workSkills", workSkills);

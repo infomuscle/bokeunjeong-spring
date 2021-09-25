@@ -5,12 +5,10 @@ import com.bokeunjeong.portfolio.model.base.BaseEntity;
 import com.bokeunjeong.portfolio.model.base.YearMonth;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.extern.slf4j.Slf4j;
 
 import javax.persistence.*;
 import java.util.List;
 
-@Slf4j
 @Getter
 @Setter
 @Entity(name = "PROJECT")
