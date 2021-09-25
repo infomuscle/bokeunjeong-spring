@@ -1,6 +1,7 @@
 package com.bokeunjeong.portfolio.controller;
 
 import com.bokeunjeong.portfolio.model.Contact;
+import com.bokeunjeong.portfolio.model.Link;
 import com.bokeunjeong.portfolio.model.Project;
 import com.bokeunjeong.portfolio.model.Skill;
 import com.bokeunjeong.portfolio.service.PortfolioService;
@@ -33,9 +34,12 @@ public class PortfolioController {
         Map<String, List<Project>> projects = portfolioService.getProjectsByType();
         Map<String, List<Skill>> workSkills = portfolioService.getSkillsByTypeOf("Work");
         Map<String, List<Skill>> personalSkills = portfolioService.getSkillsByTypeOf("Personal");
+        Map<Boolean, List<Link>> linksByColumn = portfolioService.getAllLinks();
 
         log.info(projects.toString());
         model.addAttribute("introductions", portfolioService.getAllIntroductions());
+        model.addAttribute("link1", linksByColumn.getOrDefault(true, null));
+        model.addAttribute("link2", linksByColumn.getOrDefault(false, null));
         model.addAttribute("workProjects", projects.get("Work"));
         model.addAttribute("sideProjects", projects.get("Personal"));
         model.addAttribute("workSkills", workSkills);
