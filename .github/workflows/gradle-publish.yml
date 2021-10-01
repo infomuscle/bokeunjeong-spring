@@ -44,6 +44,15 @@ jobs:
         run: |
           docker build -t $NAME/$REPO .
           docker push $NAME/$REPO:latest
+  deploy:
+    needs: build
+    name: Deploy
+    runs-on: [ self-hosted, label-development ]
+    steps:
+      - name: Docker run
+        run: |
+          sudo docker ps -q --filter "name=bortfolio" | grep -q . && sudo docker stop "bortfolio" && sudo docker rmi  "infomuscle10/bortfolio"
+          sudo docker run -d --rm -p 8080:8080 --name bortfolio -e "SPRING_PROFILES_ACTIVE=prod" -v /var/lib/docker/volumes/bortfolio/_data:/tmp --network aws-network infomuscle10/bortfolio
 
     # The USERNAME and TOKEN need to correspond to the credentials environment variables used in
     # the publishing section of your build.gradle

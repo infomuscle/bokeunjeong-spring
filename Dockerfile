@@ -22,6 +22,10 @@ ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom", "-jar", "/bokeunje
 # docker pull infomuscle10/bortfolio
 # docker-compose up -d
 
+
+### prod?
+# docker run -p 8080:8080 --name bortfolio -e "SPRING_PROFILES_ACTIVE=prod" -v /var/lib/docker/volumes/bortfolio/_data:/tmp --network aws-network infomuscle10/bortfolio
+
 # -------- #
 
 # ./gradlew clean build
