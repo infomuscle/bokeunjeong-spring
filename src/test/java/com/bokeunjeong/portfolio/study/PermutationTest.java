@@ -2,10 +2,12 @@ package com.bokeunjeong.portfolio.study;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
+import org.springframework.test.context.ActiveProfiles;
 
 import java.util.ArrayList;
 
 @Slf4j
+@ActiveProfiles("test")
 public class PermutationTest {
 
 

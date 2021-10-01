@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 
 import java.util.Map;
 
@@ -15,6 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 //@Transactional
 @SpringBootTest
+@ActiveProfiles("test")
 @DisplayName("@Transactional 테스트")
 @TestMethodOrder(MethodOrderer.MethodName.class)
 public class TransactionalTest {

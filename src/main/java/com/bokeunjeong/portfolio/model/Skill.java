@@ -34,7 +34,7 @@ public class Skill extends BaseEntity {
     private String category;
 
     @ManyToOne
-    @JoinColumn(name = "proficiency")
+    @JoinColumn(name = "PROFICIENCY", insertable = false, updatable = false)
     private SkillProficiency skillProficiency;
 
 }
