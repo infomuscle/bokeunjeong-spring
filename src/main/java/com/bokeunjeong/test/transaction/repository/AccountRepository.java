@@ -1,6 +1,6 @@
-package com.bokeunjeong.portfolio.test.transaction.repository;
+package com.bokeunjeong.test.transaction.repository;
 
-import com.bokeunjeong.portfolio.test.transaction.model.Account;
+import com.bokeunjeong.test.transaction.model.Account;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
