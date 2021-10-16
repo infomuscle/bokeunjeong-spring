@@ -13,7 +13,6 @@ public class CarRepository {
 
     private final EntityManager em;
 
-
     @Transactional
     public void save(Car car) {
         em.persist(car);
