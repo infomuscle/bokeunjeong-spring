@@ -1,13 +1,11 @@
-package com.bokeunjeong.portfolio.model;
+package com.bokeunjeong.portfolio.model.entity;
 
 import com.bokeunjeong.portfolio.model.base.BaseEntity;
 import lombok.Getter;
-import lombok.Setter;
 
 import javax.persistence.*;
 
 @Getter
-@Setter
 @Entity(name = "SKILL")
 public class Skill extends BaseEntity {
 
@@ -33,8 +31,7 @@ public class Skill extends BaseEntity {
     @Column(name = "CATEGORY")
     private String category;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "PROFICIENCY", insertable = false, updatable = false)
     private SkillProficiency skillProficiency;
-
 }

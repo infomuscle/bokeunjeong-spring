@@ -1,9 +1,9 @@
 package com.bokeunjeong.portfolio.controller;
 
-import com.bokeunjeong.portfolio.model.Contact;
-import com.bokeunjeong.portfolio.model.Link;
-import com.bokeunjeong.portfolio.model.Project;
-import com.bokeunjeong.portfolio.model.Skill;
+import com.bokeunjeong.portfolio.model.entity.Contact;
+import com.bokeunjeong.portfolio.model.entity.Link;
+import com.bokeunjeong.portfolio.model.entity.Project;
+import com.bokeunjeong.portfolio.model.entity.Skill;
 import com.bokeunjeong.portfolio.service.PortfolioService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -62,5 +62,4 @@ public class PortfolioController {
 
         return "OK";
     }
-
 }

@@ -1,4 +1,4 @@
-package com.bokeunjeong.portfolio.model;
+package com.bokeunjeong.portfolio.model.entity;
 
 import com.bokeunjeong.portfolio.model.base.BaseEntity;
 import lombok.Getter;
@@ -10,7 +10,6 @@ import javax.persistence.Id;
 import java.io.Serializable;
 
 @Getter
-@Setter
 @Entity(name = "PROJECT_DETAIL")
 public class ProjectDetail extends BaseEntity implements Serializable {
 
@@ -24,5 +23,4 @@ public class ProjectDetail extends BaseEntity implements Serializable {
 
     @Column(name = "DETAIL")
     private String detail;
-
 }

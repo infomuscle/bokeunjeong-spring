@@ -1,16 +1,14 @@
-package com.bokeunjeong.portfolio.model;
+package com.bokeunjeong.portfolio.model.entity;
 
 
 import com.bokeunjeong.portfolio.model.base.BaseEntity;
 import com.bokeunjeong.portfolio.model.base.YearMonth;
 import lombok.Getter;
-import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Getter
-@Setter
 @Entity(name = "PROJECT")
 public class Project extends BaseEntity {
 
@@ -53,7 +51,6 @@ public class Project extends BaseEntity {
     @Column(name = "DISPLAY")
     private Boolean display;
 
-    @OneToMany(mappedBy = "projectId")
+    @OneToMany(mappedBy = "projectId", fetch = FetchType.LAZY)
     private List<ProjectDetail> details;
-
 }

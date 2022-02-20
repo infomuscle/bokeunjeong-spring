@@ -1,6 +1,6 @@
 package com.bokeunjeong.portfolio.repository;
 
-import com.bokeunjeong.portfolio.model.Introduction;
+import com.bokeunjeong.portfolio.model.entity.Introduction;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

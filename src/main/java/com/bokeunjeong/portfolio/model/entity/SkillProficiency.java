@@ -1,4 +1,4 @@
-package com.bokeunjeong.portfolio.model;
+package com.bokeunjeong.portfolio.model.entity;
 
 import com.bokeunjeong.portfolio.model.base.BaseEntity;
 import lombok.Getter;
@@ -10,7 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Getter
-@Setter
 @Entity(name = "SKILL_PROFICIENCY")
 public class SkillProficiency extends BaseEntity {
 
@@ -20,5 +19,4 @@ public class SkillProficiency extends BaseEntity {
 
     @Column(name = "DETAIL")
     private String detail;
-
 }

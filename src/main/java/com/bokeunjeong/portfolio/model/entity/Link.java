@@ -1,4 +1,4 @@
-package com.bokeunjeong.portfolio.model;
+package com.bokeunjeong.portfolio.model.entity;
 
 import com.bokeunjeong.portfolio.model.base.BaseEntity;
 import lombok.Getter;
@@ -9,9 +9,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Getter
-@Setter
-@Entity(name = "INTRODUCTION")
-public class Introduction extends BaseEntity {
+@Entity(name = "LINK")
+public class Link extends BaseEntity {
 
     @Id
     @Column(name = "ID")
@@ -20,10 +19,12 @@ public class Introduction extends BaseEntity {
     @Column(name = "TITLE")
     private String title;
 
-    @Column(name = "DESCRIPTION")
-    private String description;
+    @Column(name = "URL")
+    private String url;
+
+    @Column(name = "COLUMN")
+    private Integer column;
 
     @Column(name = "DISPLAY")
     private Boolean display;
-
 }

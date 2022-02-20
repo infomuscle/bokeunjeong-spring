@@ -1,4 +1,4 @@
-package com.bokeunjeong.portfolio.model;
+package com.bokeunjeong.portfolio.model.entity;
 
 
 import com.bokeunjeong.portfolio.model.base.BaseEntity;
@@ -10,7 +10,6 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Getter
-@Setter
 @Entity(name = "CONTACT")
 public class Contact extends BaseEntity {
 
@@ -26,5 +25,4 @@ public class Contact extends BaseEntity {
 
     @Column(name = "ICON")
     private String icon;
-
 }
