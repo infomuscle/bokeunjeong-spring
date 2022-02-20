@@ -23,12 +23,11 @@ public class PortfolioApiService {
     public PortfolioResponse getPortfolio() {
         PortfolioResponse response = new PortfolioResponse();
         response.setIntroductions(getIntroductions());
-        response.setLinks(new LinkResult(getLinks()));
+        response.setLinks(getLinks());
         response.setProjects(new ProjectResult(getProjects()));
 
         List<SkillDto> skills = getSkills();
-        response.setWorkSkills(new SkillResult("Work", skills));
-        response.setPersonalSkills(new SkillResult("Personal", skills));
+        response.setSkills(List.of(new SkillResult("Work", skills), new SkillResult("Personal", skills)));
 
         response.setContacts(getContacts());
 

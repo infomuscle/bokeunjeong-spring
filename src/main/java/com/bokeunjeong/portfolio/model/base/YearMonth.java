@@ -25,6 +25,6 @@ public class YearMonth {
 
     @Override
     public String toString() {
-        return Month.of(month) + " " + year;
+        return Month.of(month).getDisplayName(TextStyle.SHORT, Locale.ENGLISH) + " " + year;
     }
 }
