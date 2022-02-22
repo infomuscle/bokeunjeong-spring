@@ -10,6 +10,6 @@ public class PortfolioResponse {
     List<IntroductionDto> introductions;
     List<LinkDto> links;
     ProjectResult projects;
-    List<SkillResult> skills;
+    List<SkillDto> skills;
     List<ContactDto> contacts;
 }
