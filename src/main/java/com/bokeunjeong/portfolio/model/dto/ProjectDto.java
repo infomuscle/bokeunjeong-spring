@@ -25,7 +25,7 @@ public class ProjectDto {
         this.type = project.getType();
         this.description = project.getDescription();
         this.startAt = project.getStartYearMonth().toString();
-        this.endAt = project.getEndYearMonth().toString();
+        this.endAt = (project.getEndYearMonth() != null) ? project.getEndYearMonth().toString() : "Present";
         this.client = project.getClient();
         this.image = project.getImage();
         this.url = project.getUrl();
