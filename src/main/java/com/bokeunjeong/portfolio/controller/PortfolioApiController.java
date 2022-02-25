@@ -5,6 +5,7 @@ import com.bokeunjeong.portfolio.service.PortfolioApiService;
 import com.bokeunjeong.portfolio.service.PortfolioService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -21,5 +22,11 @@ public class PortfolioApiController {
         } catch (Exception e) {
             return null;
         }
+    }
+
+    @PostMapping("/api/v1/portfolio/email")
+    public String sendEmail() {
+
+        return "OK";
     }
 }
