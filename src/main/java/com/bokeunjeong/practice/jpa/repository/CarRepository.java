@@ -1,6 +1,6 @@
-package com.bokeunjeong.test.jpa.repository;
+package com.bokeunjeong.practice.jpa.repository;
 
-import com.bokeunjeong.test.jpa.model.Car;
+import com.bokeunjeong.practice.jpa.model.Car;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;

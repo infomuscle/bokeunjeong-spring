@@ -1,4 +1,4 @@
-package com.bokeunjeong.test.transaction.model;
+package com.bokeunjeong.practice.transaction.model;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -1,7 +1,7 @@
 package com.bokeunjeong.portfolio.study;
 
-import com.bokeunjeong.test.transaction.model.Account;
-import com.bokeunjeong.test.transaction.service.AccountService;
+import com.bokeunjeong.practice.transaction.model.Account;
+import com.bokeunjeong.practice.transaction.service.AccountService;
 import org.junit.jupiter.api.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

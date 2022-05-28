@@ -1,7 +1,7 @@
 package com.bokeunjeong.portfolio.study;
 
-import com.bokeunjeong.test.jpa.model.Car;
-import com.bokeunjeong.test.jpa.repository.CarRepository;
+import com.bokeunjeong.practice.jpa.model.Car;
+import com.bokeunjeong.practice.jpa.repository.CarRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.MethodOrderer;

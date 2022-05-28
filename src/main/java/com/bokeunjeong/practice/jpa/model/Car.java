@@ -1,4 +1,4 @@
-package com.bokeunjeong.test.jpa.model;
+package com.bokeunjeong.practice.jpa.model;
 
 import lombok.Getter;
 import lombok.Setter;

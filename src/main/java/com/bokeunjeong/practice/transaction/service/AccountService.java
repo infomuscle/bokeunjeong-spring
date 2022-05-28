@@ -1,7 +1,7 @@
-package com.bokeunjeong.test.transaction.service;
+package com.bokeunjeong.practice.transaction.service;
 
-import com.bokeunjeong.test.transaction.model.Account;
-import com.bokeunjeong.test.transaction.repository.AccountRepository;
+import com.bokeunjeong.practice.transaction.model.Account;
+import com.bokeunjeong.practice.transaction.repository.AccountRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
