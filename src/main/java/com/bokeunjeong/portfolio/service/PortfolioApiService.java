@@ -4,8 +4,11 @@ import com.bokeunjeong.portfolio.model.dto.*;
 import com.bokeunjeong.portfolio.repository.*;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Service;
 
+import java.io.FileNotFoundException;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -19,6 +22,7 @@ public class PortfolioApiService {
     private final PortfolioSkillRepository portfolioSkillRepository;
     private final PortfolioContactRepository portfolioContactRepository;
     private final PortfolioLinkRepository portfolioLinkRepository;
+    private final ResourceLoader resourceLoader;
 
     public PortfolioResponse getPortfolio() {
         PortfolioResponse response = new PortfolioResponse();
@@ -49,5 +53,14 @@ public class PortfolioApiService {
 
     private List<ContactDto> getContacts() {
         return portfolioContactRepository.findAll().stream().map(ContactDto::new).collect(Collectors.toList());
+    }
+
+    public Resource getPortfolioResume() throws Exception {
+        Resource resource = resourceLoader.getResource("classpath:static/resume_bokeunjeong.pdf");
+        if (resource.exists()) {
+            return resource;
+        }
+
+        throw new FileNotFoundException();
     }
 }
