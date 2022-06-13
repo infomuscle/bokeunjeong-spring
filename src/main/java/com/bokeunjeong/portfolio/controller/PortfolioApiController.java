@@ -3,14 +3,15 @@ package com.bokeunjeong.portfolio.controller;
 import com.bokeunjeong.portfolio.model.dto.PortfolioResponse;
 import com.bokeunjeong.portfolio.service.PortfolioApiService;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.io.Resource;
-import org.springframework.http.*;
+import org.springframework.http.ContentDisposition;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@Slf4j
 @RestController
 @RequiredArgsConstructor
 public class PortfolioApiController {
@@ -32,8 +33,6 @@ public class PortfolioApiController {
 
             HttpHeaders headers = new HttpHeaders();
             headers.setContentDisposition(ContentDisposition.builder("attachment").filename(resource.getFilename()).build());
-            headers.setContentLength(resource.getFile().length());
-            headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
 
             return new ResponseEntity<Resource>(resource, headers, HttpStatus.OK);
         } catch (Exception e) {
