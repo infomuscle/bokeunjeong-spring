@@ -6,33 +6,33 @@ VOLUME /tmp
 
 EXPOSE 8080
 
-ARG JAR_FILE=build/libs/bokeunjeong-0.0.1-SNAPSHOT.jar
+ARG JAR_FILE=build/libs/bokeunjeong-spring-0.0.1-SNAPSHOT.jar
 
-ADD ${JAR_FILE} bokeunjeong.jar
+ADD ${JAR_FILE} bokeunjeong-spring.jar
 
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom", "-jar", "/bokeunjeong.jar"]
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom", "-jar", "/bokeunjeong-spring.jar"]
 
 
 # 배포
 
 # ./gradlew clean build
-# docker build -t infomuscle10/bortfolio .
+# docker build -t infomuscle10/bokeunjeong-spring .
 # Docker Push
 # AWS 접속
-# docker pull infomuscle10/bortfolio
+# docker pull infomuscle10/bokeunjeong-spring
 # docker-compose up -d
 
 
 ### prod?
-# docker run -p 8080:8080 --name bortfolio -e "SPRING_PROFILES_ACTIVE=prod" -v /var/lib/docker/volumes/bortfolio/_data:/tmp --network aws-network infomuscle10/bortfolio
+# docker run -p 8080:8080 --name bokeunjeong-spring -e "SPRING_PROFILES_ACTIVE=prod" -v /var/lib/docker/volumes/bokeunjeong-spring/_data:/tmp --network aws-network infomuscle10/bokeunjeong-spring
 
 # -------- #
 
 # ./gradlew clean build
 
-# docker build -t infomuscle10/bortfolio .
+# docker build -t infomuscle10/bokeunjeong-spring .
 
-# docker run -p 80:8080 --name bortfolio --network mysql-network infomuscle10/bortfolio
+# docker run -p 80:8080 --name bokeunjeong-spring --network local-network infomuscle10/bokeunjeong-spring
 
 # docker run -d -p 9090:3306 -e MYSQL_ROOT_PASSWORD=password --name mysql --network mysql-network mysql --character-set-server=utf8
 # --lower_case_table_names=1
@@ -46,4 +46,4 @@ ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom", "-jar", "/bokeunje
 # kafka-topics.sh --describe --topic test --zookeeper zookeeper:2181
 
 # docker network inspect mysql-network
-# docker network connect mysql-newtork bortfolio
+# docker network connect mysql-newtork bokeunjeong-spring

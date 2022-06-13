@@ -40,7 +40,7 @@ jobs:
       - name: build and release to DockerHub
         env:
           NAME: infomuscle10 # 계정 명
-          REPO: bortfolio # 레포 이름
+          REPO: bokeunjeong-spring # 레포 이름
         run: |
           docker build -t $NAME/$REPO .
           docker push $NAME/$REPO:latest
@@ -51,8 +51,8 @@ jobs:
     steps:
       - name: Docker run
         run: |
-          sudo docker ps -q --filter "name=bortfolio" | grep -q . && sudo docker stop "bortfolio" && sudo docker rmi "infomuscle10/bortfolio"
-          sudo docker run -d --rm -p 8080:8080 --name bortfolio -e "SPRING_PROFILES_ACTIVE=prod" -v /var/lib/docker/volumes/bortfolio/_data:/tmp --network aws-network infomuscle10/bortfolio
+          sudo docker ps -q --filter "name=bokeunjeong-spring" | grep -q . && sudo docker stop "bokeunjeong-spring" && sudo docker rmi "infomuscle10/bokeunjeong-spring"
+          sudo docker run -d --rm -p 8080:8080 --name bokeunjeong-spring -e "SPRING_PROFILES_ACTIVE=prod" -v /var/lib/docker/volumes/bokeunjeong-spring/_data:/tmp --network aws-network infomuscle10/bokeunjeong-spring
 
     # The USERNAME and TOKEN need to correspond to the credentials environment variables used in
     # the publishing section of your build.gradle
