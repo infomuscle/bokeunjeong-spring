@@ -61,6 +61,6 @@ public class PortfolioApiService {
             return resource;
         }
 
-        throw new FileNotFoundException();
+        throw new FileNotFoundException("Cannt find file.");
     }
 }
