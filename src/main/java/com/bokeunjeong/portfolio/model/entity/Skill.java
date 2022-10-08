@@ -6,7 +6,7 @@ import lombok.Getter;
 import javax.persistence.*;
 
 @Getter
-@Entity(name = "SKILL")
+@Entity
 public class Skill {
 
     @Id

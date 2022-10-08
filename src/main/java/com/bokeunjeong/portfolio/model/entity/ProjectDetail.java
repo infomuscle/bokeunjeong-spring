@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import java.io.Serializable;
 
 @Getter
-@Entity(name = "PROJECT_DETAIL")
+@Entity
 public class ProjectDetail implements Serializable {
 
     @Id

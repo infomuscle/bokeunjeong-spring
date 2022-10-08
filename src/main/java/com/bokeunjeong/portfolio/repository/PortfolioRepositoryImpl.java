@@ -35,7 +35,7 @@ public class PortfolioRepositoryImpl implements PortfolioRepository {
 
     @Override
     public List<SkillDto> findSkills() {
-        return portfolioSkillRepository.findAllByDisplay(true).stream().map(SkillDto::new).collect(Collectors.toList());
+        return portfolioSkillRepository.findAllToDisplay().stream().map(SkillDto::new).collect(Collectors.toList());
     }
 
     @Override
