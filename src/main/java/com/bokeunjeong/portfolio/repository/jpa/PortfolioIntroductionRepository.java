@@ -1,4 +1,4 @@
-package com.bokeunjeong.portfolio.repository;
+package com.bokeunjeong.portfolio.repository.jpa;
 
 import com.bokeunjeong.portfolio.model.entity.Introduction;
 import org.springframework.data.jpa.repository.JpaRepository;
