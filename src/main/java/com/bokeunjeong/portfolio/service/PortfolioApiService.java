@@ -8,7 +8,6 @@ import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Service;
 
-import java.io.FileNotFoundException;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -55,12 +54,12 @@ public class PortfolioApiService {
         return portfolioContactRepository.findAll().stream().map(ContactDto::new).collect(Collectors.toList());
     }
 
-    public Resource getPortfolioResume() throws Exception {
+    public Resource getPortfolioResume() {
         Resource resource = resourceLoader.getResource("classpath:static/resume_bokeunjeong.pdf");
         if (resource.exists()) {
             return resource;
         }
 
-        throw new FileNotFoundException("Cannt find file.");
+        throw new RuntimeException("Cannt find file.");
     }
 }
