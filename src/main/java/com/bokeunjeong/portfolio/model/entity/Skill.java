@@ -1,13 +1,13 @@
 package com.bokeunjeong.portfolio.model.entity;
 
-import com.bokeunjeong.portfolio.model.base.BaseEntity;
+
 import lombok.Getter;
 
 import javax.persistence.*;
 
 @Getter
 @Entity(name = "SKILL")
-public class Skill extends BaseEntity {
+public class Skill {
 
     @Id
     @Column(name = "ID")

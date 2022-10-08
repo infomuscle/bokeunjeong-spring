@@ -15,13 +15,7 @@ import java.util.Locale;
 public class YearMonth {
 
     private Integer year;
-
     private Integer month;
-
-    public String getMonth() {
-
-        return Month.of(month).getDisplayName(TextStyle.SHORT, Locale.ENGLISH);
-    }
 
     @Override
     public String toString() {

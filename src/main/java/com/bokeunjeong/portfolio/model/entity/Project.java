@@ -1,7 +1,6 @@
 package com.bokeunjeong.portfolio.model.entity;
 
 
-import com.bokeunjeong.portfolio.model.base.BaseEntity;
 import com.bokeunjeong.portfolio.model.base.YearMonth;
 import lombok.Getter;
 
@@ -10,7 +9,7 @@ import java.util.List;
 
 @Getter
 @Entity(name = "PROJECT")
-public class Project extends BaseEntity {
+public class Project {
 
     @Id
     @Column(name = "ID")
