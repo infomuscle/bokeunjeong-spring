@@ -3,7 +3,6 @@ package com.bokeunjeong.portfolio.repository;
 import com.bokeunjeong.portfolio.model.dto.*;
 import com.bokeunjeong.portfolio.repository.jpa.*;
 import lombok.RequiredArgsConstructor;
-import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -14,11 +13,10 @@ import java.util.stream.Collectors;
 public class PortfolioRepositoryImpl implements PortfolioRepository {
 
     private final PortfolioIntroductionRepository portfolioIntroductionRepository;
+    private final PortfolioLinkRepository portfolioLinkRepository;
     private final PortfolioProjectRepository portfolioProjectRepository;
     private final PortfolioSkillRepository portfolioSkillRepository;
     private final PortfolioContactRepository portfolioContactRepository;
-    private final PortfolioLinkRepository portfolioLinkRepository;
-    private final ResourceLoader resourceLoader;
 
     @Override
     public List<IntroductionDto> findIntroductions() {
@@ -32,7 +30,7 @@ public class PortfolioRepositoryImpl implements PortfolioRepository {
 
     @Override
     public List<ProjectDto> findProjets() {
-        return portfolioProjectRepository.findAllByDisplayOrderByIdDesc(true).stream().map(ProjectDto::new).collect(Collectors.toList());
+        return portfolioProjectRepository.findAllToDisplay().stream().map(ProjectDto::new).collect(Collectors.toList());
     }
 
     @Override

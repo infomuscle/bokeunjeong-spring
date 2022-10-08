@@ -8,7 +8,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Getter
-@Entity(name = "PROJECT")
+@Entity
 public class Project {
 
     @Id
