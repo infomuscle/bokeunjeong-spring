@@ -8,7 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Getter
-@Entity
+@Entity(name = "CONTACT")
 public class Contact {
 
     @Id
