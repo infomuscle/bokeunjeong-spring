@@ -4,6 +4,7 @@ import com.bokeunjeong.portfolio.model.entity.Project;
 import com.bokeunjeong.portfolio.model.entity.ProjectDetail;
 import lombok.Data;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -29,6 +30,6 @@ public class ProjectDto {
         this.client = project.getClient();
         this.image = project.getImage();
         this.url = project.getUrl();
-        this.details = project.getDetails().stream().map(ProjectDetail::getDetail).collect(Collectors.toList());
+        this.details = project.getDetails().stream().sorted(Comparator.comparing(ProjectDetail::getSeq)).map(ProjectDetail::getDetail).collect(Collectors.toList());
     }
 }

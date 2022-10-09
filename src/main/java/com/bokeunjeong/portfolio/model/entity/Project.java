@@ -1,7 +1,7 @@
 package com.bokeunjeong.portfolio.model.entity;
 
 
-import com.bokeunjeong.portfolio.model.base.YearMonth;
+import com.bokeunjeong.portfolio.model.composite.YearMonth;
 import lombok.Getter;
 
 import javax.persistence.*;

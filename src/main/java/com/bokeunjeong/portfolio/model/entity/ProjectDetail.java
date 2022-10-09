@@ -18,7 +18,7 @@ public class ProjectDetail implements Serializable {
 
     @Id
     @Column(name = "SEQ")
-    private String seq;
+    private Integer seq;
 
     @Column(name = "DETAIL")
     private String detail;
