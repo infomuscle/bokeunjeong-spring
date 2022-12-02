@@ -2,7 +2,11 @@ package com.bokeunjeong.practice.pattern.decorator.condiment;
 
 import com.bokeunjeong.practice.pattern.decorator.beverage.Beverage;
 
+import java.util.Map;
+
 public class Soy extends CondimentDecorator {
+
+    private static Map<Size, Double> COSTS = Map.of(Size.TALL, .10, Size.GRANDE, .15, Size.VENTI, .20);
 
     public Soy(Beverage beverage) {
         this.beverage = beverage;
@@ -15,6 +19,6 @@ public class Soy extends CondimentDecorator {
 
     @Override
     public double cost() {
-        return beverage.cost() + .15;
+        return beverage.cost() + COSTS.get(beverage.getSize());
     }
 }
