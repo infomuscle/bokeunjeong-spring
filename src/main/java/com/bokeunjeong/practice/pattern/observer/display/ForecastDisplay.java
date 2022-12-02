@@ -1,4 +1,6 @@
-package com.bokeunjeong.practice.pattern.observer;
+package com.bokeunjeong.practice.pattern.observer.display;
+
+import com.bokeunjeong.practice.pattern.observer.weather.WeatherData;
 
 import java.util.Map;
 

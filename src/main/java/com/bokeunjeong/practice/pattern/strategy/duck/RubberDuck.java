@@ -1,4 +1,4 @@
-package com.bokeunjeong.practice.pattern.strategy;
+package com.bokeunjeong.practice.pattern.strategy.duck;
 
 public class RubberDuck extends Duck {
 

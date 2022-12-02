@@ -1,4 +1,4 @@
-package com.bokeunjeong.practice.pattern.strategy;
+package com.bokeunjeong.practice.pattern.strategy.duck;
 
 import com.bokeunjeong.practice.pattern.strategy.behavior.fly.FlyBehavior;
 import com.bokeunjeong.practice.pattern.strategy.behavior.quack.QuackBehavior;

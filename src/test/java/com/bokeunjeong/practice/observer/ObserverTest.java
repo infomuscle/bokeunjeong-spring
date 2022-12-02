@@ -1,6 +1,10 @@
 package com.bokeunjeong.practice.observer;
 
-import com.bokeunjeong.practice.pattern.observer.*;
+import com.bokeunjeong.practice.pattern.observer.display.CurrentConditionsDisplay;
+import com.bokeunjeong.practice.pattern.observer.display.ForecastDisplay;
+import com.bokeunjeong.practice.pattern.observer.display.HeatIndexDisplay;
+import com.bokeunjeong.practice.pattern.observer.display.StatisticsDisplay;
+import com.bokeunjeong.practice.pattern.observer.weather.WeatherData;
 import org.junit.jupiter.api.Test;
 
 public class ObserverTest {
