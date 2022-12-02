@@ -1,7 +1,7 @@
-package com.bokeunjeong.practice.strategy;
+package com.bokeunjeong.practice.pattern.strategy;
 
-import com.bokeunjeong.practice.strategy.behavior.fly.FlyBehavior;
-import com.bokeunjeong.practice.strategy.behavior.quack.QuackBehavior;
+import com.bokeunjeong.practice.pattern.strategy.behavior.fly.FlyBehavior;
+import com.bokeunjeong.practice.pattern.strategy.behavior.quack.QuackBehavior;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor

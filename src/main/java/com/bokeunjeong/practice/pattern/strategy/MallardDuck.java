@@ -1,7 +1,7 @@
-package com.bokeunjeong.practice.strategy;
+package com.bokeunjeong.practice.pattern.strategy;
 
-import com.bokeunjeong.practice.strategy.behavior.fly.FlyWithWings;
-import com.bokeunjeong.practice.strategy.behavior.quack.Quack;
+import com.bokeunjeong.practice.pattern.strategy.behavior.fly.FlyWithWings;
+import com.bokeunjeong.practice.pattern.strategy.behavior.quack.Quack;
 
 public class MallardDuck extends Duck {
     public MallardDuck() {

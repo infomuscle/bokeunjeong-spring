@@ -1,6 +1,9 @@
 package com.bokeunjeong.practice.strategy;
 
-import com.bokeunjeong.practice.strategy.behavior.fly.FlyRocketPowered;
+import com.bokeunjeong.practice.pattern.strategy.Duck;
+import com.bokeunjeong.practice.pattern.strategy.MallardDuck;
+import com.bokeunjeong.practice.pattern.strategy.ModelDuck;
+import com.bokeunjeong.practice.pattern.strategy.behavior.fly.FlyRocketPowered;
 import org.junit.jupiter.api.Test;
 
 public class StrategyTest {

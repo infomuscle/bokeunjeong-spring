@@ -1,4 +1,4 @@
-package com.bokeunjeong.practice.strategy.behavior.fly;
+package com.bokeunjeong.practice.pattern.strategy.behavior.fly;
 
 public class FlyWithWings implements FlyBehavior {
     @Override

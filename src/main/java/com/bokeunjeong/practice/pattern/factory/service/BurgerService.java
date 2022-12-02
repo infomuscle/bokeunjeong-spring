@@ -1,4 +1,4 @@
-package com.bokeunjeong.practice.factory.service;
+package com.bokeunjeong.practice.pattern.factory.service;
 
 public interface BurgerService {
 
