@@ -14,15 +14,15 @@ public class StatisticsDisplay implements Observer, DisplayElement {
     }
 
     @Override
-    public void update(float temperature, float humidity, float pressure) {
-        tempSum += temperature;
+    public void update() {
+        tempSum += weatherData.getTemperature();
         numReadings++;
 
-        if (temperature > maxTemp) {
-            maxTemp = temperature;
+        if (weatherData.getTemperature() > maxTemp) {
+            maxTemp = weatherData.getTemperature();
         }
-        if (temperature < minTemp) {
-            minTemp = temperature;
+        if (weatherData.getTemperature() < minTemp) {
+            minTemp = weatherData.getTemperature();
         }
 
         display();

@@ -19,14 +19,14 @@ public class ForecastDisplay implements Observer, DisplayElement {
     }
 
     @Override
-    public void display() {
-        System.out.println(String.format("Forecast: %s", MESSAGE.get(Float.compare(currentPressure, lastPressure))));
+    public void update() {
+        lastPressure = currentPressure;
+        currentPressure = weatherData.getPressure();
+        display();
     }
 
     @Override
-    public void update(float temperature, float humidity, float pressure) {
-        lastPressure = currentPressure;
-        currentPressure = pressure;
-        display();
+    public void display() {
+        System.out.println(String.format("Forecast: %s", MESSAGE.get(Float.compare(currentPressure, lastPressure))));
     }
 }
