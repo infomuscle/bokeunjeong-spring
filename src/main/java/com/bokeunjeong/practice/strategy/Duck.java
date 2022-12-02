@@ -1,7 +1,6 @@
 package com.bokeunjeong.practice.strategy;
 
 import com.bokeunjeong.practice.strategy.behavior.fly.FlyBehavior;
-import com.bokeunjeong.practice.strategy.behavior.quack.Quack;
 import com.bokeunjeong.practice.strategy.behavior.quack.QuackBehavior;
 import lombok.NoArgsConstructor;
 
@@ -22,14 +21,14 @@ public abstract class Duck {
     }
 
     public void swim() {
-        System.out.println("모든 오리는 물에 뜹니다. 가짜 오리도 뜨죠.");
+        System.out.println("Every Duck float, even DecoyDuck.");
     }
 
     public void setFlyBehavior(FlyBehavior flyBehavior) {
         this.flyBehavior = flyBehavior;
     }
 
-    public void setQuackBehavior(Quack quackBehavior) {
+    public void setQuackBehavior(QuackBehavior quackBehavior) {
         this.quackBehavior = quackBehavior;
     }
 }
