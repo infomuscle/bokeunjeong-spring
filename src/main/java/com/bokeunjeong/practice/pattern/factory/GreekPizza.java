@@ -1,4 +1,5 @@
 package com.bokeunjeong.practice.pattern.factory;
 
-public class BurgerFactory {
+public class GreekPizza extends Pizza {
+
 }
