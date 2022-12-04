@@ -1,5 +1,11 @@
 package com.bokeunjeong.practice.pattern.factory;
 
+import com.bokeunjeong.practice.pattern.factory.pizza.Pizza;
+import com.bokeunjeong.practice.pattern.factory.pizza.simple.CheesePizza;
+import com.bokeunjeong.practice.pattern.factory.pizza.simple.ClamPizza;
+import com.bokeunjeong.practice.pattern.factory.pizza.simple.PepperoniPizza;
+import com.bokeunjeong.practice.pattern.factory.pizza.simple.VeggiePizza;
+
 public class SimplePizzaFacotry {
 
     public Pizza createPizza(String type) {
