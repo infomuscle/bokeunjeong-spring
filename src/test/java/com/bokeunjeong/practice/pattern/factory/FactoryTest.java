@@ -1,4 +1,4 @@
-package com.bokeunjeong.practice.factory;
+package com.bokeunjeong.practice.pattern.factory;
 
 import com.bokeunjeong.practice.pattern.factory.pizza.Pizza;
 import com.bokeunjeong.practice.pattern.factory.store.ChicagoPizzaStore;

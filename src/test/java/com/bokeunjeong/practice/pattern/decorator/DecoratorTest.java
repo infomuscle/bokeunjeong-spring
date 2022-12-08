@@ -1,4 +1,4 @@
-package com.bokeunjeong.practice.decorator;
+package com.bokeunjeong.practice.pattern.decorator;
 
 import com.bokeunjeong.practice.pattern.decorator.beverage.Beverage;
 import com.bokeunjeong.practice.pattern.decorator.beverage.DarkRoast;

@@ -1,4 +1,4 @@
-package com.bokeunjeong.practice.strategy;
+package com.bokeunjeong.practice.pattern.strategy;
 
 import com.bokeunjeong.practice.pattern.strategy.behavior.fly.FlyRocketPowered;
 import com.bokeunjeong.practice.pattern.strategy.duck.Duck;

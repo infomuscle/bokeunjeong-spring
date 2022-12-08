@@ -1,4 +1,4 @@
-package com.bokeunjeong.practice.observer;
+package com.bokeunjeong.practice.pattern.observer;
 
 import com.bokeunjeong.practice.pattern.observer.display.CurrentConditionsDisplay;
 import com.bokeunjeong.practice.pattern.observer.display.ForecastDisplay;
