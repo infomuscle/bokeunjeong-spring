@@ -23,7 +23,6 @@ public class StrategyTest {
 
     @Test
     void test2() {
-
         System.out.println("Fighter를 생성합니다.");
         Player player1 = new Fighter();
         player1.move();
@@ -32,11 +31,13 @@ public class StrategyTest {
 
         System.out.println();
 
-        System.out.println("ThiefWarrior를 생성합니다.");
-        Player player2 = new AssasinFighter();
+        System.out.println("AssassinFighter를 생성합니다.");
+        Player player2 = new AssassinFighter();
         player2.move();
-        ((AssasinFighter) player2).switchMode();
+        player2.attack();
+        ((AssassinFighter) player2).switchMode();
         player2.move();
+        player2.attack();
     }
 
     public abstract class Player {
@@ -66,8 +67,8 @@ public class StrategyTest {
     }
 
 
-    public class AssasinFighter extends Player {
-        public AssasinFighter() {
+    public class AssassinFighter extends Player {
+        public AssassinFighter() {
             this.moveBehavior = new WarriorMoveBehavior();
             this.attackBehavior = new FighterAttackBehavior();
         }
@@ -75,7 +76,7 @@ public class StrategyTest {
         public void switchMode() {
             System.out.println("모드를 전환합니다.");
             this.moveBehavior = (this.moveBehavior instanceof WarriorMoveBehavior) ? new ThieifMoveBehavior() : new WarriorMoveBehavior();
-            this.attackBehavior = (this.attackBehavior instanceof FighterAttackBehavior) ? new AssasinAttackBehavior() : new FighterAttackBehavior();
+            this.attackBehavior = (this.attackBehavior instanceof FighterAttackBehavior) ? new AssassinAttackBehavior() : new FighterAttackBehavior();
         }
     }
 
@@ -126,7 +127,7 @@ public class StrategyTest {
     }
 
 
-    public class AssasinAttackBehavior implements AttackBehavior {
+    public class AssassinAttackBehavior implements AttackBehavior {
         public void performAttack() {
             System.out.println("표창을 던집니다.");
         }
