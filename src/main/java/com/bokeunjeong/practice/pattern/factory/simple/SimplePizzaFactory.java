@@ -7,7 +7,7 @@ import com.bokeunjeong.practice.pattern.factory.simple.pizza.ClamPizza;
 import com.bokeunjeong.practice.pattern.factory.simple.pizza.PepperoniPizza;
 import com.bokeunjeong.practice.pattern.factory.simple.pizza.VeggiePizza;
 
-public class SimplePizzaFacotry {
+public class SimplePizzaFactory {
 
     public Pizza createPizza(String type) {
         Pizza pizza = null;

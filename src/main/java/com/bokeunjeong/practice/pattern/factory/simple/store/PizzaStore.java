@@ -1,19 +1,19 @@
 package com.bokeunjeong.practice.pattern.factory.simple.store;
 
 
-import com.bokeunjeong.practice.pattern.factory.simple.SimplePizzaFacotry;
+import com.bokeunjeong.practice.pattern.factory.simple.SimplePizzaFactory;
 import com.bokeunjeong.practice.pattern.factory.simple.pizza.Pizza;
 
 public class PizzaStore {
 
-    SimplePizzaFacotry facotry;
+    SimplePizzaFactory factory;
 
-    public PizzaStore(SimplePizzaFacotry facotry) {
-        this.facotry = facotry;
+    public PizzaStore(SimplePizzaFactory factory) {
+        this.factory = factory;
     }
 
     public final Pizza orderPizza(String type) {
-        Pizza pizza = facotry.createPizza(type);
+        Pizza pizza = factory.createPizza(type);
 
         pizza.prepare();
         pizza.bake();
