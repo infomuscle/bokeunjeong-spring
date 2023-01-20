@@ -1,9 +1,9 @@
 package com.bokeunjeong.practice.pattern.factory;
 
-import com.bokeunjeong.practice.pattern.factory.pizza.Pizza;
-import com.bokeunjeong.practice.pattern.factory.store.ChicagoPizzaStore;
-import com.bokeunjeong.practice.pattern.factory.store.NYPizzaStore;
-import com.bokeunjeong.practice.pattern.factory.store.PizzaStore;
+import com.bokeunjeong.practice.pattern.factory.fm.pizza.Pizza;
+import com.bokeunjeong.practice.pattern.factory.fm.store.ChicagoPizzaStore;
+import com.bokeunjeong.practice.pattern.factory.fm.store.NYPizzaStore;
+import com.bokeunjeong.practice.pattern.factory.fm.store.PizzaStore;
 import org.junit.jupiter.api.Test;
 
 public class FactoryTest {
