@@ -1,4 +1,4 @@
-package com.bokeunjeong.practice.pattern.adapter.iterator;
+package com.bokeunjeong.practice.pattern.adapter.collection;
 
 import java.util.Enumeration;
 import java.util.Iterator;
