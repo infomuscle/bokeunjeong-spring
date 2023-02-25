@@ -1,0 +1,112 @@
+insert into introduction (introduction_id, title, description, display)
+values
+            ('I001', 'Development-Oriented', 'Started to learn programming to be a IT service planner. Kept on coding several hours every day after school for one year. Thought work could be enjoyable if became a developer, and became a developer.', true)
+          , ('I002', 'Simple, Structured Code Writer', 'Think good speaker delivers deep thought with easy expressions. Want to be a person who make efficient program with short codes. Reading books like Clean Code, and continuing to improve codes I wrote.',  true)
+          , ('I003', 'Being Wide, To Be Deep', 'Created business documents every week working as PM in a social business project. Produced visuals with Photoshop and Illustrator. Made me a developer writing wiki and drawing diagrams in well-communicative way.',  true)
+          , ('I004', 'Like Achivements from Steady Endeavor', 'Regard talent, luck, effort as the most important factors to be successful. Concentrate on effort which is the only factor I can control. Progressed Github daily contributions for 398 days, and completed two side projects.',  true)
+          , ('I005', 'Launched Mobile Game, Nyantarctic Adventure', 'Think good finish is as important as good start. Experienced whole cycle of service in this side project. Developed a casual mobile game using free times for six months, and launched it on App Store and Google Play.',  true)
+;
+
+insert into skill_proficiency (skill_proficiency_id, level, detail)
+values
+            ('SP1', 1, 'Have experience of use in development')
+          , ('SP2', 2, 'Can use without difficulty')
+          , ('SP3', 3, 'Learning in deep to use with core understand as a main skill')
+;
+
+insert into
+            skill (skill_id, name, type, category, image, skill_proficiency_id, display)
+values
+            ('S001', 'Java', 'LANGUAGE', 'WORK', 'assets/img/logos/java.svg', 'SP3', true)
+          , ('S002', 'Python', 'LANGUAGE', 'WORK', 'assets/img/logos/python.svg', 'SP2', true)
+          , ('S003', 'Kotlin', 'LANGUAGE', 'PERSONAL', 'assets/img/logos/kotlin.svg', 'SP2', true)
+          , ('S004', 'JavaScript', 'LANGUAGE', 'WORK', 'assets/img/logos/javascript.svg', 'SP1', true)
+          , ('S005', 'Spring', 'FRAMEWORK', 'WORK', 'assets/img/logos/spring.svg', 'SP3', true)
+          , ('S006', 'Django', 'FRAMEWORK', 'PERSONAL', 'assets/img/logos/django.svg', 'SP1', true)
+          , ('S007', 'Vue.js', 'FRAMEWORK', 'PERSONAL', 'assets/img/logos/vue.svg', 'SP1', true)
+          , ('S008', 'Oracle', 'DATABASE', 'WORK', 'assets/img/logos/oracle.svg', 'SP2', true)
+          , ('S009', 'PostgreSQL', 'DATABASE', 'WORK', 'assets/img/logos/postgresql.svg', 'SP2', true)
+          , ('S010', 'MySQL', 'DATABASE', 'PERSONAL', 'assets/img/logos/mysql.svg', 'SP1', true)
+          , ('S011', 'Git', 'LANGUAGE', 'WORK', 'assets/img/logos/git.svg', 'SP3', true)
+          , ('S012', 'RabbitMQ', 'TOOL', 'WORK', 'assets/img/logos/rabbitmq.svg', 'SP2', true)
+          , ('S013', 'Kafka', 'TOOL', 'WORK', 'assets/img/logos/kafka.svg', 'SP2', true)
+          , ('S014', 'Docker', 'TOOL', 'PERSONAL', 'assets/img/logos/docker.svg', 'SP1', true)
+          , ('S015', 'Kubernetes', 'TOOL', 'PERSONAL', 'assets/img/logos/kubernetes.svg', 'SP1', true)
+          , ('S016', 'Unity', 'FRAMEWORK', 'PERSONAL', 'assets/img/logos/unity.svg', 'SP2', true)
+          , ('S017', 'C#', 'LANGUAGE', 'PERSONAL', 'assets/img/logos/csharp.svg', 'SP2', true)
+          , ('S018', 'AWS', 'TOOL', 'PERSONAL', 'assets/img/logos/aws.svg', 'SP1', true)
+          , ('S019', 'Grafana', 'TOOL', 'WORK', 'assets/img/logos/grafana.svg', 'SP1', true)
+          , ('S020', 'InfluxDB', 'DATABASE', 'WORK', 'assets/img/logos/influxdb.svg', 'SP1', true)
+;
+
+insert into project (project_id, name, type, description, client, start_year, start_month, end_year, end_month, image, display)
+values
+            ('P001', 'SSG Easy-Payment Module', 'WORK', 'Applied Easy-Payment Module to Order and Delivery Page', null, 2019, 7, 2019, 8, null, false)
+          , ('P002', 'Ssgpaycon API Integration', 'WORK', 'API Integration of Ssgpaycon Coupon Products', null, 2019, 8, 2019, 10, null, false)
+          , ('P003', 'Emart Online Store', 'WORK', 'Developed Order Validation API for Emart Automation Center', null, 2019, 12, 2019, 12, null, false)
+          , ('P004', 'Mobile Gift Order MSA Project', 'WORK', 'Separated Affiliate Logics from Order Projects to Respond Proactively to MSA Migrations', null, 2020, 3, 2020, 8, null, true)
+          , ('P005', 'Mobile Gift Claim MSA Project', 'WORK', 'Added Claim Features to Reduce Heavy CS Burden caused by Order-Only Service', null, 2021, 5, 2022, 2, null, true)
+          , ('P006', 'bokeunjeong', 'PERSONAL', 'Personal Website aimed at Learning New skills and Technical Practice', null, 2020, 9, 2020, 11, null, true)
+          , ('P007', 'Nyantarctic Adventure ', 'PERSONAL', 'Casual Mobile Game Project', null, 2021, 1, 2021, 6, null, true)
+          , ('P008', 'Affiliate Admin Service API Project Building', 'WORK', 'Separated Service Layer from Obsolescent Legacy Back Office System', null, 2021, 12, 2022, 2, null, true)
+          , ('P009', 'e-Coupon Service Improvement', 'WORK', 'Improvement for operational efficiency and service stabilization', null, 2022, 3, 2022, 12, null, true)
+          , ('P010', 'Affiliate Team Operation Admin Building', 'WORK', 'Developed Team-Only Operation Admin System to Resolve Increased Team Demand', null, 2022, 7, 2022, 7, null, true)
+          , ('P011', 'Mobile Gift Data Validation System', 'WORK', 'Developed Monitoring System for Data Inconsistency between Order and Affiliate DB', null, 2022, 8, 2022, 9, null, true)
+;
+
+insert into project_detail (project_detail_id, project_id, detail, display_sequence)
+values
+            ('PD0001', 'P001', 'Applied easy-payment module to changing reserved payment method service of funding products', 1)
+          , ('PD0002', 'P001', 'Developed registering cards and displaying registred cards service in easy-payment', 2)
+          , ('PD0003', 'P002', 'Developed claim APIs for cancel, resend, status, usage', 1)
+          , ('PD0004', 'P002', 'Developed admin pages for test and operation', 2)
+          , ('PD0005', 'P003', 'Developed order validation API', 1)
+          , ('PD0006', 'P004', 'Designed system architecture and data modeling', 1)
+          , ('PD0007', 'P004', 'Visualized monitoring data for coupon order with InfluxDB and Grafana', 2)
+          , ('PD0008', 'P004', 'Added mailing error details to sales manager', 3)
+          , ('PD0009', 'P005', 'Designed REST APIs for order, cancel, resend, status', 1)
+          , ('PD0010', 'P005', 'Used adapter pattern to delegate calling FeignClient by sellers and converting DTO to String by HTTP request content-type', 2)
+          , ('PD0011', 'P005', 'Used factory method pattern to ensure scalability for adding new sellers', 3)
+          , ('PD0012', 'P005', 'Used Spring AOP to separate cross-cutting concerns from main business logics', 4)
+          , ('PD0013', 'P005', 'Wrote detailed test scenario for controllers to ensure maintainability', 5)
+          , ('PD0014', 'P005', 'Used Kafka for asynchronous process of inessential features such as sending SMS or monitoring data', 6)
+          , ('PD0015', 'P006', 'Developed with Java, Spring, MySQL', 1)
+          , ('PD0016', 'P006', 'Deployed Docker image on AWS EC2', 2)
+          , ('PD0017', 'P006', 'Practiced ORM with Spring Data JPA', 3)
+          , ('PD0018', 'P006', 'Tested Java and Spring features for learning', 4)
+          , ('PD0019', 'P006', 'Built CI/CD pipeline with Github Actions', 5)
+          , ('PD0020', 'P007', 'Developed with Unity', 1)
+          , ('PD0021', 'P007', 'API Integration for Google Admob, AppLovin MAX, GameAnalytics', 2)
+          , ('PD0022', 'P007', 'User data analysis in partnership with Lion Studios', 3)
+          , ('PD0023', 'P007', 'Launched on App Store and Google Play', 4)
+          , ('PD0024', 'P008', 'Suggested architecure separating service logics from monolithic back office', 1)
+          , ('PD0025', 'P008', 'Designed common paging structure for data selection APIs', 2)
+          , ('PD0026', 'P008', 'Developed APIs for responsible services such as order-list, coupon-use', 3)
+          , ('PD0027', 'P009', 'Developed batch to check unlinked order data', 1)
+          , ('PD0028', 'P009', 'Developed back-office system to retry/cancel unlinked order', 2)
+          , ('PD0029', 'P009', 'Developed back-office system to block illegal users', 3)
+          , ('PD0030', 'P009', 'Applied Sentry to catch exceptions in detail', 4)
+          , ('PD0031', 'P010', 'Implemented simple login based on company LDAP and JWT', 1)
+          , ('PD0032', 'P010', 'Implemented Thymeleaf templates based on Bootstrap', 2)
+          , ('PD0033', 'P010', 'Implemented grid module with DataTables library', 3)
+          , ('PD0034', 'P010', 'Implemented statistics visualization module with Chart.js library', 4)
+          , ('PD0035', 'P011', 'Designed system architecture', 1)
+          , ('PD0036', 'P011', 'Developed Validation Target Selection API', 2)
+          , ('PD0037', 'P011', 'Developed Coupon Unit Validation API ', 3)
+          , ('PD0038', 'P011', 'Postprocessed validation for approximately 1 million of cumulative data', 4)
+;
+
+insert into link (link_id, title, url, column, display)
+values
+            ('L001', 'Github', 'https://github.com/infomuscle', 1, true)
+          , ('L002', 'Blog', 'https://bortfolio.tistory.com/', 1, true)
+          , ('L003', 'Resume', 'https://bit.ly/336nmuY', 2, true)
+          , ('L004', 'Linkedin', 'https://bit.ly/2XT9PrI', 2, true)
+;
+
+insert into contact (contact_id, type, detail, icon)
+values
+            ('C01', 'ADDRESS', 'Samhaksa Street, Songpa, Seoul, KR', 'fa-map-marked-alt')
+          , ('C02', 'EMAIL', 'infomuscle10@gmail.com', 'fa-envelope')
+          , ('C03', 'PHONE', 'Please Contact via Email', 'fa-mobile-alt')
+;

@@ -17,7 +17,7 @@ public class ProjectDetail {
     @JoinColumn(name = "project_id")
     private Project project;
 
-    @Column(name = "sequence")
+    @Column(name = "display_sequence")
     private Integer sequence;
 
     @Column(name = "detail")

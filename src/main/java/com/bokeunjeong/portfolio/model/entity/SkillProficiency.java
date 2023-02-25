@@ -13,7 +13,9 @@ public class SkillProficiency {
 
     @Id
     @Column(name = "skill_proficiency_id")
-    private Integer id;
+    private String id;
+
+    private Integer level;
 
     private String detail;
 }

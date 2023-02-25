@@ -10,6 +10,6 @@ import java.util.List;
 @Repository
 public interface PortfolioProjectRepository extends JpaRepository<Project, String> {
 
-    @Query("select p from Project p join fetch p.details where p.display=true order by p.id desc")
+    @Query("select distinct p from Project p join fetch p.details where p.display=true order by p.id desc")
     List<Project> findAllToDisplay();
 }

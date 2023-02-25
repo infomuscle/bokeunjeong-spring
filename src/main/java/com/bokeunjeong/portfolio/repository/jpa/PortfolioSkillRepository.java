@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public interface PortfolioSkillRepository extends JpaRepository<Skill, String> {
 
-    @Query("select s from Skill s join fetch s.skillProficiency where s.display=true")
+    @Query("select s from Skill s join fetch s.proficiency where s.display=true")
     public List<Skill> findAllToDisplay();
 
 }

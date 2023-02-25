@@ -15,22 +15,26 @@ public class Skill {
 
     private String name;
 
-    private String type;
-
-    private Integer proficiency;
+    @Enumerated(value = EnumType.STRING)
+    private Type type;
 
     private String image;
 
     private Boolean display;
 
-    private String category;
+    @Enumerated(value = EnumType.STRING)
+    private Category category;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "proficiency", insertable = false, updatable = false)
-    private SkillProficiency skillProficiency;
+    @JoinColumn(name = "skill_proficiency_id")
+    private SkillProficiency proficiency;
 
 
-    enum Type {
+    public enum Type {
         LANGUAGE, FRAMEWORK, DATABASE, TOOL
+    }
+
+    public enum Category {
+        WORK, PERSONAL
     }
 }
