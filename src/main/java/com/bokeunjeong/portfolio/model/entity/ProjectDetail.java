@@ -4,11 +4,10 @@ package com.bokeunjeong.portfolio.model.entity;
 import lombok.Getter;
 
 import javax.persistence.*;
-import java.io.Serializable;
 
 @Getter
 @Entity
-public class ProjectDetail  {
+public class ProjectDetail {
 
     @Id
     @Column(name = "project_detail_id")
@@ -23,4 +22,12 @@ public class ProjectDetail  {
 
     @Column(name = "detail")
     private String detail;
+
+    @Enumerated
+    private Type type;
+
+
+    enum Type {
+        DESCRIPTION, LINK
+    }
 }

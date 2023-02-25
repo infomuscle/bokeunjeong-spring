@@ -12,15 +12,12 @@ import javax.persistence.Id;
 public class Introduction {
 
     @Id
-    @Column(name = "id")
+    @Column(name = "introduction_id")
     private String id;
 
-    @Column(name = "title")
     private String title;
 
-    @Column(name = "description")
     private String description;
 
-    @Column(name = "display")
     private Boolean display;
 }

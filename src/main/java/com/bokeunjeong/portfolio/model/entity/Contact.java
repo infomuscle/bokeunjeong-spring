@@ -12,15 +12,12 @@ import javax.persistence.Id;
 public class Contact {
 
     @Id
-    @Column(name = "id")
+    @Column(name = "contact_id")
     private String id;
 
-    @Column(name = "type")
     private String type;
 
-    @Column(name = "detail")
     private String detail;
 
-    @Column(name = "icon")
     private String icon;
 }

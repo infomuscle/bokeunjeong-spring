@@ -12,9 +12,8 @@ import javax.persistence.Id;
 public class SkillProficiency {
 
     @Id
-    @Column(name = "id")
+    @Column(name = "skill_proficiency_id")
     private Integer id;
 
-    @Column(name = "detail")
     private String detail;
 }

@@ -12,18 +12,15 @@ import javax.persistence.Id;
 public class Link {
 
     @Id
-    @Column(name = "id")
+    @Column(name = "link_id")
     private String id;
 
-    @Column(name = "title")
     private String title;
 
-    @Column(name = "url")
     private String url;
 
-    @Column(name = "column")
     private Integer column;
 
-    @Column(name = "display")
     private Boolean display;
+
 }

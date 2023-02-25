@@ -1,7 +1,7 @@
 package com.bokeunjeong.portfolio.model.entity;
 
 
-import com.bokeunjeong.portfolio.model.composite.YearMonth;
+import com.bokeunjeong.portfolio.model.entity.composite.YearMonth;
 import lombok.Getter;
 
 import javax.persistence.*;
@@ -15,16 +15,12 @@ public class Project {
     @Column(name = "project_id")
     private String id;
 
-    @Column(name = "name")
     private String name;
 
-    @Column(name = "type")
     private String type;
 
-    @Column(name = "description")
     private String description;
 
-    @Column(name = "client")
     private String client;
 
     @AttributeOverrides({
@@ -41,13 +37,10 @@ public class Project {
     @Embedded
     private YearMonth endYearMonth;
 
-    @Column(name = "img")
     private String image;
 
-    @Column(name = "url")
     private String url;
 
-    @Column(name = "display")
     private Boolean display;
 
     @OneToMany(mappedBy = "project", fetch = FetchType.LAZY)
