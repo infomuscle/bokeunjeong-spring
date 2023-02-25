@@ -40,8 +40,6 @@ public class Project {
 
     private String image;
 
-    private String url;
-
     private Boolean display;
 
     @OneToMany(mappedBy = "project", fetch = FetchType.LAZY)

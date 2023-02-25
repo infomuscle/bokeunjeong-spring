@@ -23,11 +23,11 @@ public class ProjectDetail {
     @Column(name = "detail")
     private String detail;
 
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     private Type type;
 
 
-    enum Type {
+    public enum Type {
         DESCRIPTION, LINK
     }
 }
