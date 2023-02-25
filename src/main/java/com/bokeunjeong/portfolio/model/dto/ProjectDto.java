@@ -30,6 +30,6 @@ public class ProjectDto {
         this.client = project.getClient();
         this.image = project.getImage();
         this.url = project.getUrl();
-        this.details = project.getDetails().stream().sorted(Comparator.comparing(ProjectDetail::getSeq)).map(ProjectDetail::getDetail).collect(Collectors.toList());
+        this.details = project.getDetails().stream().sorted(Comparator.comparing(ProjectDetail::getSequence)).map(ProjectDetail::getDetail).collect(Collectors.toList());
     }
 }

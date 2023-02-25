@@ -8,48 +8,48 @@ import javax.persistence.*;
 import java.util.List;
 
 @Getter
-@Entity(name = "PROJECT")
+@Entity
 public class Project {
 
     @Id
-    @Column(name = "ID")
+    @Column(name = "project_id")
     private String id;
 
-    @Column(name = "NAME")
+    @Column(name = "name")
     private String name;
 
-    @Column(name = "TYPE")
+    @Column(name = "type")
     private String type;
 
-    @Column(name = "DESCRIPTION")
+    @Column(name = "description")
     private String description;
 
-    @Column(name = "CLIENT")
+    @Column(name = "client")
     private String client;
 
     @AttributeOverrides({
-            @AttributeOverride(name = "year", column = @Column(name = "START_YEAR")),
-            @AttributeOverride(name = "month", column = @Column(name = "START_MONTH"))
+            @AttributeOverride(name = "year", column = @Column(name = "start_year")),
+            @AttributeOverride(name = "month", column = @Column(name = "start_month"))
     })
     @Embedded
     private YearMonth startYearMonth;
 
     @AttributeOverrides({
-            @AttributeOverride(name = "year", column = @Column(name = "END_YEAR")),
-            @AttributeOverride(name = "month", column = @Column(name = "END_MONTH"))
+            @AttributeOverride(name = "year", column = @Column(name = "end_year")),
+            @AttributeOverride(name = "month", column = @Column(name = "end_month"))
     })
     @Embedded
     private YearMonth endYearMonth;
 
-    @Column(name = "IMG")
+    @Column(name = "img")
     private String image;
 
-    @Column(name = "URL")
+    @Column(name = "url")
     private String url;
 
-    @Column(name = "DISPLAY")
+    @Column(name = "display")
     private Boolean display;
 
-    @OneToMany(mappedBy = "projectId", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "project", fetch = FetchType.LAZY)
     private List<ProjectDetail> details;
 }

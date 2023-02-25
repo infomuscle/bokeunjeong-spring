@@ -3,23 +3,24 @@ package com.bokeunjeong.portfolio.model.entity;
 
 import lombok.Getter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Getter
-@Entity(name = "PROJECT_DETAIL")
-public class ProjectDetail implements Serializable {
+@Entity
+public class ProjectDetail  {
 
     @Id
-    @Column(name = "PROJECT_ID")
-    private String projectId;
+    @Column(name = "project_detail_id")
+    private String id;
 
-    @Id
-    @Column(name = "SEQ")
-    private Integer seq;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "project_id")
+    private Project project;
 
-    @Column(name = "DETAIL")
+    @Column(name = "sequence")
+    private Integer sequence;
+
+    @Column(name = "detail")
     private String detail;
 }

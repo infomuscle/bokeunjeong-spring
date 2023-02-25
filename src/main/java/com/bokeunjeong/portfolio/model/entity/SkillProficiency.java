@@ -8,13 +8,13 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Getter
-@Entity(name = "SKILL_PROFICIENCY")
+@Entity
 public class SkillProficiency {
 
     @Id
-    @Column(name = "ID")
+    @Column(name = "id")
     private Integer id;
 
-    @Column(name = "DETAIL")
+    @Column(name = "detail")
     private String detail;
 }
