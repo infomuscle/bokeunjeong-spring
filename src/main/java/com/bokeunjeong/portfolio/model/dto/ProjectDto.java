@@ -23,7 +23,7 @@ public class ProjectDto {
 
     public ProjectDto(Project project) {
         this.name = project.getName();
-        this.type = project.getType();
+        this.type = project.getType().name();
         this.description = project.getDescription();
         this.startAt = project.getStartYearMonth().toString();
         this.endAt = (project.getEndYearMonth() != null) ? project.getEndYearMonth().toString() : "Present";

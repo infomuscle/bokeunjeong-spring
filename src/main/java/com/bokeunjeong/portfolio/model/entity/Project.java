@@ -17,7 +17,8 @@ public class Project {
 
     private String name;
 
-    private String type;
+    @Enumerated(value = EnumType.STRING)
+    private Type type;
 
     private String description;
 
@@ -45,4 +46,9 @@ public class Project {
 
     @OneToMany(mappedBy = "project", fetch = FetchType.LAZY)
     private List<ProjectDetail> details;
+
+
+    public enum Type {
+        WORK, PERSONAL
+    }
 }
