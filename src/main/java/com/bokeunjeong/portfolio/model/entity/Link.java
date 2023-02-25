@@ -19,8 +19,6 @@ public class Link {
 
     private String url;
 
-    private Integer column;
-
     private Boolean display;
 
 }

@@ -1,4 +1,4 @@
-FROM openjdk:11-jdk
+FROM infomuscle10/openjdk
 
 LABEL maintainer="infomuscle10@gmail.com"
 

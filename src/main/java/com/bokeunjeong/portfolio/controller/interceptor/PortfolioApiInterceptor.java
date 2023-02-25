@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 
 import javax.annotation.PostConstruct;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Enumeration;
@@ -40,9 +41,12 @@ public class PortfolioApiInterceptor implements HandlerInterceptor {
         log.info("PortfolioApiInterceptor.afterCompletion# request.getRemotePort(): {} ", request.getRemotePort());
         log.info("PortfolioApiInterceptor.afterCompletion# request.getLocalAddr(): {} ", request.getLocalAddr());
         log.info("PortfolioApiInterceptor.afterCompletion# request.getRemoteAddr(): {} ", request.getRemoteAddr());
-        log.info("PortfolioApiInterceptor.afterCompletion# request.getCookies(): {} ", request.getCookies());
         log.info("PortfolioApiInterceptor.afterCompletion# request.getPathInfo(): {} ", request.getPathInfo());
         log.info("PortfolioApiInterceptor.afterCompletion# request.getQueryString(): {} ", request.getQueryString());
+
+        for (Cookie cookie : request.getCookies()) {
+            log.info("PortfolioApiInterceptor.afterCompletion# cookie: {} ", cookie);
+        }
 
         Enumeration<String> headerNames = request.getHeaderNames();
         while (headerNames.hasMoreElements()) {
