@@ -43,10 +43,7 @@ public class PortfolioApiInterceptor implements HandlerInterceptor {
         log.info("PortfolioApiInterceptor.afterCompletion# request.getRemoteAddr(): {} ", request.getRemoteAddr());
         log.info("PortfolioApiInterceptor.afterCompletion# request.getPathInfo(): {} ", request.getPathInfo());
         log.info("PortfolioApiInterceptor.afterCompletion# request.getQueryString(): {} ", request.getQueryString());
-
-        for (Cookie cookie : request.getCookies()) {
-            log.info("PortfolioApiInterceptor.afterCompletion# cookie: {} ", cookie);
-        }
+        log.info("PortfolioApiInterceptor.afterCompletion# request.getCookies(): {} ", request.getCookies());
 
         Enumeration<String> headerNames = request.getHeaderNames();
         while (headerNames.hasMoreElements()) {
