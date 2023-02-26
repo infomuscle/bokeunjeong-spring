@@ -1,4 +1,4 @@
-package com.bokeunjeong.portfolio.model.composite;
+package com.bokeunjeong.portfolio.model.entity.composite;
 
 import lombok.Getter;
 import lombok.Setter;

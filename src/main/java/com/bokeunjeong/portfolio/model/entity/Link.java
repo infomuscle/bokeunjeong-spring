@@ -8,22 +8,17 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Getter
-@Entity(name = "LINK")
+@Entity
 public class Link {
 
     @Id
-    @Column(name = "ID")
+    @Column(name = "link_id")
     private String id;
 
-    @Column(name = "TITLE")
     private String title;
 
-    @Column(name = "URL")
     private String url;
 
-    @Column(name = "COLUMN")
-    private Integer column;
-
-    @Column(name = "DISPLAY")
     private Boolean display;
+
 }

@@ -8,19 +8,16 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Getter
-@Entity(name = "CONTACT")
+@Entity
 public class Contact {
 
     @Id
-    @Column(name = "ID")
+    @Column(name = "contact_id")
     private String id;
 
-    @Column(name = "TYPE")
     private String type;
 
-    @Column(name = "DETAIL")
     private String detail;
 
-    @Column(name = "ICON")
     private String icon;
 }

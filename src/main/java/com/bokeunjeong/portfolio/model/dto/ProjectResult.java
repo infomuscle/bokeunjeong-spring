@@ -5,6 +5,8 @@ import lombok.Data;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.bokeunjeong.portfolio.model.entity.Project.Type.WORK;
+
 @Data
 public class ProjectResult {
 
@@ -13,7 +15,7 @@ public class ProjectResult {
 
     public ProjectResult(List<ProjectDto> projects) {
         projects.stream().forEach(p -> {
-            if ("Work".equals(p.getType())) {
+            if (WORK.name().equals(p.getType())) {
                 this.works.add(p);
             } else {
                 this.sides.add(p);

@@ -8,6 +8,9 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static com.bokeunjeong.portfolio.model.entity.ProjectDetail.Type.DESCRIPTION;
+import static com.bokeunjeong.portfolio.model.entity.ProjectDetail.Type.LINK;
+
 @Data
 public class ProjectDto {
 
@@ -18,18 +21,18 @@ public class ProjectDto {
     private String startAt;
     private String endAt;
     private String image;
-    private String url;
+    private List<String> urls;
     private List<String> details;
 
     public ProjectDto(Project project) {
         this.name = project.getName();
-        this.type = project.getType();
+        this.type = project.getType().name();
         this.description = project.getDescription();
         this.startAt = project.getStartYearMonth().toString();
         this.endAt = (project.getEndYearMonth() != null) ? project.getEndYearMonth().toString() : "Present";
         this.client = project.getClient();
         this.image = project.getImage();
-        this.url = project.getUrl();
-        this.details = project.getDetails().stream().sorted(Comparator.comparing(ProjectDetail::getSeq)).map(ProjectDetail::getDetail).collect(Collectors.toList());
+        this.urls = project.getDetails().stream().filter(pd -> LINK.equals(pd.getType())).sorted(Comparator.comparing(ProjectDetail::getSequence)).map(ProjectDetail::getDetail).collect(Collectors.toList());
+        this.details = project.getDetails().stream().filter(pd -> DESCRIPTION.equals(pd.getType())).sorted(Comparator.comparing(ProjectDetail::getSequence)).map(ProjectDetail::getDetail).collect(Collectors.toList());
     }
 }

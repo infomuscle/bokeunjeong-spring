@@ -8,19 +8,16 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Getter
-@Entity(name = "INTRODUCTION")
+@Entity
 public class Introduction {
 
     @Id
-    @Column(name = "ID")
+    @Column(name = "introduction_id")
     private String id;
 
-    @Column(name = "TITLE")
     private String title;
 
-    @Column(name = "DESCRIPTION")
     private String description;
 
-    @Column(name = "DISPLAY")
     private Boolean display;
 }

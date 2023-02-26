@@ -6,32 +6,35 @@ import lombok.Getter;
 import javax.persistence.*;
 
 @Getter
-@Entity(name = "SKILL")
+@Entity
 public class Skill {
 
     @Id
-    @Column(name = "ID")
+    @Column(name = "skill_id")
     private String id;
 
-    @Column(name = "NAME")
     private String name;
 
-    @Column(name = "TYPE")
-    private String type;
+    @Enumerated(value = EnumType.STRING)
+    private Type type;
 
-    @Column(name = "PROFICIENCY")
-    private Integer proficiency;
-
-    @Column(name = "LOGO")
     private String image;
 
-    @Column(name = "DISPLAY")
     private Boolean display;
 
-    @Column(name = "CATEGORY")
-    private String category;
+    @Enumerated(value = EnumType.STRING)
+    private Category category;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "PROFICIENCY", insertable = false, updatable = false)
-    private SkillProficiency skillProficiency;
+    @JoinColumn(name = "skill_proficiency_id")
+    private SkillProficiency proficiency;
+
+
+    public enum Type {
+        LANGUAGE, FRAMEWORK, DATABASE, TOOL
+    }
+
+    public enum Category {
+        WORK, PERSONAL
+    }
 }

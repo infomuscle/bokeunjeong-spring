@@ -15,10 +15,10 @@ public class SkillDto {
 
     public SkillDto(Skill skill) {
         this.name = skill.getName();
-        this.type = skill.getType();
-        this.proficiency = skill.getProficiency();
+        this.type = skill.getType().name();
+        this.proficiency = skill.getProficiency().getLevel();
         this.image = skill.getImage();
-        this.category = skill.getCategory();
-        this.detail = skill.getSkillProficiency().getDetail();
+        this.category = skill.getCategory().name();
+        this.detail = skill.getProficiency().getDetail();
     }
 }
