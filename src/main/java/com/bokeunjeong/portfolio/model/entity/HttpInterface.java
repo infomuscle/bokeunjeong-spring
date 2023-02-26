@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 
 @Getter
 @Entity
-public class HttpInterface {
+public class HttpInterface extends Audit {
 
     @Id
     @GeneratedValue
@@ -22,11 +22,17 @@ public class HttpInterface {
     private String cookies;
     private String remoteHost;
     private String remoteAddr;
+    private String localAddr;
+    private String referer;
+    private String userAgent;
 
     public HttpInterface(HttpServletRequest request) {
         this.requestUri = request.getRequestURI();
         this.remoteHost = request.getRemoteHost();
         this.remoteAddr = request.getRemoteAddr();
+        this.localAddr = request.getLocalAddr();
+        this.referer = request.getHeader("referer");
+        this.userAgent = request.getHeader("user-agent");
         if (request.getCookies() != null) {
             this.cookies = request.getCookies().toString();
         }
