@@ -110,7 +110,7 @@ insert into link (link_id, title, url, display)
 values
             ('L001', 'Github', 'https://github.com/infomuscle', true)
           , ('L002', 'Blog', 'https://bortfolio.tistory.com/', true)
-          , ('L003', 'Resume', 'https://bit.ly/336nmuY', true)
+          , ('L003', 'Resume', 'https://bit.ly/3kJOcWb', true)
           , ('L004', 'Linkedin', 'https://bit.ly/2XT9PrI', true)
 ;
 
