@@ -10,50 +10,51 @@ public class CallByValueReferenceTest {
     void callByValuePrimitiveTest() {
         int num = 0;
         System.out.println("before num: " + num);
-        plusOnePrimitive(num);
+        plusOne(num);
         System.out.println("after num: " + num);
     }
 
-    void plusOnePrimitive(int num) {
-        num = 1;
+    void plusOne(int num) {
+        num += 1;
     }
 
     @Test
     void callByValueWrapperTest() {
         Integer num = 0;
-        System.out.println(System.identityHashCode(num));
-        System.out.println("before num: " + num);
-        plusOneWrapper(num);
-        System.out.println("after num: " + num);
+        System.out.println("1.callByValueTest# before num: " + System.identityHashCode(num));
+        plusOne(num);
+        System.out.println("4.callByValueTest# after num: " + System.identityHashCode(num));
     }
 
-    void plusOneWrapper(Integer num) {
-        System.out.println(System.identityHashCode(num));
-        num = 1;
+    void plusOne(Integer num) {
+        System.out.println("2.plusOne# before num: " + System.identityHashCode(num));
+        num += 1;
+        System.out.println("3.plusOne# after num: " + System.identityHashCode(num));
+        System.out.println("3-1.plusOne# after num: " + System.identityHashCode(1));
     }
 
     @Test
     void callByValueClassTest() {
         Number num = new Number(0);
         System.out.println("before num: " + num);
-        plusOneClass(num);
+        plusOne(num);
         System.out.println("after num: " + num);
     }
 
-    void plusOneClass(Number num) {
-        num.value = 1;
+    void plusOne(Number num) {
+        num.value += 1;
     }
 
     @Test
-    void testCallByValueString() {
+    void callByValueStringTest() {
         String num = "0";
         System.out.println("before num: " + num);
-        plusOneString(num);
+        plusOne(num);
         System.out.println("after num: " + num);
     }
 
-    void plusOneString(String num) {
-        num = "1";
+    void plusOne(String num) {
+        num += "1";
     }
 
 
