@@ -48,7 +48,7 @@ public class PortfolioApiServiceImpl implements PortfolioApiService {
         mailMessage.setSubject(String.format("[bokeunjeong.com] %s", emailDto.getSubject()));
 
         StringBuilder sb = new StringBuilder();
-        sb.append("발신인: ").append("\n").append(emailDto.getName());
+        sb.append("발신인: ").append("\n").append(emailDto.getName()).append(" / ").append(emailDto.getEmail());
         sb.append("\n\n");
         sb.append("내용: ").append("\n").append(emailDto.getMessage());
         mailMessage.setText(sb.toString());
