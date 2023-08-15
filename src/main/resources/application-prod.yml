@@ -16,7 +16,6 @@ spring:
     init:
       mode: never
       platform: postgresql
-  data:
-    redis:
-      host: bokeunjeong-redis
-      port: 6379
+  redis:
+    host: bokeunjeong-redis
+    port: 6379
