@@ -1,4 +1,4 @@
-package com.bokeunjeong.portfolio.config;
+package com.bokeunjeong.portfolio.configuration;
 
 import com.bokeunjeong.portfolio.controller.interceptor.PortfolioApiInterceptor;
 import lombok.RequiredArgsConstructor;
@@ -8,7 +8,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 @RequiredArgsConstructor
-public class InterceptorConfig implements WebMvcConfigurer {
+public class InterceptorConfiguration implements WebMvcConfigurer {
 
     private final PortfolioApiInterceptor portfolioApiInterceptor;
 

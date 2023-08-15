@@ -1,11 +1,14 @@
 package com.bokeunjeong.portfolio.service;
 
+import com.bokeunjeong.portfolio.model.dto.EmailDto;
 import com.bokeunjeong.portfolio.model.dto.PortfolioResponse;
 import com.bokeunjeong.portfolio.model.dto.ProjectResult;
 import com.bokeunjeong.portfolio.repository.PortfolioRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -14,6 +17,7 @@ public class PortfolioApiServiceImpl implements PortfolioApiService {
 
     private final ResourceLoader resourceLoader;
     private final PortfolioRepository portfolioRepository;
+    private final JavaMailSender javaMailSender;
 
     public PortfolioResponse getPortfolio() {
         PortfolioResponse response = new PortfolioResponse();
@@ -33,5 +37,22 @@ public class PortfolioApiServiceImpl implements PortfolioApiService {
         }
 
         throw new RuntimeException("Cannt find file.");
+    }
+
+    @Override
+    public void sendEmail(EmailDto emailDto) {
+
+        SimpleMailMessage mailMessage = new SimpleMailMessage();
+        mailMessage.setFrom(emailDto.getEmail());
+        mailMessage.setTo("infomuscle10@gmail.com");
+        mailMessage.setSubject(String.format("[bokeunjeong.com] %s", emailDto.getSubject()));
+
+        StringBuilder sb = new StringBuilder();
+        sb.append("발신인: ").append("\n").append(emailDto.getName());
+        sb.append("\n\n");
+        sb.append("내용: ").append("\n").append(emailDto.getMessage());
+        mailMessage.setText(sb.toString());
+
+        javaMailSender.send(mailMessage);
     }
 }
