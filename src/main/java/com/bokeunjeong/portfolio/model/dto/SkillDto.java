@@ -9,7 +9,6 @@ public class SkillDto {
     private String name;
     private String type;
     private Integer proficiency;
-    private String image;
     private String category;
     private String detail;
 
@@ -17,7 +16,6 @@ public class SkillDto {
         this.name = skill.getName();
         this.type = skill.getType().name();
         this.proficiency = skill.getProficiency().getLevel();
-        this.image = skill.getImage();
         this.category = skill.getCategory().name();
         this.detail = skill.getProficiency().getDetail();
     }

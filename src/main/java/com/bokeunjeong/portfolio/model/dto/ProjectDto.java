@@ -17,7 +17,6 @@ public class ProjectDto {
     private String name;
     private String type;
     private String description;
-    private String client;
     private String startAt;
     private String endAt;
     private String image;
@@ -28,9 +27,8 @@ public class ProjectDto {
         this.name = project.getName();
         this.type = project.getType().name();
         this.description = project.getDescription();
-        this.startAt = project.getStartYearMonth().toString();
-        this.endAt = (project.getEndYearMonth() != null) ? project.getEndYearMonth().toString() : "Present";
-        this.client = project.getClient();
+        this.startAt = (project.hasNoPeriod()) ? null : project.getStartAt();
+        this.endAt = (project.hasNoPeriod()) ? null : project.getEndAt();
         this.image = project.getImage();
         this.urls = project.getDetails().stream().filter(pd -> LINK.equals(pd.getType())).sorted(Comparator.comparing(ProjectDetail::getSequence)).map(ProjectDetail::getDetail).collect(Collectors.toList());
         this.details = project.getDetails().stream().filter(pd -> DESCRIPTION.equals(pd.getType())).sorted(Comparator.comparing(ProjectDetail::getSequence)).map(ProjectDetail::getDetail).collect(Collectors.toList());

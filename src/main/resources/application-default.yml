@@ -2,19 +2,25 @@ server:
   port: 8080
 spring:
   jpa:
-    database: h2
+#    database: h2
+    database: postgresql
     show-sql: true
     properties.hibernate.format_sql: false
-    hibernate.ddl-auto: create
+    hibernate.ddl-auto: none
     defer-datasource-initialization: true
+#  datasource:
+#    url: jdbc:h2:~/bokeunjeong
+#    username: sa
+#    password:
+#    driver-class-name: org.h2.Driver
   datasource:
-    url: jdbc:h2:~/bokeunjeong
-    username: sa
-    password:
-    driver-class-name: org.h2.Driver
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: password
+    driver-class-name: org.postgresql.Driver
   sql:
     init:
-      mode: always
+      mode: never
       platform: h2
   redis:
     host: localhost

@@ -18,8 +18,6 @@ public class Skill {
     @Enumerated(value = EnumType.STRING)
     private Type type;
 
-    private String image;
-
     private Boolean display;
 
     @Enumerated(value = EnumType.STRING)

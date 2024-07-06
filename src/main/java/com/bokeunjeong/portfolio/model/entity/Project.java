@@ -22,8 +22,6 @@ public class Project {
 
     private String description;
 
-    private String client;
-
     @AttributeOverrides({
             @AttributeOverride(name = "year", column = @Column(name = "start_year")),
             @AttributeOverride(name = "month", column = @Column(name = "start_month"))
@@ -45,6 +43,17 @@ public class Project {
     @OneToMany(mappedBy = "project", fetch = FetchType.LAZY)
     private List<ProjectDetail> details;
 
+    public Boolean hasNoPeriod() {
+        return startYearMonth == null && endYearMonth == null;
+    }
+
+    public String getStartAt() {
+        return this.startYearMonth.toString();
+    }
+
+    public String getEndAt() {
+        return (this.endYearMonth != null) ? this.endYearMonth.toString() : "Present";
+    }
 
     public enum Type {
         WORK, PERSONAL
